@@ -1,30 +1,44 @@
+import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ErrorHandler, NgModule } from '@angular/core';
-import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
-import { SplashScreen } from '@ionic-native/splash-screen';
-import { StatusBar } from '@ionic-native/status-bar';
-
+import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
+
+
+import { StatusBar } from '@ionic-native/status-bar';
+import { SplashScreen } from '@ionic-native/splash-screen';
+import { DepartureTabsPage } from "../pages/tabs/departure-tabs";
+import { DatePicker } from "@ionic-native/date-picker";
+import { DepartureModule } from "../providers/departure/departure";
+import { HttpService } from "../providers/http-service";
+import { DeviceInfoProvider } from "../providers/device-info/device-info";
+import { HttpModule } from "@angular/http";
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    DepartureTabsPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    HttpModule,
+    IonicModule.forRoot(MyApp,{
+      iconMode: 'ios',
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    DepartureTabsPage
+    
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    DepartureModule,
+    DatePicker,    
+    HttpService,
+    DeviceInfoProvider,
   ]
 })
 export class AppModule {}

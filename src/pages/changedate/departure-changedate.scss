@@ -1,0 +1,163 @@
+page-departure-changedate {
+    ion-content {
+        // background-image: url('../assets/departure/background/background-home.jpg');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        .scroll-content {
+            // background-color: rgba(17, 34, 51, 0.5);
+        }
+    }
+    $heiderHeight: 60px;
+    $titleHeight: 30px;
+    $rowHeight: 50px;
+    $background: linear-gradient(to right, #17cce9, #34a1ca);
+    .height-56 {
+        height: 56px;
+    }
+    .a-header-background {
+        background: $background;
+    }
+    .today {
+        font-size: .9em;
+        color: #FFF;
+        border: solid 1px #FFF;
+        border-radius: 10px;
+        padding: 0 8px;
+        text-transform: none;
+        font-weight: normal;
+        white-space: nowrap;
+    }
+    .date-today {
+        font-size: 1em;
+    }
+    .a-header-button {
+        img {
+            height: 3em;
+        }
+    }
+    .a-header-title {
+        text-align: center;
+        color: white;
+        white-space: nowrap;
+    }
+    .a-center-center {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .a-right-center {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 16px;
+    }
+    .a-left-center {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 16px;
+    }
+    .width-40 {
+        width: 40%;
+    }
+    .width-10 {
+        width: 10%;
+    }
+    .change-date-body {
+        .header {
+            background: $background;
+            height: $titleHeight;
+            text-align: center;
+            color: #FFF;
+            border-radius: 20px;
+        }
+        .content {
+            position: relative;
+            height: $rowHeight * 3;
+            .bg-active {
+                position: absolute;
+                top: 50%;
+                left: 0;
+                width: 100%;
+                transform: translateY(-50%);
+                height: 30px;
+                z-index: -1;
+                background: #f2f2f2;
+                border-radius: 20px;
+                opacity: 0.3;
+                // color: red;
+            }
+            .border {
+                height: 80%;
+                width: 1px;
+                background-color: #ccc;
+                opacity: 0.5;
+            }
+            .change-date-col {
+                width: 33%;
+                height: $rowHeight * 3;
+                float: left;
+                overflow: auto;
+                .item {
+                    width: 100%;
+                    height: $rowHeight;
+                    color: #717171;
+                    text-align: center;
+                    span {
+                        display: block;
+                        width: 100%;
+                        text-align: center;
+                        height: $rowHeight;
+                        line-height: $rowHeight;
+                        white-space: nowrap;
+                        font-size: 1em;
+                    }
+                }
+                .day-active {
+                    color: #fbd025;
+                    font-weight: bold;
+                }
+                .month-active {
+                    color: #ef679c;
+                    font-weight: bold;
+                }
+                .year-active {
+                    color: #fc882a;
+                    font-weight: bold;
+                }
+            }
+        }
+        .icon {
+            margin-top: 32px;
+            padding: 8px;
+        }
+    }
+    .zodiac-block {
+        margin-top: 20px;
+        height: $titleHeight;
+        width: 100%;
+        .date-detail {
+            width: 90%;
+            border-radius: 15px;
+            background: $background;
+            height: $titleHeight;
+            color: #fff;
+        }
+    }
+    .zodiac-comment {
+        padding: 5%;
+        .day-name {
+            width: 100%;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+            color: #34a1ca;
+            white-space: nowrap;
+        }
+        .day-comment {
+            font-size: 1em;
+        }
+    }
+}
