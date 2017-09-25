@@ -285,10 +285,10 @@ export class DepartureHomePage {
         this.solarDate = data.date.getDate();
         this.solarMonth = data.date.getMonth() + 1;
         this.solarYear = data.date.getFullYear();
-        this.changeBackgroundImage();
         this.getDayOfWeek();
         this.getLunarDateTime();
         this.getQuoteAndDayName();
+        this.changeBackgroundImage();
         this.getSexagesimalCycle();
       }
     })

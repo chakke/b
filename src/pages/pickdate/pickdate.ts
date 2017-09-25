@@ -137,13 +137,14 @@ export class PickdatePage {
     if (this.animationFrameObjects[index]) cancelAnimationFrame(this.animationFrameObjects[index]);
     if (Math.abs(nowScrollTop - scrollTop) <= deltaDistance) {
       element.scrollTop = scrollTop;
+      this.isScroll = false;
       // this.getDayInMonth();
       this.changeDate();
 
       // if(this.currentIndex==1 || this.currentIndex==2){
       //   this.getDayInMonth();
       // }
-      this.isScroll = false;
+     
       return;
     }
     if (deltaDistance * this.fps < Math.abs(nowScrollTop - scrollTop)) deltaDistance = Math.round(Math.abs(nowScrollTop - scrollTop) / this.fps);

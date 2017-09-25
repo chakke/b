@@ -104,20 +104,18 @@ export class DepartureChangeDatePage {
       }
     }
   }
+  ionViewDidLoad(){
+    this.gotoToday();
+  }
   ionViewDidEnter() {
     this.isLeaving = false;
-    this.load_filter = true;
-    this.day_filter = [];
+  
     // this.goToDefault();
     // setTimeout(()=> {
-    this.gotoToday();
     // }, 100);
     let scrollElms = document.getElementsByClassName('change-date-col');
-    this.today = new Date();
-    this.todayInLunar = this.departureExchangeDay.convertSolar2Lunar(this.today.getDate(), this.today.getMonth() + 1, this.today.getFullYear(), 7);
-    this.day_filter.push(new DayFilter(this.today.getDate(), this.today.getMonth() + 1, this.today.getFullYear()));
-    this.day_filter.push(new DayFilter(this.todayInLunar[0], this.todayInLunar[1], this.todayInLunar[2]));
-    this.load_filter = false;
+    
+  
     if (scrollElms) {
       for (let i = 0; i < scrollElms.length; i++) {
         let scrollElm = <HTMLElement>scrollElms[i];
@@ -164,10 +162,15 @@ export class DepartureChangeDatePage {
 
   }
   gotoToday() {
+    this.load_filter = true;
+    this.day_filter = [];
     this.currentIndex = 6;
     let scrollElms = document.getElementsByClassName('change-date-col');
     this.today = new Date();
     this.todayInLunar = this.departureExchangeDay.convertSolar2Lunar(this.today.getDate(), this.today.getMonth() + 1, this.today.getFullYear(), 7);
+    this.day_filter.push(new DayFilter(this.today.getDate(), this.today.getMonth() + 1, this.today.getFullYear()));
+    this.day_filter.push(new DayFilter(this.todayInLunar[0], this.todayInLunar[1], this.todayInLunar[2]));
+    this.load_filter = false;
     if (scrollElms) {
       if (scrollElms) {
         for (let i = 0; i < scrollElms.length; i++) {
@@ -256,7 +259,8 @@ export class DepartureChangeDatePage {
           }
           // this.getDayInMonth();
           this.selectedDate = new Departure(new Date(this.solar_date[2] + "-" + this.solar_date[1] + "-" + this.solar_date[0]));
-          this.mAppModule.updateDepartureInfo([this.selectedDate]);
+          let data = this.mAppModule.updateDepartureInfo([this.selectedDate]);
+          this.selectedDate = data[0];
 
         }
       }
@@ -272,7 +276,9 @@ export class DepartureChangeDatePage {
     if (Math.abs(nowScrollTop - scrollTop) <= deltaDistance || this.isLeaving) {
       element.scrollTop = scrollTop;
       if (((nowScrollTop - screenTop) % 50 == 0) && this.currentIndex == index) {
-        this.getDayInSolarMonth();
+        if (this.currentIndex <= 2 || this.currentIndex >= 0) {
+          this.getDayInSolarMonth();
+        }
         setTimeout(() => {
           this.changeDate(index);
         }, 100);

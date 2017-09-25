@@ -75,7 +75,7 @@ export class DepartureModule {
   }
 
   updateDepartureInfo(departures: Array<Departure>) {
-    if (this.departureData)
+    if (this.departureData){
       departures.forEach(departure => {
         if (departure) {
           let data = this.getQuoteAndNameOfDay(departure.lunarDate, departure.lunarMonth);
@@ -83,8 +83,10 @@ export class DepartureModule {
           departure.comment = data[1];
         }
       });
+      return departures;
+    }
     else {
-      this.getData().then(() => {
+      return this.getData().then(() => {
         departures.forEach(departure => {
           if (departure) {
             let data = this.getQuoteAndNameOfDay(departure.lunarDate, departure.lunarMonth);
@@ -92,6 +94,7 @@ export class DepartureModule {
             departure.comment = data[1];
           }
         });
+        return departures;
       })
     }
   }

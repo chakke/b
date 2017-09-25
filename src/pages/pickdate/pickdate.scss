@@ -31,7 +31,7 @@ page-pickdate {
     .close-button {
         height: $rowHeight;
         width: $rowHeight;
-        padding: 16px;
+        padding: 10px;
         color: #fff;
         background: rgba(white, 0.3);
         position: absolute;
@@ -96,5 +96,6 @@ page-pickdate {
         background-color: #56b8dd;
         text-transform: uppercase;
         color: #fff;
+        z-index: 10;
     }
 }

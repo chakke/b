@@ -31,6 +31,7 @@ page-departure-calendar {
     .grid {
         padding: 0;
         border: none;
+        margin-bottom: 16px;
         // margin-bottom: 1px;
     }
     .col {
@@ -47,29 +48,22 @@ page-departure-calendar {
         -ms-flex-align: center;
         align-items: center;
         // color: #FFF;
-        &.selected {
-            border: solid 2px #4db8ff;
-            border-radius: 50%;
-        }
-        &.today {
-            border: none;
-        }
+        // &.selected {
+        //     border: solid 2px #4db8ff;
+        //     border-radius: 50%;
+        // }
+        // &.today {
+        //     border: none;
+        // }
     }
-    .selected {
-        height: 46px;
-        width: 46px;
-        border: solid 2px #4db8ff;
-        border-radius: 50%;
-        position: absolute;
-        top: 0;
-        left: 4px;
-        z-index: -1;
-    }
-    .date-today {
-        background-color: #fad1e1;
-        border-radius: 50%;
-        border: none !important;
-    }
+    // .selected {
+    //     border-color: #4db8ff !important;
+    // }
+    // .date-today {
+    //     background-color: #fad1e1;
+    //     border-radius: 50%;
+    //     border-color: #fad1e1 !important;
+    // }
     .calendar-th {
         height: $line-height * 1.5;
         // background: linear-gradient(to right, #17cce9, #34a1ca);
@@ -95,13 +89,20 @@ page-departure-calendar {
             -ms-flex-preferred-size: initial;
             flex-basis: initial;
             // margin-bottom: 10px;
-            padding: 2px;
+            padding: 1px;
             text-align: -webkit-center;
+        }
+        .selected {
+            border-color: #4db8ff !important;
+        }
+        .today {
+            border-color: #fad1e1 !important;
+            background-color: #fad1e1;
         }
         .solar-date {
             width: 100%;
             display: block;
-            font-size: 1.2em;
+            font-size: 4.5vw;
         }
         .lunar-date {
             font-size: 0.8em;
@@ -109,12 +110,18 @@ page-departure-calendar {
             color: #b7b7b7;
             background-color: transparent;
             vertical-align: middle;
-            margin-left: 16px;
+            margin-left: 5px;
+            margin-bottom: 1px;
         }
         .day-box {
-            height: 3em;
-            width: 3em;
-            padding: 0.4em;
+            width: 99%;
+            height: 99%;
+            border-style: solid;
+            border-radius: 50%;
+            border-width: 1px;
+            border-color: white;
+            padding: 2px;
+            padding-top: 3px;
         }
     }
     .color-sunday {
@@ -132,10 +139,8 @@ page-departure-calendar {
         height: 5px;
         border-radius: 50%;
         background-color: transparent;
-        position: absolute;
-        left: 50%;
-        margin-top: 6px;
-        transform: translateX(-12px);
+        margin-right: 5px;
+        margin-top: 2px;
         // transform: translateY(-2px);
     }
     .status-zodiac {
