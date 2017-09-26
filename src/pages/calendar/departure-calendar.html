@@ -30,7 +30,7 @@
         <div style="height: 30px"></div>
         <ion-grid class="calendar-block" (swipe)="swipe($event)">
             <ion-row #calendarContent margin-top class="calendar-day animated">
-                <ion-col class="a3-container-center" (tap)="selectDeparture(departure)" *ngFor="let departure of departureDays; let i = index">
+                <ion-col [style.height]="col_height" class="a3-container-center" (tap)="selectDeparture(departure)" *ngFor="let departure of departureDays; let i = index">
                     <div *ngIf="departure" class="day-box a1-relative" text-center [class.today]="departure && departure.dateString == currentDate.dateString" [class.selected]="departure &&  departure.dateString == selectedDate.dateString">
                         <div class="solar-date " [class.color-sunday]="i==0 || i%7==0" [class.color-saturday]="i%7==6" [class.color-default]="i%7==1 || i%7==2 || i%7==3 || i%7==4 || i%7==5">{{getDate(departure.date)}}</div>
                         <div class="a3-container-center a1-relative" nowrap>

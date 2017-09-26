@@ -24,7 +24,7 @@ export class DepartureCalendarPage {
   //dữ liệu về ngày xuất hành
   departureData: any;
   showDatePicker = false;
-  col_height;
+  col_height = "40px";
   isPlatform;
   constructor(
     private navParams: NavParams,
@@ -40,7 +40,7 @@ export class DepartureCalendarPage {
     this.selectedDate = new Departure(new Date());
     this.calendar = new Calendar(this.currentDate.date.getMonth(), this.currentDate.date.getFullYear());
     this.checkDepartureBlank();
-    this.col_height = ((screen.width - 32) / 7);
+    this.col_height = Math.floor(((screen.width - 32) / 7)) + "px";
     // this.calendar = this.calendar.
     if (!this.departureData) {
       this.mAppModule.getData().then(
@@ -54,15 +54,8 @@ export class DepartureCalendarPage {
     // document.getElementById("box").style.height = this.col_height;
     // this.getQuoteAndDayName(this.selectedDate);
   }
-  setColHeight() {
-    let Elems = document.getElementsByClassName("col");
-    for (let i = 0; i < Elems.length; i++) {
-      let Elem = <HTMLElement>Elems[i];
-      Elem.style.height = this.col_height + 'px';
-    }
-  }
+ 
   ionViewDidEnter() {
-    this.setColHeight();
   }
   checkDepartureBlank() {
     if (this.calendar.days[35]) {
@@ -74,14 +67,10 @@ export class DepartureCalendarPage {
   //Load data
   onInputChange(month, year) {
     this.calendar.setTime(month, year);
-
     this.checkDepartureBlank();
 
     this.mAppModule.updateDepartureInfo(this.departureDays);
-    setTimeout( ()=> {
-      this.setColHeight();
 
-    }, 100);
   }
 
   getDate(date: Date) {
@@ -142,10 +131,6 @@ export class DepartureCalendarPage {
           let month = this.selectedDate.date.getMonth();
           let year = this.selectedDate.date.getFullYear();
           this.onInputChange(month, year);
-          setTimeout( ()=> {
-            this.setColHeight();
-      
-          }, 100);
         }, 100);
       }
     })
