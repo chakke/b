@@ -57,6 +57,10 @@ export class DepartureModule {
   public convertSolarToLunar(dd: any, mm: any, yy: any) {
     return this.mDepartureExchangeDay.convertSolar2Lunar(dd, mm, yy, 7);
   }
+  //doi ngay am ve ngay duong
+  public convertLunarToSolar(dd: any, mm: any, yy: any) {
+    return this.mDepartureExchangeDay.convertSolar2Lunar(dd,mm,yy,7);
+  }
 
   public update() {
     this.getData();
