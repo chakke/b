@@ -87,7 +87,6 @@ export class PickdatePage {
       }
     }
     this.gotoToday();
-    
   }
   closeSolarDate() {
     this.viewCtrl.dismiss({}, "", {
@@ -101,12 +100,16 @@ export class PickdatePage {
       this.doScrollTo(this.divIDs[1],(this.today.getMonth())*this.rowHeight);
       this.doScrollTo(this.divIDs[2],(this.today.getFullYear() - this.datas[2][0])*this.rowHeight);
     }
+    this.selected_date = new Departure(this.today);
   }
   ionViewDidEnter() {
     // this.gotoToday();
   }
   doScrollTo(divID: string, top: number){
-    AppModule.getInstance().getScrollController().doScroll(divID,top,{alpha: 0.4, callback: ()=>{}});
+    this.isScroll = true;
+    AppModule.getInstance().getScrollController().doScroll(divID,top,{alpha: 0.4, callback: ()=>{
+      this.isScroll = false;
+    }});
   }
   scrollToTop(element: HTMLElement, scrollTop, index) {
     let divID = element.getAttribute('id');
