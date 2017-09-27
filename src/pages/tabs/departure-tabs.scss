@@ -13,8 +13,8 @@ page-departure-tabs {
     .tabbar.show-tabbar {
         height: 56px;
         font-size: 100%;
-        box-shadow: 0 0 0.3px 0 rgba(0, 0, 0, 0.4), 0 0 1px 0 rgba(0, 0, 0, 0.01) !important;
-        -webkit-box-shadow: 0 0 0.3px 0 rgba(221, 98, 98, 0.4), 0 0 1px 0 rgba(0, 0, 0, 0.01) !important;
+        box-shadow: 0 0 0.01px 0 rgba(0, 0, 0, 0.04), 0 0 1px 0 rgba(0, 0, 0, 0.01) !important;
+        -webkit-box-shadow: 0 0 0.01px 0 rgba(0, 0, 0, 0.04), 0 0 1px 0 rgba(0, 0, 0, 0.01) !important;
         background-color: transparent !important;
     }
     .tabbar,
@@ -31,6 +31,8 @@ page-departure-tabs {
     .tabs-ios .tabbar {
         border: 0;
         height: 45px;
+        // box-shadow: 0 0 0.3px 0 rgba(0, 0, 0, 0.4), 0 0 1px 0 rgba(0, 0, 0, 0.01) !important;
+        // -webkit-box-shadow: 0 0 0.3px 0 rgba(0, 0, 0, 0.4), 0 0 1px 0 rgba(0, 0, 0, 0.01) !important;
         // padding-top: 2px;
     }
     .tabs-md {

@@ -25,14 +25,15 @@ export class PickdatePage {
   rowHeight = 45;//height of each row in px; Match to css; 
   timeoutID;
   touchingObjects = [];
-  currentIndex = 6;
-  today: any;
-  fps = 30;
+  today: Date;
   submit_button = <HTMLElement>document.getElementById("submit");
-  isShowPickDate: boolean = false;
   isScroll: boolean = false;
-  selectedDate: Departure;
+  selected_date: Departure;
   solar_date = [];
+  mScrollELms = new Array<HTMLElement>();
+  divIDs = ["div1","div2","div3"];
+  mRunningScroll: boolean = false;
+  scrollIndex : number = 4; 
   constructor(public navCtrl: NavController, public navParams: NavParams,
     public viewCtrl: ViewController,
     private mDepartureModule: DepartureModule,
@@ -59,8 +60,34 @@ export class PickdatePage {
   }
 
   ionViewDidLoad() {
-    // console.log('ionViewDidLoad PickdatePage');
+    for(let i = 0; i<this.divIDs.length;i++){
+      let element = <HTMLElement>document.getElementById(this.divIDs[i]);
+      this.mScrollELms.push(element);
+    }
+    
+    if(this.mScrollELms){
+      for(let key = 0; key<this.mScrollELms.length;key++){
+        let scrollElm = this.mScrollELms[key];
+
+        scrollElm.addEventListener('scroll', (event) => {
+          if (!this.touchingObjects[key] && this.scrollIndex == key) {
+            this.scrollEnd(scrollElm, key);
+          }
+        })
+        scrollElm.addEventListener('touchstart', () => {
+          this.touchingObjects[key] = true;
+          this.isScroll = true;
+          this.scrollIndex = key;
+        })
+        scrollElm.addEventListener('touchend', () => {
+
+          this.touchingObjects[key] = false;
+          this.scrollEnd(scrollElm, key);
+        })
+      }
+    }
     this.gotoToday();
+    
   }
   closeSolarDate() {
     this.viewCtrl.dismiss({}, "", {
@@ -68,69 +95,36 @@ export class PickdatePage {
     });
   }
   gotoToday() {
-    let scrollElms = document.getElementsByClassName('change-date-col');
     this.today = new Date();
-    this.selectedDate = new Departure(this.today);
-    this.mDepartureModule.updateDepartureInfo([this.selectedDate]);
-    if (scrollElms) {
-      if (scrollElms) {
-        for (let i = 0; i < scrollElms.length; i++) {
-          let scrollElm = <HTMLElement>scrollElms[i];
-          let index = parseInt(scrollElm.getAttribute('index'));
-          if (index == 0) {
-            scrollElm.scrollTop = (this.today.getDate() - 1) * this.rowHeight;
-          } else if (index == 1) {
-            scrollElm.scrollTop = (this.today.getMonth()) * this.rowHeight;
-          } else if (index == 2) {
-            scrollElm.scrollTop = (this.today.getFullYear() - this.datas[2][0]) * this.rowHeight;
-          }
-        }
-      }
+    if(this.mScrollELms){
+      this.doScrollTo(this.divIDs[0],(this.today.getDate()-1)*this.rowHeight);
+      this.doScrollTo(this.divIDs[1],(this.today.getMonth())*this.rowHeight);
+      this.doScrollTo(this.divIDs[2],(this.today.getFullYear() - this.datas[2][0])*this.rowHeight);
     }
   }
   ionViewDidEnter() {
     // this.gotoToday();
-    let scrollElms = document.getElementsByClassName('change-date-col');
-    if (scrollElms) {
-      for (let i = 0; i < scrollElms.length; i++) {
-        let scrollElm = <HTMLElement>scrollElms[i];
-        let index = parseInt(scrollElm.getAttribute('index'));
-
-        scrollElm.addEventListener('scroll', (event) => {
-          if (!this.touchingObjects[index]) {
-            this.scrollEnd(scrollElm, index);
-          }
-        })
-        scrollElm.addEventListener('touchstart', () => {
-
-          this.touchingObjects[index] = true;
-          this.currentIndex = index;
-          this.isScroll = true;
-        })
-        scrollElm.addEventListener('touchend', () => {
-
-          this.touchingObjects[index] = false;
-          this.scrollEnd(scrollElm, index);
-        })
-      }
-    }
-
   }
-
+  doScrollTo(divID: string, top: number){
+    AppModule.getInstance().getScrollController().doScroll(divID,top,{alpha: 0.4, callback: ()=>{}});
+  }
   scrollToTop(element: HTMLElement, scrollTop, index) {
     let divID = element.getAttribute('id');
     let nowScrollTop = element.scrollTop;
     this.isScroll = true;
-    AppModule.getInstance().getScrollController().doScroll(divID, scrollTop,{alpha:0.2, callback: ()=>{
+    AppModule.getInstance().getScrollController().doScroll(divID, scrollTop,{alpha:0.1, callback: ()=>{
+      if(nowScrollTop%45==0){
+        this.getDayInMonth();
+        setTimeout(()=> {
         this.changeDate();
-        this.isScroll = false;
-        return;
-    }})
+        }, 100);
+      }
+      this.isScroll = false;
+      return;
+    }});
   }
 
   scrollEnd(scrollElm: HTMLElement, index) {
-    //end of touch. May be end of scrolling. Just reset timeout. 
-    //Scroll event fire about every 30ms so 100ms timeout is fine
     if (this.timeoutID) clearTimeout(this.timeoutID);
     this.timeoutID = setTimeout(() => {
       let scrollTop = scrollElm.scrollTop;
@@ -138,22 +132,30 @@ export class PickdatePage {
     }, 100)
   }
   changeDate() {
-    let solarElms = document.getElementsByClassName('solar-col');
     this.solar_date = [];
-
-    if (solarElms) {
-      for (let i = 0; i < solarElms.length; i++) {
-        let solarElm = solarElms[i];
-        let index = solarElm.getAttribute('index');
+    console.log("change-date");
+    
+    if (this.mScrollELms) {
+      for (let i = 0; i < 3; i++) {
+        let solarElm = this.mScrollELms[i];
         let childIndex = Math.round(solarElm.scrollTop / this.rowHeight) + 1;
-        this.solar_date[index] = parseInt(solarElm.children[childIndex].children[0].innerHTML);
+        this.solar_date[i] = parseInt(solarElm.children[childIndex].children[0].innerHTML);
       }
-      this.getDayInMonth();
-      this.selectedDate = new Departure(new Date(this.solar_date[2] + "-" + this.solar_date[1] + "-" + this.solar_date[0]));
-      this.mDepartureModule.updateDepartureInfo([this.selectedDate]);
+      this.selected_date = new Departure(new Date(this.solar_date[2] + "-" + this.solar_date[1] + "-" + this.solar_date[0]));
+      let data = this.mDepartureModule.updateDepartureInfo([this.selected_date]);
+      this.selected_date = data[0];
     }
   }
+
   getDayInMonth() {
+    this.solar_date = [];
+    if(this.mScrollELms){
+      for (let i = 0; i < 3; i++) {
+        let solarElm = this.mScrollELms[i];
+        let childIndex = Math.round(solarElm.scrollTop / this.rowHeight) + 1;
+        this.solar_date[i] = parseInt(solarElm.children[childIndex].children[0].innerHTML);
+      }
+    }
     if (this.solar_date[2] % 4 == 0) {
       if (this.solar_date[1] == 2) {
         this.day_in_month = this.day_29;
@@ -174,7 +176,7 @@ export class PickdatePage {
   }
   getSolarDate() {
     if (!this.isScroll) {
-      this.viewCtrl.dismiss(this.selectedDate, "", {
+      this.viewCtrl.dismiss(this.selected_date, "", {
         animate: false
       });
     }
