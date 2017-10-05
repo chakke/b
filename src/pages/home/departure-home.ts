@@ -34,7 +34,7 @@ export class DepartureHomePage {
   //số ngày trong tháng của năm thường
   day_numbers_of_month_in_normal_year: Array<number> = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
   //số ngày trong tháng của năm nhuận
-  day_numbers_of_month_in_leap_year: Array<number> = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];;
+  day_numbers_of_month_in_leap_year: Array<number> = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
   //can chi của giờ
   sexagesimalCycleTime: string = "";
   //can chi của ngày
@@ -45,6 +45,18 @@ export class DepartureHomePage {
   sexagesimalCycleYear: string = "";
   //dữ liệu về ngày xuất hành
   departureData: any;
+  //dữ liệu về chi tiết ngày
+  dayDetailData: any;
+  //đữ liệu về chi tiết trực
+  trucData : any;
+  //dữ liệu về Tiết của ngày
+  tietData : any;
+  //dữ liệu về hướng xuất hành
+  taiThan_hyThan: any;
+  //dữ liệu sao tốt sao xấu
+  saoTot_saoXau: any;
+  //dữ liệu về ngày đặc biệt
+  special_data: any;
   //tên của ngày theo lịch xuất hành
   name_of_date: string = "";
   //lời khuyên cho ngày:
@@ -83,6 +95,50 @@ export class DepartureHomePage {
       this.mMenuController.enable(false, "lottery");
       this.addCubeListener();
     }
+    if(!this.dayDetailData){
+      this.mAppModule.getDayDetailDataJSON().then(
+        data=>{
+          this.dayDetailData = data;
+          console.log("LoadDayDetail finished");
+          
+        }, error => {}
+      )
+    }
+    if(!this.trucData ){
+      this.mAppModule.getTrucDataJSON().then(
+        data=>{
+          this.trucData = data;
+        }, error => {}
+      )
+    }
+    if(!this.tietData ){
+      this.mAppModule.getTietDataJSON().then(
+        data=>{
+          this.tietData = data;
+        }, error => {}
+      )
+    }
+    if(!this.taiThan_hyThan){
+      this.mAppModule.getTaiThanHyThanDataJSON().then(
+        data=> {
+          this.taiThan_hyThan = data;
+        },error =>{}
+      )
+    }
+    if(!this.saoTot_saoXau){
+      this.mAppModule.getSaoTotSaoXauDataJSON().then(
+        data =>{
+          this.saoTot_saoXau = data;
+        },error =>{}
+      )
+    }
+    if(!this.special_data){
+      this.mAppModule.getSpecialDataJSON().then(
+        data=>{
+          this.special_data = data;
+        },error =>{}
+      )
+    }
     if (!this.departureData) {
       this.mAppModule.getData().then(
         data => {
@@ -91,8 +147,18 @@ export class DepartureHomePage {
         }, error => { }
       );
     }
-  }
 
+   
+    
+  }
+  viewDayDetail(){
+    console.log("click");
+    this.navCtrl.push("DayDetailPage", {
+      dd: this.solarDate,
+      mm: this.solarMonth,
+      yy: this.solarYear,
+    });
+  }
   onLoadedData() {
     this.getDayOfWeek();
     this.getLunarDateTime();

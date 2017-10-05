@@ -1,0 +1,138 @@
+<div style="height: 30%" *ngIf="!isLoading" class="day-detail-header a1-absolute a1-z-10">
+    <div class="background">
+        <div *ngIf="mAppModule.mIsOnIOSDevice" style="height:20px;"></div>
+        <div *ngIf="!mAppModule.mIsOnIOSDevice" style="height:4px;"></div>
+        <div class="a3-container a3-justify-between a3-items-center height-56 ">
+            <div style="height: 25px; width: 70px" text-center>
+                <div class="back-button a3-container-center" (click)="close()">
+                    <ion-icon name="arrow-back"></ion-icon>
+                </div>
+            </div>
+            <div class="a1-relative" text-center>
+                <div><span style="font-weight: bold; font-size: larger">{{day_of_week}}</span></div>
+                <div><span>{{dd}}/{{mm}}/{{yy}}</span></div>
+            </div>
+            <div class="today-button" text-center (click)="goToDay()">
+                <span>Hôm nay</span>
+            </div>
+        </div>
+    </div>
+    <div class="lunar-container a3-container a3-justify-between a3-items-center">
+        <div class="item-container a1-relative" text-center style="border-top-left-radius:10px ">
+            <div class="item-title a1-height-30 background" style="border-top-left-radius:10px "><span>Giờ</span></div>
+            <div class="box-container">
+                <div class="item-number"><span>{{nowtime | date: "HH:mm"}}</span></div>
+                <div class="item-footer"><span>{{sexagesimalCycleTime}}</span></div>
+            </div>
+        </div>
+        <div class="item-container a1-relative" text-center>
+            <div class="item-title a1-height-30 background"><span>Ngày</span></div>
+            <div class="box-container">
+                <div class="item-number"><span>{{lunarDate}}</span></div>
+                <div class="item-footer"><span>{{sexagesimalCycleDate}}</span></div>
+            </div>
+        </div>
+        <div class="item-container a1-relative" text-center>
+            <div class="item-title a1-height-30 background"><span>Tháng</span></div>
+            <div class="box-container">
+                <div class="item-number"><span>{{lunarMonth}}</span></div>
+                <div class="item-footer"><span>{{sexagesimalCycleMonth }}</span></div>
+            </div>
+        </div>
+        <div class="item-container a1-relative" text-center style="border-top-right-radius:10px ">
+            <div class="item-title a1-height-30 background" style="border-top-right-radius:10px "><span>Năm</span></div>
+            <div class="box-container">
+                <div class="item-number"><span>{{lunarYear}}</span></div>
+                <div class="item-footer"><span>{{sexagesimalCycleYear}}</span></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ion-content>
+    <!-- <div *ngIf="mAppModule.mIsOnIOSDevice" style="height:76px;"></div>
+    <div *ngIf="!mAppModule.mIsOnIOSDevice" style="height:60px;"></div> -->
+    <div style="height: 20px"></div>
+
+    <div class="app-content animated" #detail id="detail" (swipe)="swipe($event)">
+        <div class="a3-container a3-justify-between">
+            <div class="item-background item-haft">
+                <div class="item">
+                    <span class="item-title">Hành:</span>
+                    <span>{{TNBINFO.nguhanh_id}}</span>
+                </div>
+            </div>
+            <div class="item-background item-haft">
+                <div class="item">
+                    <span class="item-title">Trực:</span>
+                    <span>{{trucDay}}</span>
+                </div>
+            </div>
+        </div>
+        <div style="height: 1px"></div>
+        <div class="a3-container a3-justify-between">
+            <div class="item-background item-haft">
+                <div class="item">
+                    <span class="item-title">Sao: </span>
+                    <span>{{TNBINFO.thapnhibat_ten}}</span>
+                </div>
+            </div>
+            <div class="item-background item-haft">
+                <div class="item">
+                    <span class="item-title">Tiết: </span>
+                    <span>{{tietDay}}</span>
+                </div>
+            </div>
+        </div>
+        <div style="height: 1px"></div>
+        <div class="item-background">
+            <div class="item-title-color "><span>Kiêng</span></div>
+            <div class="line-height" style="padding-left: 10px">{{TNBINFO.kieng_ky}}</div>
+        </div>
+        <div style="height: 1px"></div>
+        <div class="item-background">
+            <div class="item-title-color"><span>Nên</span></div>
+            <div class="line-height" style="padding-left: 10px">{{TNBINFO.nen_lam}}</div>
+        </div>
+        <div style="height: 1px"></div>
+        <div class="item-background">
+            <div class="item-title-color"><span>Giờ tốt</span></div>
+            <div style="padding-left: 10px"><span class="line-height" *ngFor="let hour of hour_better">{{hour}}</span>
+            </div>
+        </div>
+        <div style="height: 1px"></div>
+        <div class="item-background">
+            <div class="item-title-color"><span>Giờ xấu</span></div>
+            <div style="padding-left: 10px"><span class="line-height" *ngFor="let member of hour_bad">{{member}}</span>
+            </div>
+        </div>
+        <div style="height: 1px"></div>
+        <div class="item-background">
+            <div class="item-title-color"><span>Hướng xuất hành</span></div>
+            <div style="padding-left: 10px" *ngFor="let item of huong_xuat_hanh"><span>
+                {{item.huong_name}} : {{item.huong_id}}
+            </span></div>
+        </div>
+        <div style="height: 1px"></div>
+        <div class="item-background">
+            <div class="item-title-color"><span>Tuổi xung khắc</span></div>
+            <div style="padding-left: 10px"><span>{{tuoi_xung_khac}}</span></div>
+        </div>
+        <div style="height: 1px"></div>
+        <div class="item-background">
+            <div class="item-title-color"><span>Sao tốt</span></div>
+            <div style="padding-left: 10px"><span *ngFor="let temp of sao_tot">{{temp}}</span></div>
+        </div>
+        <div style="height: 1px"></div>
+        <div class="item-background">
+            <div class="item-title-color"><span>Sao xấu</span></div>
+            <div style="padding-left: 10px">
+                <span *ngFor="let tem of sao_xau; let i = index">
+                    {{tem}}
+                    <span *ngIf="i<sao_xau.length-1">,</span>
+                </span>
+            </div>
+        </div>
+        <div style="height: 5px"></div>
+    </div>
+</ion-content>

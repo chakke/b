@@ -1,0 +1,566 @@
+{
+    "taithan_hythan": [{
+            "can": "Giáp",
+            "huong_id": "Đông Bắc",
+            "taithan_hythan": "Hỷ thần"
+        },
+        {
+            "can": "Kỷ",
+            "huong_id": "Đông Bắc",
+            "taithan_hythan": "Hỷ thần"
+        },
+        {
+            "can": "Ất",
+            "huong_id": "Tây Bắc",
+            "taithan_hythan": "Hỷ thần"
+        },
+        {
+            "can": "Canh",
+            "huong_id": "Tây Bắc",
+            "taithan_hythan": "Hỷ thần"
+        },
+        {
+            "can": "Bính",
+            "huong_id": "Tây Nam",
+            "taithan_hythan": "Hỷ thần"
+        },
+        {
+            "can": "Tân",
+            "huong_id": "Tây Nam",
+            "taithan_hythan": "Hỷ thần"
+        },
+        {
+            "can": "Đinh",
+            "huong_id": "Nam",
+            "taithan_hythan": "Hỷ thần"
+        },
+        {
+            "can": "Nhâm",
+            "huong_id": "Nam",
+            "taithan_hythan": "Hỷ thần"
+        },
+        {
+            "can": "Mậu",
+            "huong_id": "Đông Nam",
+            "taithan_hythan": "Hỷ thần"
+        },
+        {
+            "can": "Quý",
+            "huong_id": "Đông Nam",
+            "taithan_hythan": "Hỷ thần"
+        },
+        {
+            "can": "Giáp",
+            "huong_id": "Đông Nam",
+            "taithan_hythan": "Tài thần"
+        },
+        {
+            "can": "Ất",
+            "huong_id": "Đông Nam",
+            "taithan_hythan": "Tài thần"
+        },
+        {
+            "can": "Bính",
+            "huong_id": "Đông",
+            "taithan_hythan": "Tài thần"
+        },
+        {
+            "can": "Đinh",
+            "huong_id": "Đông",
+            "taithan_hythan": "Tài thần"
+        },
+        {
+            "can": "Mậu",
+            "huong_id": "Bắc",
+            "taithan_hythan": "Tài thần"
+        },
+        {
+            "can": "Kỷ",
+            "huong_id": "Nam",
+            "taithan_hythan": "Tài thần"
+        },
+        {
+            "can": "Canh",
+            "huong_id": "Tây Nam",
+            "taithan_hythan": "Tài thần"
+        },
+        {
+            "can": "Tân",
+            "huong_id": "Tây Nam",
+            "taithan_hythan": "Tài thần"
+        },
+        {
+            "can": "Nhâm",
+            "huong_id": "Tây",
+            "taithan_hythan": "Tài thần"
+        },
+        {
+            "can": "Quý",
+            "huong_id": "Tây Bắc",
+            "taithan_hythan": "Tài thần"
+        }
+    ],
+    "hac_than": [{
+            "can": "Kỷ",
+            "chi": "Dậu",
+            "huong_id": "Đông Bắc"
+        },
+        {
+            "can": "Canh",
+            "chi": "TuẤt",
+            "huong_id": "Đông Bắc"
+        },
+        {
+            "can": "Tân",
+            "chi": "Hợi",
+            "huong_id": "Đông Bắc"
+        },
+        {
+            "can": "Nhâm",
+            "chi": "Tý",
+            "huong_id": "Đông Bắc"
+        },
+        {
+            "can": "Quý",
+            "chi": "Sửu",
+            "huong_id": "Đông Bắc"
+        },
+        {
+            "can": "Giáp",
+            "chi": "Dần",
+            "huong_id": "Đông Bắc"
+        },
+        {
+            "can": "Ất",
+            "chi": "Mão",
+            "huong_id": "Đông"
+        },
+        {
+            "can": "Bính",
+            "chi": "Thìn",
+            "huong_id": "Đông"
+        },
+        {
+            "can": "Đinh",
+            "chi": "Tỵ",
+            "huong_id": "Đông"
+        },
+        {
+            "can": "Mậu",
+            "chi": "Ngọ",
+            "huong_id": "Đông"
+        },
+        {
+            "can": "Kỷ",
+            "chi": "Mùi",
+            "huong_id": "Đông"
+        },
+        {
+            "can": "Canh",
+            "chi": "Thân",
+            "huong_id": "Đông Nam"
+        },
+        {
+            "can": "Tân",
+            "chi": "Dậu",
+            "huong_id": "Đông Nam"
+        },
+        {
+            "can": "Nhâm",
+            "chi": "TuẤt",
+            "huong_id": "Đông Nam"
+        },
+        {
+            "can": "Quý",
+            "chi": "Hợi",
+            "huong_id": "Đông Nam"
+        },
+        {
+            "can": "Giáp",
+            "chi": "Tý",
+            "huong_id": "Đông Nam"
+        },
+        {
+            "can": "Ất",
+            "chi": "Sửu",
+            "huong_id": "Đông Nam"
+        },
+        {
+            "can": "Bính",
+            "chi": "Dần",
+            "huong_id": "Nam"
+        },
+        {
+            "can": "Đinh",
+            "chi": "Mão",
+            "huong_id": "Nam"
+        },
+        {
+            "can": "Mậu",
+            "chi": "Thìn",
+            "huong_id": "Nam"
+        },
+        {
+            "can": "Kỷ",
+            "chi": "Tỵ",
+            "huong_id": "Nam"
+        },
+        {
+            "can": "Canh",
+            "chi": "Ngọ",
+            "huong_id": "Nam"
+        },
+        {
+            "can": "Tân",
+            "chi": "Mùi",
+            "huong_id": "Tây Nam"
+        },
+        {
+            "can": "Nhâm",
+            "chi": "Thân",
+            "huong_id": "Tây Nam"
+        },
+        {
+            "can": "Quý",
+            "chi": "Dậu",
+            "huong_id": "Tây Nam"
+        },
+        {
+            "can": "Giáp",
+            "chi": "TuẤt",
+            "huong_id": "Tây Nam"
+        },
+        {
+            "can": "Ất",
+            "chi": "Hợi",
+            "huong_id": "Tây Nam"
+        },
+        {
+            "can": "Bính",
+            "chi": "Tý",
+            "huong_id": "Tây Nam"
+        },
+        {
+            "can": "Đinh",
+            "chi": "Sửu",
+            "huong_id": "Tây"
+        },
+        {
+            "can": "Mậu",
+            "chi": "Dần",
+            "huong_id": "Tây"
+        },
+        {
+            "can": "Kỷ",
+            "chi": "Mão",
+            "huong_id": "Tây"
+        },
+        {
+            "can": "Canh",
+            "chi": "Thìn",
+            "huong_id": "Tây"
+        },
+        {
+            "can": "Tân",
+            "chi": "Tỵ",
+            "huong_id": "Tây"
+        },
+        {
+            "can": "Nhâm",
+            "chi": "Ngọ",
+            "huong_id": "Tây Bắc"
+        },
+        {
+            "can": "Quý",
+            "chi": "Mùi",
+            "huong_id": "Tây Bắc"
+        },
+        {
+            "can": "Giáp",
+            "chi": "Thân",
+            "huong_id": "Tây Bắc"
+        },
+        {
+            "can": "Ất",
+            "chi": "Dậu",
+            "huong_id": "Tây Bắc"
+        },
+        {
+            "can": "Bính",
+            "chi": "TuẤt",
+            "huong_id": "Tây Bắc"
+        },
+        {
+            "can": "Đinh",
+            "chi": "Hợi",
+            "huong_id": "Tây Bắc"
+        },
+        {
+            "can": "Mậu",
+            "chi": "Tý",
+            "huong_id": "Bắc"
+        },
+        {
+            "can": "Kỷ",
+            "chi": "Sửu",
+            "huong_id": "Bắc"
+        },
+        {
+            "can": "Canh",
+            "chi": "Dần",
+            "huong_id": "Bắc"
+        },
+        {
+            "can": "Tân",
+            "chi": "Mão",
+            "huong_id": "Bắc"
+        },
+        {
+            "can": "Nhâm",
+            "chi": "Thìn",
+            "huong_id": "Bắc"
+        }
+    ],
+    "tuoi_xung_khac": [{
+            "canchi": "Giáp tý",
+            "tuoi_xung_khac": "Mậu ngọ, Nhâm ngọ, Canh dần, Canh thân"
+        },
+        {
+            "canchi": "Ất sửu",
+            "tuoi_xung_khac": "Kỷ mùi, Quí mùi, Tân mão, Tân dậu"
+        },
+        {
+            "canchi": "Bính dần",
+            "tuoi_xung_khac": "Giáp thân, Nhâm thân, Nhâm tuẤt, Nhâm thìn"
+        },
+        {
+            "canchi": "Đinh mão",
+            "tuoi_xung_khac": "Ất dậu, Quí dậu, Quí tị, Quí hợi"
+        },
+        {
+            "canchi": "Mậu thìn",
+            "tuoi_xung_khac": "Canh tuẤt, Bính tuẤt"
+        },
+        {
+            "canchi": "Kỷ tị",
+            "tuoi_xung_khac": "Tân hợi, Đinh hợi"
+        },
+        {
+            "canchi": "Canh ngọ",
+            "tuoi_xung_khac": "Nhâm tý, Bính tý, Giáp thân, Giáp dần"
+        },
+        {
+            "canchi": "Tân mùi",
+            "tuoi_xung_khac": "Quí sửu, Đinh sửu, Ất dậu, Ất mão"
+        },
+        {
+            "canchi": "Nhâm thân",
+            "tuoi_xung_khac": "Bính dần, Canh dần, Bính thân"
+        },
+        {
+            "canchi": "Quí dậu",
+            "tuoi_xung_khac": "Đinh mão, Tân mão, Đinh dậu"
+        },
+        {
+            "canchi": "Giáp tuẤt",
+            "tuoi_xung_khac": "Nhâm thìn, Canh thìn, Canh tuẤt"
+        },
+        {
+            "canchi": "Ất hợi",
+            "tuoi_xung_khac": "Quí tị, Tân tị, Tân hợi"
+        },
+        {
+            "canchi": "Bính tý",
+            "tuoi_xung_khac": "Canh ngo, Mậu ngọ"
+        },
+        {
+            "canchi": "Đinh Sửu",
+            "tuoi_xung_khac": "Tân mùi, Kỷ mùi"
+        },
+        {
+            "canchi": "Mậu dần",
+            "tuoi_xung_khac": "Canh thân, Giáp thân"
+        },
+        {
+            "canchi": "Kỷ mão",
+            "tuoi_xung_khac": "Tân dậu, Ất dậu"
+        },
+        {
+            "canchi": "Canh thìn",
+            "tuoi_xung_khac": "Giáp tuẤt, Mậu tuẤt, Giáp thìn"
+        },
+        {
+            "canchi": "Tân tị",
+            "tuoi_xung_khac": "Ất hợi, Kỷ hợi, Ất tị"
+        },
+        {
+            "canchi": "Nhâm ngọ",
+            "tuoi_xung_khac": "Giáp tý, Canh ty, Bính tuẤt, Bính thìn"
+        },
+        {
+            "canchi": "Quí mùi",
+            "tuoi_xung_khac": "Ất sửu, Tân sửu, Đinh hợi, Đinh tị"
+        },
+        {
+            "canchi": "Giáp thân",
+            "tuoi_xung_khac": "Mậu dần, Bính dần, Canh ngọ, Canh tý"
+        },
+        {
+            "canchi": "Ất dậu",
+            "tuoi_xung_khac": "Kỷ mão, Đinh mão, Tân mùi, Tân sửu"
+        },
+        {
+            "canchi": "Bính tuẤt",
+            "tuoi_xung_khac": "Mậu thìn, Nhâm thìn, Nhâm ngọ, Nhâm tý"
+        },
+        {
+            "canchi": "Đinh hợi",
+            "tuoi_xung_khac": "Kỷ tị, Quí tị, Quí mùi, Quí sửu"
+        },
+        {
+            "canchi": "Mậu tý",
+            "tuoi_xung_khac": "Bính ngọ, Giáp ngọ"
+        },
+        {
+            "canchi": "Kỷ sửu",
+            "tuoi_xung_khac": "Đinh mùi, Ất mui"
+        },
+        {
+            "canchi": "Canh dần",
+            "tuoi_xung_khac": "Nhâm thân, Mậu thân, Giáp tý, Giáp ngọ"
+        },
+        {
+            "canchi": "Tân mão",
+            "tuoi_xung_khac": "Quí dậu, Kỷ dậu, Ất sửu, Ất mùi"
+        },
+        {
+            "canchi": "Nhâm thìn",
+            "tuoi_xung_khac": "Bính tuẤt, Giáp tuât, Bính dần"
+        },
+        {
+            "canchi": "Quí tị",
+            "tuoi_xung_khac": "Đinh hợi, Ất hợi, Đinh mão"
+        },
+        {
+            "canchi": "Giáp ngọ",
+            "tuoi_xung_khac": "Mậu tý, Nhâm tý, Canh dần, Nhâm dần"
+        },
+        {
+            "canchi": "Ất mùi",
+            "tuoi_xung_khac": "Kỷ sửu, Quí sửu, Tân mão, Tân dậu"
+        },
+        {
+            "canchi": "Bính thân",
+            "tuoi_xung_khac": "Giáp dần, Nhâm thân, Nhâm tuẤt, Nhâm thìn"
+        },
+        {
+            "canchi": "Đinh dậu",
+            "tuoi_xung_khac": "Ất mão, Quí mão, Quí tị, Quí hợi"
+        },
+        {
+            "canchi": "Mậu tuẤt",
+            "tuoi_xung_khac": "Canh thìn, Bính thìn"
+        },
+        {
+            "canchi": "Kỷ hợi",
+            "tuoi_xung_khac": "Tân tị, Đinh tị."
+        },
+        {
+            "canchi": "Canh tý",
+            "tuoi_xung_khac": "Nhâm ngọ, Bính ngọ, Giáp thân, Giáp dần"
+        },
+        {
+            "canchi": "Tân sửu",
+            "tuoi_xung_khac": "Quí mùi, Đinh mùi, Ất dậu, Ất mão"
+        },
+        {
+            "canchi": "Nhâm dần",
+            "tuoi_xung_khac": "Canh thân, Bính thân, Bính dần"
+        },
+        {
+            "canchi": "Quí mão",
+            "tuoi_xung_khac": "Tân dậu, Đinh dậu, Đinh mão"
+        },
+        {
+            "canchi": "Giáp thìn",
+            "tuoi_xung_khac": "Nhâm tuẤt, Canh tuẤt, Canh thìn"
+        },
+        {
+            "canchi": "Ất tị",
+            "tuoi_xung_khac": "Quí hợi, Tân hợi, Tân tị"
+        },
+        {
+            "canchi": "Bính ngọ",
+            "tuoi_xung_khac": "Mậu tý, Canh tý"
+        },
+        {
+            "canchi": "Đinh Mùi",
+            "tuoi_xung_khac": "Kỷ sửu, Tân sửu"
+        },
+        {
+            "canchi": "Mậu thân",
+            "tuoi_xung_khac": "Canh dần, Giáp dần"
+        },
+        {
+            "canchi": "Kỷ dậu",
+            "tuoi_xung_khac": "Tân mão, Ất mão"
+        },
+        {
+            "canchi": "Canh TuẤt",
+            "tuoi_xung_khac": "Giáp thìn, Mậu thìn, Giáp tuẤt"
+        },
+        {
+            "canchi": "Tân hợi",
+            "tuoi_xung_khac": "Ất tị, Kỷ tị, Ất hợi"
+        },
+        {
+            "canchi": "Nhâm tý",
+            "tuoi_xung_khac": "Giáp ngọ, Canh ngọ, Bính tuẤt, Bính thìn"
+        },
+        {
+            "canchi": "Quí sửu",
+            "tuoi_xung_khac": "Ất mùi, Tân mùi, Đinh hợi, Đinh tỵ"
+        },
+        {
+            "canchi": "Giáp dần",
+            "tuoi_xung_khac": "Mậu thân, Bính thân, Canh ngọ, Canh tý"
+        },
+        {
+            "canchi": "Ất mão",
+            "tuoi_xung_khac": "Kỷ dậu, Đinh dậu, Tân mùi, Tân sửu"
+        },
+        {
+            "canchi": "Bính thìn",
+            "tuoi_xung_khac": "Mậu tuẤt, Nhâm tuẤt, Nhâm ngọ, Nhâm tý"
+        },
+        {
+            "canchi": "Đinh tị",
+            "tuoi_xung_khac": "Kỷ hợi, Quí hợi, Quí sửu, Quí mùi"
+        },
+        {
+            "canchi": "Mậu ngọ",
+            "tuoi_xung_khac": "Bính tý, Giáp tý"
+        },
+        {
+            "canchi": "Kỷ mùi",
+            "tuoi_xung_khac": "Đinh sửu, Ất sửu"
+        },
+        {
+            "canchi": "Canh Thân",
+            "tuoi_xung_khac": "Nhâm dần, Mậu dần, Giáp tý, Giáp ngọ"
+        },
+        {
+            "canchi": "Tân dậu",
+            "tuoi_xung_khac": "Quí mão, Kỷ mão, Ất sửu, Ất mùi"
+        },
+        {
+            "canchi": "Nhâm tuẤt",
+            "tuoi_xung_khac": "Bính thìn, Giáp thìn, Bính thân, Bính dần"
+        },
+        {
+            "canchi": "Quý hợi",
+            "tuoi_xung_khac": "Đinh tị, Ất tị, Đinh mão, Đinh dậu"
+        }
+    ]
+
+}

@@ -9,7 +9,7 @@ import { DepartureTabsPage } from "../pages/tabs/departure-tabs";
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = "DepartureLoadingPage";
+  rootPage:any = DepartureTabsPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

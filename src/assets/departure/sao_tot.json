@@ -1,0 +1,120 @@
+{
+    "sao_tot": [{
+            "chi": "Tị, Mùi, Dậu, Hợi, Sửu, Mão, Tị, Mùi, Dậu, Hợi, Sửu, Mão",
+            "name": "Thiên Đức"
+        },
+        {
+            "chi": "Hợi, Tuất, Dậu, Thân, Mùi, Ngọ, Tị, Thìn, Mão, Dần, Sửu, Tý",
+            "name": "Nguyệt Đức"
+        },
+        {
+            "chi": " Ngọ, Thân, Tuất, Tý, Dần, Thìn, Ngọ, Thân, Tuất, Tý, Dần, Thìn",
+            "name": "Thiên Giải"
+        },
+        {
+            "chi": "Tuất, Hợi, Tý, Sửu, Dần, Mão, Thìn, Tị, Ngọ, Mùi, Thân, Dậu",
+            "name": "Thiên Hỷ"
+        },
+        {
+            "chi": "Dần, Thân, Mão, Dậu, Thìn, Tuất, Tị, Hợi, Ngọ, Tý, Mùi, Sửu",
+            "name": "Thiên Quý"
+        },
+        {
+            "chi": "Ngọ, Mùi, Thân, Dậu, Tuất, Hợi, Tý, Sửu, Dần, Mão, Thìn, Tị",
+            "name": "Tam Hợp"
+        },
+        {
+            "chi": "Tý, Sửu, Dần, Mão, Thìn, Tị, Ngọ, Mùi, Thân, Dậu, Tuất, Hợi",
+            "name": "Sinh Khí"
+        },
+        {
+            "chi": "Mùi, Dậu, Hợi, Sửu, Mão, Tị, Mùi, Dậu, Mùi, Sửu, Mão, Tị",
+            "name": "Thiên Thành"
+        },
+        {
+            "chi": "Tuất, Tý, Dần, Thìn, Ngọ, Thân, Tuất, Tý, Dần, Thìn, Ngọ, Thân",
+            "name": "Thiên Quan"
+        },
+        {
+            "chi": "Ngọ, Thân, Tuất, Tý, Dần, Thìn, Ngọ, Thân, Tuất, Tý, Dần, Thìn",
+            "name": "Lộc Mã"
+        },
+        {
+            "chi": "Dậu, Mão, Tuất, Thìn, Hợi, Tị, Tý, Ngọ, Sửu, Mùi, Dần, Thân",
+            "name": "Phúc Sinh"
+        },
+        {
+            "chi": "Thân, Thân, Tuất, Tuất, Tý, Tý, Dần, Dần, Thìn, Thìn, Ngọ, Ngọ",
+            "name": "Giải Thần"
+        },
+        {
+            "chi": "Tuất, Sửu, Dần, Tị, Dậu, Mão, Tý, Ngọ, Thân, Thìn, Thân, Mùi",
+            "name": "Thiên Ân"
+        }
+    ],
+    "sao_xau": [{
+            "chi": "Tị, Tý, Mùi, Dần, Dậu, Thìn, Hợi, Ngọ, Sửu, Thân, Mão, Tuất",
+            "name": "Thiên Cương"
+        },
+        {
+            "chi": "Tuất, Thìn, Hợi, Tị, Tý, Ngọ, Sửu, Mùi, Dần, Thân, Mão, Dậu",
+            "name": "Thụ Tử"
+        },
+        {
+            "chi": "Ngọ, Mùi, Thân, Dậu, Tuất, Hợi, Tý, Sửu, Dần, Mão, Thìn, Tị",
+            "name": "Đại Hao, Tử Khí, Quan Phù"
+        },
+        {
+            "chi": "Tị, Ngọ, Mùi, Thân, Dậu, Tuất, Hợi, Tý, Sửu, Dần, Mão, Thìn",
+            "name": "Tiểu Hao"
+        },
+        {
+            "chi": "Tý, Tị, Mùi, Mão, Thân, Tuất, Sửu, Hợi, Ngọ, Dậu, Dần, Thìn",
+            "name": "Sát Chủ"
+        },
+        {
+            "chi": "Tý, Mão, Ngọ, Dậu, Tý, Mão, Ngọ, Dậu, Tý, Mão, Ngọ, Dậu",
+            "name": "Thiên Hỏa"
+        },
+        {
+            "chi": "Tuất, Dậu, Thân, Mùi, Ngọ, tỵ, Thìn, Mão, Dần, Sửu, Tý, Hợi",
+            "name": "Địa Hỏa"
+        },
+        {
+            "chi": " Sửu, Mùi, Dần, Thân, Mão, Dậu, Thìn, Tuất, Tị, Hợi, Tý, Ngọ",
+            "name": "Hỏa Tai\n"
+        },
+        {
+            "chi": "Thân, Tuất, Tuất, Hợi, Sửu, Sửu, Dần, Thìn, Thìn, Tị, Mùi, Mùi",
+            "name": "Nguyệt Phá"
+        },
+        {
+            "chi": "Tị, Tý, Sửu, Thân, Mão, Tuất, Hợi, Ngọ, Mùi, Dần, Dậu, Thìn",
+            "name": "Băng Tiêu, Ngọa Giải"
+        },
+        {
+            "chi": "Hợi, Hợi, Hợi, Dần, Dần, Dần, Tị, Tị, Tị, Thân, Thân, Thân",
+            "name": "Thổ Cẩm"
+        },
+        {
+            "chi": "Dần, Tị, Thân, Hợi, Mão, Ngọ, Dậu, Tý, Thìn, Mùi, Tuất, Sửu",
+            "name": "Thổ Kỵ, Vãng Vong"
+        },
+        {
+            "chi": "Tuất, Hợi, Tý, Sửu, Dần, Mão, Thìn, Tị, Ngọ, Mùi, Thân, Dậu",
+            "name": "Cô Thần"
+        },
+        {
+            "chi": "Thìn, Tị, Ngọ, Mùi, Thân, Dậu, Tuất, Hợi, Tý, Sửu, Dần, Mão.",
+            "name": "Quả Tú"
+        },
+        {
+            "chi": "Giáp, ất, mậu, bính, đinh, kỷ, canh, tân, kỷ, nhân, quý, mậu.",
+            "name": "Trùng Tang"
+        },
+        {
+            "chi": "Canh, tân, kỷ, nhâm, quí, mậu, giáp, ất, kỷ, bính, đinh, mậu",
+            "name": "Trùng Phục"
+        }
+    ]
+}

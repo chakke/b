@@ -17,11 +17,13 @@ export const MOREOPTION = [
     },
     {
         icon: "assets/departure/icon/icon_5.png" ,
-        name_option: "Ngày lễ Việt Nam"
+        name_option: "Ngày lễ Việt Nam",
+        component: "SpecialDatePage"
     },
     {
         icon: "assets/departure/icon/icon_6.png" ,
-        name_option: "Văn khấn"
+        name_option: "Văn khấn",
+        component: "VanKhanPage"
     },
     {
         icon: "assets/departure/icon/icon_7.png" ,

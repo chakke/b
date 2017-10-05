@@ -37,7 +37,7 @@
                 <div class="icon-option">
                     <img [src]="option.icon">
                 </div>
-                <div text-left class="name-option">{{option.name_option}}</div>
+                <div text-left class="name-option" (click)="viewPage(option.component)">{{option.name_option}}</div>
             </ion-col>
         </ion-row>
     </div>

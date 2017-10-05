@@ -1,0 +1,104 @@
+page-special-date {
+    .app-content {
+        overflow: auto;
+    }
+    .content-md {
+        background: linear-gradient(to right, #17cce9, #34a1ca);
+    }
+    .content-ios {
+        background: linear-gradient(to right, #17cce9, #34a1ca);
+    }
+    // .background {
+    //     background: linear-gradient(to right, #17cce9, #34a1ca);
+    //     padding: 5px;
+    // }
+    .back-button {
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        left: 16px;
+        background: rgba(black, 0.4);
+        border: 1px solid white;
+        ion-icon {
+            color: #fff;
+        }
+    }
+    .title {
+        text-transform: uppercase;
+        font-size: 1.5em;
+        span {
+            color: white;
+        }
+    }
+    .height-56 {
+        height: 56px;
+    }
+    button.activated,
+    .segment-md .segment-button.segment-activated {
+        border-color: #fff;
+        border-width: 2px;
+        opacity: 1;
+    }
+    .segmen-title {
+        color: white;
+        font-size: 1.2em;
+    }
+    .segment-container {
+        width: 90%;
+        margin: auto;
+    }
+    .dl-al {
+        width: 20%;
+        .dl {
+            font-weight: bold;
+            font-size: 1.5em;
+            color: white;
+        }
+        .al {
+            font-size: 1.2em;
+            color: #dcdcdc;
+        }
+    }
+    .item-div {
+        width: 90%;
+        margin: auto;
+        margin-bottom: 10px;
+        background: rgba(black, 0.4);
+        .line {
+            left: 20%;
+            width: 1px;
+            height: 60%;
+            background-color: white;
+        }
+        .item-start {
+            width: 20%;
+            text-align: center;
+            span {
+                color: white;
+            }
+            .dl {
+                font-size: 1.2em;
+                font-weight: bold;
+            }
+            .al {
+                font-size: 1em;
+                color: #dcdcdc;
+            }
+        }
+        .item-end {
+            width: 20%;
+            text-align: center;
+            ion-icon {
+                color: white;
+                font-size: 1.8em;
+            }
+        }
+        .item-content {
+            width: 60%;
+            span {
+                color: white;
+                padding-left: 16px;
+            }
+        }
+    }
+}

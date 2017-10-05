@@ -1,0 +1,47 @@
+page-van-khan {
+    .content-md {
+        background: linear-gradient(to right, #17cce9, #34a1ca);
+    }
+    .content-ios {
+        background: linear-gradient(to right, #17cce9, #34a1ca);
+    }
+    .back-button {
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        left: 16px;
+        border: 1px solid white;
+        background: rgba(black, 0.4);
+        ion-icon {
+            color: #fff;
+        }
+    }
+    .title {
+        text-transform: uppercase;
+        font-size: 1.5em;
+        span {
+            color: white;
+        }
+    }
+    .height-56 {
+        height: 56px;
+    }
+    .list-container {
+        overflow: auto;
+        .div-item {
+            width: 90%;
+            margin: auto;
+            padding-left: 16px;
+            margin-bottom: 10px;
+            color: white;
+            background: rgba(black, 0.4);
+            .item-content {
+                width: 90%;
+            }
+            .item-end {
+                width: 10%;
+                text-align: center;
+            }
+        }
+    }
+}

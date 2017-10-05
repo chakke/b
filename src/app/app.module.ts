@@ -12,23 +12,27 @@ import { DepartureModule } from "../providers/departure/departure";
 import { HttpService } from "../providers/http-service";
 import { DeviceInfoProvider } from "../providers/device-info/device-info";
 import { HttpModule } from "@angular/http";
+import { SpecicalDatePopover } from '../pages/special-date/special-date-popover';
 
 @NgModule({
   declarations: [
     MyApp,
-    DepartureTabsPage
+    DepartureTabsPage,
+    SpecicalDatePopover
   ],
   imports: [
     BrowserModule,
     HttpModule,
     IonicModule.forRoot(MyApp,{
       iconMode: 'ios',
+      tabsHideOnSubPages: true
     })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    DepartureTabsPage
+    DepartureTabsPage,
+    SpecicalDatePopover
     
   ],
   providers: [

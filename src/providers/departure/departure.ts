@@ -19,6 +19,15 @@ export class DepartureModule {
   private mDepartureLoadData: DepartureLoadData;
   private mDepartureExchangeDay: DepartureExchangeDay;
   private departureData: any;
+  private dayDetailData: any;
+  private trucData : any;
+  private tietData : any;
+  private taiThan_hyThan: any;
+  private sao_tot_data : any;
+  private special_data : any;
+  private cavalVNAL : any;
+  private cavalVNDL : any;
+  private vankhan_data : any;
   private mConfig: AppConfig;
   public mIsOnIOSDevice: boolean = false;
   constructor(
@@ -78,6 +87,111 @@ export class DepartureModule {
     });
   }
 
+  getDayDetailDataJSON(){
+    return new Promise((resolve, reject) => {
+      if (this.dayDetailData) resolve(this.dayDetailData);
+      else {
+        this.mDepartureLoadData.getDayDetailFromJSON().subscribe((data) => {
+          this.dayDetailData = data;
+          resolve(this.dayDetailData);
+        });
+      }
+    });
+  }
+
+  getTrucDataJSON(){
+    return new Promise((resolve, reject) => {
+      if (this.trucData) resolve(this.trucData);
+      else {
+        this.mDepartureLoadData.getTrucDataFromJSON().subscribe((data) => {
+          this.trucData = data;
+          resolve(this.trucData);
+        });
+      }
+    });
+  }
+  getTietDataJSON(){
+    return new Promise((resolve, reject) => {
+      if (this.tietData) resolve(this.tietData);
+      else {
+        this.mDepartureLoadData.getTietDataFromJSON().subscribe((data) => {
+          this.tietData = data;
+          resolve(this.tietData);
+        });
+      }
+    });
+  }
+
+  getTaiThanHyThanDataJSON(){
+    return new Promise((resolve, reject) => {
+      if (this.taiThan_hyThan) resolve(this.taiThan_hyThan);
+      else {
+        this.mDepartureLoadData.getTaiThanHyThanFromJSON().subscribe((data) => {
+          this.taiThan_hyThan = data;
+          resolve(this.taiThan_hyThan);
+        });
+      }
+    });
+  }
+
+  getSaoTotSaoXauDataJSON(){
+    return new Promise((resolve, reject) => {
+      if (this.sao_tot_data) resolve(this.sao_tot_data);
+      else {
+        this.mDepartureLoadData.getSaoTotSaoXauDataFromJSON().subscribe((data) => {
+          this.sao_tot_data = data;
+          resolve(this.sao_tot_data);
+        });
+      }
+    });
+  }
+
+  getSpecialDataJSON(){
+    return new Promise((resolve, reject) => {
+      if (this.special_data) resolve(this.special_data);
+      else {
+        this.mDepartureLoadData.getSpecialDataFromJSON().subscribe((data) => {
+          this.special_data = data;
+          resolve(this.special_data);
+        });
+      }
+    });
+  }
+
+  getCavalVNALDataJSON(){
+    return new Promise((resolve, reject) => {
+      if (this.cavalVNAL) resolve(this.cavalVNAL);
+      else {
+        this.mDepartureLoadData.getLeVietNamAmLichDataFromJSON().subscribe((data) => {
+          this.cavalVNAL = data;
+          resolve(this.cavalVNAL);
+        });
+      }
+    });
+  }
+  getCavalVNDLDataJSON(){
+    return new Promise((resolve, reject) => {
+      if (this.cavalVNDL) resolve(this.cavalVNDL);
+      else {
+        this.mDepartureLoadData.getLeVietNamDuongLichDataFromJSON().subscribe((data) => {
+          this.cavalVNDL = data;
+          resolve(this.cavalVNDL);
+        });
+      }
+    });
+  }
+
+  getVanKhanDataJSON(){
+    return new Promise((resolve, reject) => {
+      if (this.vankhan_data) resolve(this.vankhan_data);
+      else {
+        this.mDepartureLoadData.getVanKhanDataFromJSON().subscribe((data) => {
+          this.vankhan_data = data;
+          resolve(this.vankhan_data);
+        });
+      }
+    });
+  }
   updateDepartureInfo(departures: Array<Departure>) {
     if (this.departureData){
       departures.forEach(departure => {
@@ -108,6 +222,30 @@ export class DepartureModule {
     return this.mDepartureLoadData.getDataFromJSON();
   }
 
+  public getDayDetailData(){
+    return this.mDepartureLoadData.getDayDetailFromJSON();
+  }
+
+  public getTrucData(){
+    return this.mDepartureLoadData.getTrucDataFromJSON();
+  }
+
+  public getVanKhanValue(){
+    if(this.vankhan_data){
+      return this.vankhan_data;
+    }
+  }
+
+  /**
+   * getTietData
+   */
+  public getTietData() {
+    return this.mDepartureLoadData.getTietDataFromJSON();
+  }
+
+  public getTaiThanHyThanData(){
+    return this.mDepartureLoadData.getTaiThanHyThanFromJSON();
+  }
   //tính can chi cho giờ (theo ngày dương lịch)
   public getSexagesimalCycleByTime(dd: any, mm: any, yy: any, hour: number) {
     return this.mDepartureExchangeDay.getSexagesimalCycleByTime(dd, mm, yy, hour);
@@ -132,6 +270,28 @@ export class DepartureModule {
     }
     return this.mDepartureLoadData.getInfoDayInMonth(dd, mm, data);
   }
+  //lấy thông tin tinh tú trong thập nhị bát sao
+  public GetTNBINFO(dd: number, mm: number, yy: number, data?: any){
+    if(!data){
+      data = this.dayDetailData;
+    }
+    return this.mDepartureLoadData.GetTNBINFO(dd,mm,yy,data);
+  }
+
+  //lấy thông tin về trực của ngày
+  public getTrucDay(lunarMonth: number,chi:string,data?:any){
+    if(!data){
+      data = this.trucData;
+    }
+    return this.mDepartureExchangeDay.getTrucDay(lunarMonth,chi,data);
+  }
+  // Lấy thông tin về ngày Tiết
+  public getTietDay(date: number,month:number, data?:any){
+    if(!data){
+      data = this.tietData;
+    }
+    return this.mDepartureExchangeDay.getTietDay(date,month,data);
+  }
   //Tính ngày hoàng đạo, hắc đạo
   public getZodiacDay(dd: any, mm: any, yy: any) {
     return this.mDepartureExchangeDay.getZodiacDay(dd, mm, yy);
@@ -139,9 +299,6 @@ export class DepartureModule {
 
   //lấy đường dẫn của ảnh
   public getBackgroundLink(index) {
-    // let lenght: number = BACKGROUND.length;
-    // let index: number = Math.floor(lenght * Math.random());
-
     return BACKGROUND[index];
   }
 
@@ -159,14 +316,54 @@ export class DepartureModule {
   public getOptions() {
     return MOREOPTION;
   }
+  
+  public getHourBetterAndBad(chi: string){
+    return this.mDepartureExchangeDay.getHoursBetterAndBad(chi);
+  }
 
+  public getTaiThanHyThan(canchi: string, data?: any){
+    if(!data){
+      data = this.taiThan_hyThan;
+    }
+    return this.mDepartureExchangeDay.getTaiThanHyThan(canchi,data);
+  }
+  public getTuoiXungKhac(canchi: string, data?: any){
+    if(!data){
+      data = this.taiThan_hyThan;
+    }
+    return this.mDepartureExchangeDay.getTuoiXungKhac(canchi,data);
+  }
 
+  public getSaoTot(chi: string, lunarMonth: number, data?:any){
+    if(!data){
+      data = this.sao_tot_data;
+    }
+    return this.mDepartureExchangeDay.getSaoTot(chi,lunarMonth,data);
+  }
+  public getSaoXau(chi: string, lunarMonth: number, data?:any){
+    if(!data){
+      data = this.sao_tot_data;
+    }
+    return this.mDepartureExchangeDay.getSaoXau(chi,lunarMonth,data);
+  }
 
-
-
-
-
-
+  public getSpecialDate(lunarDay: string, solarDay: string ,data?:any){
+    if(!data){
+      data = this.special_data;
+    }
+    return this.mDepartureLoadData.getSpecialDate(lunarDay,solarDay,data);
+  }
+  
+  public getValueDataLeVNAL(){
+    if(this.cavalVNAL){
+      return this.cavalVNAL;
+    }
+  }
+  public getValueDataLeVNDL(){
+    if(this.cavalVNDL){
+      return this.cavalVNDL;
+    }
+  }
 }
 
 

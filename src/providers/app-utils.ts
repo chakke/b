@@ -139,4 +139,23 @@ export class Utils {
 
     return inside;
   };
+  public static getDayOfWeek(solarDate, solarMonth, solarYear) {
+    let day: number = new Date(solarMonth.toString() + "/" + solarDate.toString() + "/" + solarYear.toString()).getDay();
+    switch (day) {
+      case 0:
+        return "Chủ nhật";
+      case 1:
+        return "Thứ hai";
+      case 2:
+        return "Thứ ba";
+      case 3:
+        return "Thứ tư";
+      case 4:
+        return "Thứ năm";
+      case 5:
+        return "Thứ sáu";
+      case 6:
+        return "Thứ bảy";
+    }
+  }
 }

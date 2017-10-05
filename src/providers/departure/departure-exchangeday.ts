@@ -1,7 +1,8 @@
 import { ZODIACTIME } from '../departure/departure-zodiactimestorage';
+import { Hour } from './departure-hour';
+import { HUONGXUATHANH } from './interface/huong_xuat_hanh';
 
 export class DepartureExchangeDay {
-
     jdFromDate(dd, mm, yy) {
         let a, y, m, jd;
         a = parseInt(((14 - mm) / 12).toString());
@@ -481,7 +482,6 @@ export class DepartureExchangeDay {
             }
         }
     }
-
     //tính can của ngày
     getCanDay(date: any, month: any, year: any) {
         let result: string;
@@ -613,4 +613,104 @@ export class DepartureExchangeDay {
     daysInMonth(month, year) {
         return (month === 2) ? (28 + this.isLeap(year)) : 31 - (month - 1) % 7 % 2;
     }
+    getTrucDay(lunarMonth: number,chi:string,data:any){
+        for(let i = (lunarMonth-1)*12 ; i<(lunarMonth-1)*12 + 12; i++){
+            if(chi==data[i].ngay_chi){
+                return data[i].name;
+            }
+        }
+    }
+    getTietDay(date: number , solarMonth: number,data: any){
+        
+        let dateNumber = [];
+        for(let j = ((solarMonth-1)*2); j < ((solarMonth-1)*2) + 2; j++){
+            dateNumber.push(parseInt(data[j].date));
+        }
+        if(date < dateNumber[0]){
+            return data[(solarMonth-1)*2 -1].name;
+        }else if(date > dateNumber[0] && date < dateNumber[1]){
+            return data[(solarMonth-1)*2].name;
+        }else if(date > dateNumber[1]){
+            return data[(solarMonth-1)*2 + 1].name;
+        }
+    }
+    getHourDay(){
+        return Hour;
+    }
+    getHoursBetterAndBad(chi: string){
+        let result = [[],[]];
+        let hourdata = this.getHourDay();
+        let check: boolean = false;
+        for(let k = 0; k<hourdata.length;k++){
+            let chi_array = hourdata[k].chi.split(",");
+            chi_array.forEach(element => {
+                if(chi.toLowerCase()==element.toLowerCase()){
+                    result[0].push(hourdata[k].gio_tot);
+                    result[1].push(hourdata[k].gio_xau);
+                    check = true;
+                }
+            });
+            if(check){
+                break;
+            }
+        }
+        return result;
+    }
+    getTaiThanHyThan(canchi: string,data: any){
+        let can = canchi.split(" ")[0];
+        let chi = canchi.split(" ")[1];
+        let taiThan_hyThan_data = data.taithan_hythan;
+        let hac_than_data = data.hac_than;
+        let result = [];
+        for(let i = 0;i<taiThan_hyThan_data.length;i++){
+            if(can==taiThan_hyThan_data[i].can){
+                let huong_xuat_hanh : HUONGXUATHANH = {
+                    huong_id : taiThan_hyThan_data[i].huong_id,
+                    huong_name: taiThan_hyThan_data[i].taithan_hythan
+                }
+                result.push(huong_xuat_hanh);
+            }
+        }
+        for(let j = 0; j<hac_than_data.length; j++){
+            if(can==hac_than_data[j].can && chi==hac_than_data[j].chi){
+                let huong_xuat_hanh : HUONGXUATHANH = {
+                    huong_id : hac_than_data[j].huong_id,
+                    huong_name: "Hắc Thần"
+                }
+                result.push(huong_xuat_hanh);
+                break;
+            }
+        }
+        return result;
+    }
+    getTuoiXungKhac(canchi: string, data: any){
+        let tuoi_xung_khac_data = data.tuoi_xung_khac;
+        for(let t = 0; t< tuoi_xung_khac_data.length;t++){
+            if(canchi.toLocaleLowerCase()==tuoi_xung_khac_data[t].canchi.toLocaleLowerCase()){
+                return tuoi_xung_khac_data[t].tuoi_xung_khac;
+            }
+        }
+    }
+
+    getSaoTot(chi: string,lunarMonth: number,data : any){
+        let result= [];
+        let data_sao_tot = data.sao_tot;
+        for(let i = 0;i<data_sao_tot.length;i++){
+            if(chi.toLocaleLowerCase()==data_sao_tot[i].chi.split(", ")[lunarMonth-1].toLocaleLowerCase()){
+                result.push(data_sao_tot[i].name);
+            }
+        }
+        return result;
+    }
+    getSaoXau(chi: string,lunarMonth: number,data : any){
+        let result= [];
+        let data_sao_xau = data.sao_xau;
+        for(let i = 0;i<data_sao_xau.length;i++){
+            if(chi.toLocaleLowerCase()==data_sao_xau[i].chi.split(", ")[lunarMonth-1].toLocaleLowerCase()){
+                result.push(data_sao_xau[i].name);
+            }
+        }
+        return result;
+    }
+   
 }

@@ -1,0 +1,22 @@
+<div class="a1-container-top a1-z-10">
+    <div class="a3-container-center height-56">
+        <div class="back-button a1-absolute a3-container-center" (click)="closeView()">
+            <ion-icon name="arrow-back"></ion-icon>
+        </div>
+        <div class="title">
+            <span>Văn Khấn</span>
+        </div>
+    </div>
+</div>
+
+<ion-content>
+    <div class="height-56"></div>
+    <div class="list-container" margin-top [style.height]="list_height">
+        <div [style.height]="item_height" class="div-item a3-container-center" *ngFor="let item of data" (click)="viewItem(item)">
+            <div class="item-content"><span>{{item.TenLoai}}</span></div>
+            <div class="item-end">
+                <ion-icon name="arrow-forward"></ion-icon>
+            </div>
+        </div>
+    </div>
+</ion-content>

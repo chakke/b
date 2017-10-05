@@ -1,0 +1,721 @@
+[{
+        "ngay_chi": "Dần",
+        "month": "1",
+        "name": "Kiến"
+    },
+    {
+        "ngay_chi": "Mão",
+        "month": "1",
+        "name": "Trừ"
+    },
+    {
+        "ngay_chi": "Thìn",
+        "month": "1",
+        "Trừc_id": "Mãn"
+    },
+    {
+        "ngay_chi": "Tỵ",
+        "month": "1",
+        "name": "Bình"
+    },
+    {
+        "ngay_chi": "Ngọ",
+        "month": "1",
+        "name": "Định"
+    },
+    {
+        "ngay_chi": "Mùi",
+        "month": "1",
+        "name": "Chấp"
+    },
+    {
+        "ngay_chi": "Thân",
+        "month": "1",
+        "name": "Phá"
+    },
+    {
+        "ngay_chi": "Dậu",
+        "month": "1",
+        "name": "Nguy"
+    },
+    {
+        "ngay_chi": "Tuất",
+        "month": "1",
+        "name": "Thành"
+    },
+    {
+        "ngay_chi": "Hợi",
+        "month": "1",
+        "name": "Thu"
+    },
+    {
+        "ngay_chi": "Tý",
+        "month": "1",
+        "name": "Khai"
+    },
+    {
+        "ngay_chi": "Sửu",
+        "month": "1",
+        "name": "Bế"
+    },
+    {
+        "ngay_chi": "Mão",
+        "month": "2",
+        "name": "Kiến"
+    },
+    {
+        "ngay_chi": "Thìn",
+        "month": "2",
+        "name": "Trừ"
+    },
+    {
+        "ngay_chi": "Tỵ",
+        "month": "2",
+        "name": "Mãn"
+    },
+    {
+        "ngay_chi": "Ngọ",
+        "month": "2",
+        "name": "Bình"
+    },
+    {
+        "ngay_chi": "Mùi",
+        "month": "2",
+        "name": "Định"
+    },
+    {
+        "ngay_chi": "Thân",
+        "month": "2",
+        "name": "Chấp"
+    },
+    {
+        "ngay_chi": "Dậu",
+        "month": "2",
+        "name": "Phá"
+    },
+    {
+        "ngay_chi": "Tuất",
+        "month": "2",
+        "name": "Nguy"
+    },
+    {
+        "ngay_chi": "Hợi",
+        "month": "2",
+        "name": "Thành"
+    },
+    {
+        "ngay_chi": "Tý",
+        "month": "2",
+        "name": "Thu"
+    },
+    {
+        "ngay_chi": "Sửu",
+        "month": "2",
+        "name": "Khai"
+    },
+    {
+        "ngay_chi": "Dần",
+        "month": "2",
+        "name": "Bế"
+    },
+    {
+        "ngay_chi": "Thìn",
+        "month": "3",
+        "name": "Kiến"
+    },
+    {
+        "ngay_chi": "Tỵ",
+        "month": "3",
+        "name": "Trừ"
+    },
+    {
+        "ngay_chi": "Ngọ",
+        "month": "3",
+        "name": "Mãn"
+    },
+    {
+        "ngay_chi": "Mùi",
+        "month": "3",
+        "name": "Bình"
+    },
+    {
+        "ngay_chi": "Thân",
+        "month": "3",
+        "name": "Định"
+    },
+    {
+        "ngay_chi": "Dậu",
+        "month": "3",
+        "name": "Chấp"
+    },
+    {
+        "ngay_chi": "Tuất",
+        "month": "3",
+        "name": "Phá"
+    },
+    {
+        "ngay_chi": "Hợi",
+        "month": "3",
+        "name": "Nguy"
+    },
+    {
+        "ngay_chi": "Tý",
+        "month": "3",
+        "name": "Thành"
+    },
+    {
+        "ngay_chi": "Sửu",
+        "month": "3",
+        "name": "Thu"
+    },
+    {
+        "ngay_chi": "Dần",
+        "month": "3",
+        "name": "Khai"
+    },
+    {
+        "ngay_chi": "Mão",
+        "month": "3",
+        "name": "Bế"
+    },
+    {
+        "ngay_chi": "Tỵ",
+        "month": "4",
+        "name": "Kiến"
+    },
+    {
+        "ngay_chi": "Ngọ",
+        "month": "4",
+        "name": "Trừ"
+    },
+    {
+        "ngay_chi": "Mùi",
+        "month": "4",
+        "name": "Mãn"
+    },
+    {
+        "ngay_chi": "Thân",
+        "month": "4",
+        "name": "Bình"
+    },
+    {
+        "ngay_chi": "Dậu",
+        "month": "4",
+        "name": "Định"
+    },
+    {
+        "ngay_chi": "Tuất",
+        "month": "4",
+        "name": "Chấp"
+    },
+    {
+        "ngay_chi": "Hợi",
+        "month": "4",
+        "name": "Phá"
+    },
+    {
+        "ngay_chi": "Tý",
+        "month": "4",
+        "name": "Nguy"
+    },
+    {
+        "ngay_chi": "Sửu",
+        "month": "4",
+        "name": "Thành"
+    },
+    {
+        "ngay_chi": "Dần",
+        "month": "4",
+        "name": "Thu"
+    },
+    {
+        "ngay_chi": "Mão",
+        "month": "4",
+        "name": "Khai"
+    },
+    {
+        "ngay_chi": "Thìn",
+        "month": "4",
+        "name": "Bế"
+    },
+    {
+        "ngay_chi": "Ngọ",
+        "month": "5",
+        "name": "Kiến"
+    },
+    {
+        "ngay_chi": "Mùi",
+        "month": "5",
+        "name": "Trừ"
+    },
+    {
+        "ngay_chi": "Thân",
+        "month": "5",
+        "name": "Mãn"
+    },
+    {
+        "ngay_chi": "Dậu",
+        "month": "5",
+        "name": "Bình"
+    },
+    {
+        "ngay_chi": "Tuất",
+        "month": "5",
+        "name": "Định"
+    },
+    {
+        "ngay_chi": "Hợi",
+        "month": "5",
+        "name": "Chấp"
+    },
+    {
+        "ngay_chi": "Tý",
+        "month": "5",
+        "name": "Phá"
+    },
+    {
+        "ngay_chi": "Sửu",
+        "month": "5",
+        "name": "Nguy"
+    },
+    {
+        "ngay_chi": "Dần",
+        "month": "5",
+        "name": "Thành"
+    },
+    {
+        "ngay_chi": "Mão",
+        "month": "5",
+        "name": "Thu"
+    },
+    {
+        "ngay_chi": "Thìn",
+        "month": "5",
+        "name": "Khai"
+    },
+    {
+        "ngay_chi": "Tỵ",
+        "month": "5",
+        "name": "Bế"
+    },
+    {
+        "ngay_chi": "Mùi",
+        "month": "6",
+        "name": "Kiến"
+    },
+    {
+        "ngay_chi": "Thân",
+        "month": "6",
+        "name": "Trừ"
+    },
+    {
+        "ngay_chi": "Dậu",
+        "month": "6",
+        "name": "Mãn"
+    },
+    {
+        "ngay_chi": "Tuất",
+        "month": "6",
+        "name": "Bình"
+    },
+    {
+        "ngay_chi": "Hợi",
+        "month": "6",
+        "name": "Định"
+    },
+    {
+        "ngay_chi": "Tý",
+        "month": "6",
+        "name": "Chấp"
+    },
+    {
+        "ngay_chi": "Sửu",
+        "month": "6",
+        "name": "Phá"
+    },
+    {
+        "ngay_chi": "Dần",
+        "month": "6",
+        "name": "Nguy"
+    },
+    {
+        "ngay_chi": "Mão",
+        "month": "6",
+        "name": "Thành"
+    },
+    {
+        "ngay_chi": "Thìn",
+        "month": "6",
+        "name": "Thu"
+    },
+    {
+        "ngay_chi": "Tỵ",
+        "month": "6",
+        "name": "Khai"
+    },
+    {
+        "ngay_chi": "Ngọ",
+        "month": "6",
+        "name": "Bế"
+    },
+    {
+        "ngay_chi": "Thân",
+        "month": "7",
+        "name": "Kiến"
+    },
+    {
+        "ngay_chi": "Dậu",
+        "month": "7",
+        "name": "Trừ"
+    },
+    {
+        "ngay_chi": "Tuất",
+        "month": "7",
+        "name": "Mãn"
+    },
+    {
+        "ngay_chi": "Hợi",
+        "month": "7",
+        "name": "Bình"
+    },
+    {
+        "ngay_chi": "Tý",
+        "month": "7",
+        "name": "Định"
+    },
+    {
+        "ngay_chi": "Sửu",
+        "month": "7",
+        "name": "Chấp"
+    },
+    {
+        "ngay_chi": "Dần",
+        "month": "7",
+        "name": "Phá"
+    },
+    {
+        "ngay_chi": "Mão",
+        "month": "7",
+        "name": "Nguy"
+    },
+    {
+        "ngay_chi": "Thìn",
+        "month": "7",
+        "name": "Thành"
+    },
+    {
+        "ngay_chi": "Tỵ",
+        "month": "7",
+        "name": "Thu"
+    },
+    {
+        "ngay_chi": "Ngọ",
+        "month": "7",
+        "name": "Khai"
+    },
+    {
+        "ngay_chi": "Mùi",
+        "month": "7",
+        "name": "Bế"
+    },
+    {
+        "ngay_chi": "Dậu",
+        "month": "8",
+        "name": "Kiến"
+    },
+    {
+        "ngay_chi": "Tuất",
+        "month": "8",
+        "name": "Trừ"
+    },
+    {
+        "ngay_chi": "Hợi",
+        "month": "8",
+        "name": "Mãn"
+    },
+    {
+        "ngay_chi": "Tý",
+        "month": "8",
+        "name": "Bình"
+    },
+    {
+        "ngay_chi": "Sửu",
+        "month": "8",
+        "name": "Định"
+    },
+    {
+        "ngay_chi": "Dần",
+        "month": "8",
+        "name": "Chấp"
+    },
+    {
+        "ngay_chi": "Mão",
+        "month": "8",
+        "name": "Phá"
+    },
+    {
+        "ngay_chi": "Thìn",
+        "month": "8",
+        "name": "Nguy"
+    },
+    {
+        "ngay_chi": "Tỵ",
+        "month": "8",
+        "name": "Thành"
+    },
+    {
+        "ngay_chi": "Ngọ",
+        "month": "8",
+        "name": "Thu"
+    },
+    {
+        "ngay_chi": "Mùi",
+        "month": "8",
+        "name": "Khai"
+    },
+    {
+        "ngay_chi": "Thân",
+        "month": "8",
+        "name": "Bế"
+    },
+    {
+        "ngay_chi": "Tuất",
+        "month": "9",
+        "name": "Kiến"
+    },
+    {
+        "ngay_chi": "Hợi",
+        "month": "9",
+        "name": "Trừ"
+    },
+    {
+        "ngay_chi": "Tý",
+        "month": "9",
+        "name": "Mãn"
+    },
+    {
+        "ngay_chi": "Sửu",
+        "month": "9",
+        "name": "Bình"
+    },
+    {
+        "ngay_chi": "Dần",
+        "month": "9",
+        "name": "Định"
+    },
+    {
+        "ngay_chi": "Mão",
+        "month": "9",
+        "name": "Chấp"
+    },
+    {
+        "ngay_chi": "Thìn",
+        "month": "9",
+        "name": "Phá"
+    },
+    {
+        "ngay_chi": "Tỵ",
+        "month": "9",
+        "name": "Nguy"
+    },
+    {
+        "ngay_chi": "Ngọ",
+        "month": "9",
+        "name": "Thành"
+    },
+    {
+        "ngay_chi": "Mùi",
+        "month": "9",
+        "name": "Thu"
+    },
+    {
+        "ngay_chi": "Thân",
+        "month": "9",
+        "name": "Khai"
+    },
+    {
+        "ngay_chi": "Dậu",
+        "month": "9",
+        "name": "Bế"
+    },
+    {
+        "ngay_chi": "Hợi",
+        "month": "10",
+        "name": "Kiến"
+    },
+    {
+        "ngay_chi": "Tý",
+        "month": "10",
+        "name": "Trừ"
+    },
+    {
+        "ngay_chi": "Sửu",
+        "month": "10",
+        "name": "Mãn"
+    },
+    {
+        "ngay_chi": "Dần",
+        "month": "10",
+        "name": "Bình"
+    },
+    {
+        "ngay_chi": "Mão",
+        "month": "10",
+        "name": "Định"
+    },
+    {
+        "ngay_chi": "Thìn",
+        "month": "10",
+        "name": "Chấp"
+    },
+    {
+        "ngay_chi": "Tỵ",
+        "month": "10",
+        "name": "Phá"
+    },
+    {
+        "ngay_chi": "Ngọ",
+        "month": "10",
+        "name": "Nguy"
+    },
+    {
+        "ngay_chi": "Mùi",
+        "month": "10",
+        "name": "Thành"
+    },
+    {
+        "ngay_chi": "Thân",
+        "month": "10",
+        "name": "Thu"
+    },
+    {
+        "ngay_chi": "Dậu",
+        "month": "10",
+        "name": "Khai"
+    },
+    {
+        "ngay_chi": "Tuất",
+        "month": "10",
+        "name": "Bế"
+    },
+    {
+        "ngay_chi": "Tý",
+        "month": "11",
+        "name": "Kiến"
+    },
+    {
+        "ngay_chi": "Sửu",
+        "month": "11",
+        "name": "Trừ"
+    },
+    {
+        "ngay_chi": "Dần",
+        "month": "11",
+        "name": "Mãn"
+    },
+    {
+        "ngay_chi": "Mão",
+        "month": "11",
+        "name": "Bình"
+    },
+    {
+        "ngay_chi": "Thìn",
+        "month": "11",
+        "name": "Định"
+    },
+    {
+        "ngay_chi": "Tỵ",
+        "month": "11",
+        "name": "Chấp"
+    },
+    {
+        "ngay_chi": "Ngọ",
+        "month": "11",
+        "name": "Phá"
+    },
+    {
+        "ngay_chi": "Mùi",
+        "month": "11",
+        "name": "Nguy"
+    },
+    {
+        "ngay_chi": "Thân",
+        "month": "11",
+        "name": "Thành"
+    },
+    {
+        "ngay_chi": "Dậu",
+        "month": "11",
+        "name": "Thu"
+    },
+    {
+        "ngay_chi": "Tuất",
+        "month": "11",
+        "name": "Khai"
+    },
+    {
+        "ngay_chi": "Hợi",
+        "month": "11",
+        "name": "Bế"
+    },
+    {
+        "ngay_chi": "Sửu",
+        "month": "12",
+        "name": "Kiến"
+    },
+    {
+        "ngay_chi": "Dần",
+        "month": "12",
+        "name": "Trừ"
+    },
+    {
+        "ngay_chi": "Mão",
+        "month": "12",
+        "name": "Mãn"
+    },
+    {
+        "ngay_chi": "Thìn",
+        "month": "12",
+        "name": "Bình"
+    },
+    {
+        "ngay_chi": "Tỵ",
+        "month": "12",
+        "name": "Định"
+    },
+    {
+        "ngay_chi": "Ngọ",
+        "month": "12",
+        "name": "Chấp"
+    },
+    {
+        "ngay_chi": "Mùi",
+        "month": "12",
+        "name": "Phá"
+    },
+    {
+        "ngay_chi": "Thân",
+        "month": "12",
+        "name": "Nguy"
+    },
+    {
+        "ngay_chi": "Dậu",
+        "month": "12",
+        "name": "Thành"
+    },
+    {
+        "ngay_chi": "Tuất",
+        "month": "12",
+        "name": "Thu"
+    },
+    {
+        "ngay_chi": "Hợi",
+        "month": "12",
+        "name": "Khai"
+    },
+    {
+        "ngay_chi": "Tý",
+        "month": "12",
+        "name": "Bế"
+    }
+]

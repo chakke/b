@@ -1,0 +1,61 @@
+<div class="a1-container-top a1-z-10">
+    <div class="a3-container-center height-56">
+        <div class="back-button a1-absolute a3-container-center" (click)="closeView()">
+            <ion-icon name="arrow-back"></ion-icon>
+        </div>
+        <div class="title">
+            <span>Ngày Lễ Việt Nam</span>
+        </div>
+    </div>
+    <div style="height: 30px" class="a1-relative a3-container segment-container">
+        <div class="dl-al" text-center>
+            <div><span class="dl"> DL</span></div>
+            <div><span class="al">AL</span></div>
+        </div>
+        <ion-segment [(ngModel)]="calendar">
+            <ion-segment-button value="solar">
+                <span class="segmen-title">Dương Lịch</span>
+            </ion-segment-button>
+            <ion-segment-button value="lunar">
+                <span class="segmen-title">Âm Lịch</span>
+            </ion-segment-button>
+        </ion-segment>
+    </div>
+</div>
+
+
+<ion-content>
+    <div style="height:96px"></div>
+    <div [ngSwitch]="calendar" [style.height]="content_height" class="app-content">
+        <div margin-top *ngSwitchCase="'solar'" class="a1-relative">
+            <div [style.height]="item_height" class="item-div a1-relative a3-container a3-justify-between a3-items-center" *ngFor="let day of cavalDL_data">
+                <div class="date item-start">
+                    <div><span class="dl">{{day.date}}</span></div>
+                    <div><span class="al">{{getLunarDate(day.date)}}</span></div>
+                </div>
+                <div class="a1-absolute line"></div>
+                <div class="item-content" (click)="goToDetail(day)">
+                    <span>{{day.name}}</span>
+                </div>
+                <div class="item-end">
+                    <ion-icon name="ios-information-circle-outline" (click)="viewDescription(day)"></ion-icon>
+                </div>
+            </div>
+        </div>
+        <div margin-top *ngSwitchCase="'lunar'" class="a1-relative">
+            <div [style.height]="item_height" class="item-div a1-relative a3-container a3-justify-between a3-items-center" *ngFor="let day of cavalAL_data">
+                <div class="date item-start">
+                    <div><span class="dl">{{day.date}}</span></div>
+                    <div><span class="al">{{getLunarDate(day.date)}}</span></div>
+                </div>
+                <div class="a1-absolute line"></div>
+                <div class="item-content" (click)="goToDetail(day)">
+                    <span>{{day.name}}</span>
+                </div>
+                <div class="item-end">
+                    <ion-icon name="ios-information-circle-outline" (click)="viewDescription(day)"></ion-icon>
+                </div>
+            </div>
+        </div>
+    </div>
+</ion-content>

@@ -1,0 +1,120 @@
+page-day-detail {
+    $background: linear-gradient(to right, #17cce9, #34a1ca);
+    $line-height: 1.2em;
+    .content-ios {
+        // background: radial-gradient(black, #837E7E, #251F1F);
+        background: linear-gradient(to bottom, #83E6F3, #34a1ca);
+    }
+    .content-md {
+        // background: radial-gradient(#68B7DB, #17cce9, #34a1ca);
+        background: linear-gradient(to bottom, #83E6F3, #34a1ca);
+        // background-image: url('/assets/departure/background/background-image.jpg');
+    }
+    .scroll-content {
+        position: absolute;
+        top: 25%;
+        height: 75%;
+        left: 0;
+        width: 100%;
+    }
+    .back-button {
+        height: 25px;
+        width: 25px;
+        border-radius: 50%;
+        border: 1px solid white;
+        background: rgba(black, 0.4);
+        margin-left: 10px;
+    }
+    .today-button {
+        border-radius: 10px;
+        padding: 2px;
+        border: 1px solid white;
+        margin-right: 10px;
+        width: 70px;
+        span {
+            padding: 2px;
+        }
+    }
+    .background {
+        background: $background;
+        color: white;
+        padding: 5px;
+    }
+    .height-30 {
+        height: 30px;
+    }
+    .height-56 {
+        height: 56px;
+    }
+    .day-detail-header {
+        left: 0;
+        width: 100%;
+        // background: linear-gradient(to top, #C3F3FA, #34a1ca);
+        ion-icon {
+            color: white;
+        }
+    }
+    .line-height {
+        line-height: $line-height;
+    }
+    .lunar-container {
+        padding-right: 10px;
+        padding-left: 10px;
+        position: relative;
+        top: 20px;
+        width: 100%;
+        .item-container {
+            width: 24.75%;
+        }
+        .item-number {
+            span {
+                font-weight: bold;
+            }
+        }
+        .item-footer {
+            span {
+                white-space: nowrap;
+            }
+        }
+    }
+    .box-container {
+        padding: 5px;
+        background: white;
+    }
+    .item {
+        padding: 5px;
+    }
+    .item-title {
+        color: white;
+        font-weight: bold;
+        padding: 5px;
+        span {
+            padding: 5px;
+        }
+    }
+    .item-title-color {
+        color: #EEEE80;
+        font-weight: bold;
+        padding: 5px;
+        span {
+            padding: 5px;
+        }
+    }
+    .app-content {
+        padding-left: 10px;
+        padding-right: 10px;
+        position: absolute;
+        height: 100%;
+    }
+    .item-haft {
+        width: 49.8335%;
+    }
+    .item-background {
+        padding: 5px;
+        color: white;
+        background: rgba(black, 0.2);
+    }
+    .width-25 {
+        width: 25%;
+    }
+}
