@@ -1,17 +1,23 @@
-<div class="a1-container-top a1-z-10">
-    <div class="a3-container-center height-56">
-        <div class="back-button a1-absolute a3-container-center" (click)="closeView()">
+<div class="a1-container-top a1-z-10 background-header">
+    <div class="a3-container a1-relative a3-justify-between a3-items-center height-56">
+        <div margin-left class="header-button back a3-container-center" (click)="closeView()">
             <ion-icon name="arrow-back"></ion-icon>
         </div>
-        <div class="title">
+        <div class="title a3-container">
             <span>Văn Khấn</span>
         </div>
+        <div margin-right class="header-button"></div>
+        <div class="a1-absolute setting-text">
+            <span style="padding-right: 8px;" (click)="changeTextSmaller()">A-</span>
+            <span (click)="changeTextLarger()">A+</span>
+        </div>
     </div>
+
 </div>
 
 <ion-content>
-    <div class="appContentVK a1-relative" padding>
-        <div class="content-title">
+    <div class="appContentVK a1-relative" padding margin-top>
+        <div class="content-title" id="title-vk">
             <span>{{van_khan_td}}</span>
         </div>
         <div class="content-text">

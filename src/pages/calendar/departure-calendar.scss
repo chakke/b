@@ -24,6 +24,10 @@ page-departure-calendar {
     .height-56 {
         height: 56px;
     }
+    .scroll-container {
+        overflow: auto;
+        white-space: nowrap;
+    }
     .calendar-block {
         // background: linear-gradient(to right, #17cce9, #34a1ca);
         width: 100%;
@@ -31,7 +35,7 @@ page-departure-calendar {
     .grid {
         padding: 0;
         border: none;
-        margin-bottom: 16px;
+        display: inline-block;
         // margin-bottom: 1px;
     }
     .col {

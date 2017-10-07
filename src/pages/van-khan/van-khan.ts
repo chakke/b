@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { DepartureModule } from '../../providers/departure/departure';
+import { StatusBar } from '@ionic-native/status-bar';
 
 /**
  * Generated class for the VanKhanPage page.
@@ -17,10 +18,11 @@ import { DepartureModule } from '../../providers/departure/departure';
 export class VanKhanPage {
   data : any;
   item_height = screen.height / 10 + "px";
-  list_height = (screen.height - 56) + "px";
   constructor(
     private mAppModule: DepartureModule,
-    public navCtrl: NavController, public navParams: NavParams) {
+    public navCtrl: NavController, public navParams: NavParams,
+    private statusBar : StatusBar
+  ) {
   }
   ngOnInit(){
     this.data = this.mAppModule.getVanKhanValue();
@@ -32,7 +34,8 @@ export class VanKhanPage {
       )
     }
   }
-  ionViewDidLoad() {
+  ionViewDidEnter() {
+    this.statusBar.backgroundColorByHexString("#145355");
     
   }
   viewItem(item){

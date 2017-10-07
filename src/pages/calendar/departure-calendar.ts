@@ -5,6 +5,7 @@ import { Departure } from '../../providers/departure/class/departure';
 import { AppController } from '../../providers/app-controller';
 import { Calendar } from '../../providers/departure/class/calendar';
 import { DatePicker } from '@ionic-native/date-picker';
+import { StatusBar } from '@ionic-native/status-bar';
 
 @IonicPage()
 @Component({
@@ -25,6 +26,7 @@ export class DepartureCalendarPage {
   departureData: any;
   showDatePicker = false;
   col_height = "40px";
+  grid_height= "256px";
   isPlatform;
   constructor(
     private navParams: NavParams,
@@ -33,14 +35,17 @@ export class DepartureCalendarPage {
     private datePicker: DatePicker,
     private platform: Platform,
     private modalCtrl: ModalController,
-    private rd: Renderer2
+    private rd: Renderer2,
+    private statusBar: StatusBar,
   ) {
+    
     this.isPlatform = this.platform._platforms[2];
     this.currentDate = new Departure(new Date());
     this.selectedDate = new Departure(new Date());
     this.calendar = new Calendar(this.currentDate.date.getMonth(), this.currentDate.date.getFullYear());
-    this.checkDepartureBlank();
+    this.departureDays = this.calendar.days;
     this.col_height = Math.floor(((screen.width - 32) / 7)) + "px";
+    this.grid_height = Math.floor(((screen.width - 32)/ 7)*6) + 16 + "px";
     // this.calendar = this.calendar.
     if (!this.departureData) {
       this.mAppModule.getData().then(
@@ -56,19 +61,13 @@ export class DepartureCalendarPage {
   }
  
   ionViewDidEnter() {
+    this.statusBar.backgroundColorByHexString("#17cce9");
   }
-  checkDepartureBlank() {
-    if (this.calendar.days[35]) {
-      this.departureDays = this.calendar.days;
-    } else {
-      this.departureDays = this.calendar.days.slice(0, 35);
-    }
-  }
+  
   //Load data
   onInputChange(month, year) {
     this.calendar.setTime(month, year);
-    this.checkDepartureBlank();
-
+    this.departureDays = this.calendar.days;
     this.mAppModule.updateDepartureInfo(this.departureDays);
 
   }

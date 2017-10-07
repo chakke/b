@@ -1,10 +1,10 @@
 {
     "sao_tot": [{
-            "chi": "Tị, Mùi, Dậu, Hợi, Sửu, Mão, Tị, Mùi, Dậu, Hợi, Sửu, Mão",
+            "chi": "Tỵ, Mùi, Dậu, Hợi, Sửu, Mão, Tỵ, Mùi, Dậu, Hợi, Sửu, Mão",
             "name": "Thiên Đức"
         },
         {
-            "chi": "Hợi, Tuất, Dậu, Thân, Mùi, Ngọ, Tị, Thìn, Mão, Dần, Sửu, Tý",
+            "chi": "Hợi, Tuất, Dậu, Thân, Mùi, Ngọ, Tỵ, Thìn, Mão, Dần, Sửu, Tý",
             "name": "Nguyệt Đức"
         },
         {
@@ -12,23 +12,23 @@
             "name": "Thiên Giải"
         },
         {
-            "chi": "Tuất, Hợi, Tý, Sửu, Dần, Mão, Thìn, Tị, Ngọ, Mùi, Thân, Dậu",
+            "chi": "Tuất, Hợi, Tý, Sửu, Dần, Mão, Thìn, Tỵ, Ngọ, Mùi, Thân, Dậu",
             "name": "Thiên Hỷ"
         },
         {
-            "chi": "Dần, Thân, Mão, Dậu, Thìn, Tuất, Tị, Hợi, Ngọ, Tý, Mùi, Sửu",
+            "chi": "Dần, Thân, Mão, Dậu, Thìn, Tuất, Tỵ, Hợi, Ngọ, Tý, Mùi, Sửu",
             "name": "Thiên Quý"
         },
         {
-            "chi": "Ngọ, Mùi, Thân, Dậu, Tuất, Hợi, Tý, Sửu, Dần, Mão, Thìn, Tị",
+            "chi": "Ngọ, Mùi, Thân, Dậu, Tuất, Hợi, Tý, Sửu, Dần, Mão, Thìn, Tỵ",
             "name": "Tam Hợp"
         },
         {
-            "chi": "Tý, Sửu, Dần, Mão, Thìn, Tị, Ngọ, Mùi, Thân, Dậu, Tuất, Hợi",
+            "chi": "Tý, Sửu, Dần, Mão, Thìn, Tỵ, Ngọ, Mùi, Thân, Dậu, Tuất, Hợi",
             "name": "Sinh Khí"
         },
         {
-            "chi": "Mùi, Dậu, Hợi, Sửu, Mão, Tị, Mùi, Dậu, Mùi, Sửu, Mão, Tị",
+            "chi": "Mùi, Dậu, Hợi, Sửu, Mão, Tỵ, Mùi, Dậu, Mùi, Sửu, Mão, Tỵ",
             "name": "Thiên Thành"
         },
         {
@@ -40,7 +40,7 @@
             "name": "Lộc Mã"
         },
         {
-            "chi": "Dậu, Mão, Tuất, Thìn, Hợi, Tị, Tý, Ngọ, Sửu, Mùi, Dần, Thân",
+            "chi": "Dậu, Mão, Tuất, Thìn, Hợi, Tỵ, Tý, Ngọ, Sửu, Mùi, Dần, Thân",
             "name": "Phúc Sinh"
         },
         {
@@ -48,28 +48,28 @@
             "name": "Giải Thần"
         },
         {
-            "chi": "Tuất, Sửu, Dần, Tị, Dậu, Mão, Tý, Ngọ, Thân, Thìn, Thân, Mùi",
+            "chi": "Tuất, Sửu, Dần, Tỵ, Dậu, Mão, Tý, Ngọ, Thân, Thìn, Thân, Mùi",
             "name": "Thiên Ân"
         }
     ],
     "sao_xau": [{
-            "chi": "Tị, Tý, Mùi, Dần, Dậu, Thìn, Hợi, Ngọ, Sửu, Thân, Mão, Tuất",
+            "chi": "Tỵ, Tý, Mùi, Dần, Dậu, Thìn, Hợi, Ngọ, Sửu, Thân, Mão, Tuất",
             "name": "Thiên Cương"
         },
         {
-            "chi": "Tuất, Thìn, Hợi, Tị, Tý, Ngọ, Sửu, Mùi, Dần, Thân, Mão, Dậu",
+            "chi": "Tuất, Thìn, Hợi, Tỵ, Tý, Ngọ, Sửu, Mùi, Dần, Thân, Mão, Dậu",
             "name": "Thụ Tử"
         },
         {
-            "chi": "Ngọ, Mùi, Thân, Dậu, Tuất, Hợi, Tý, Sửu, Dần, Mão, Thìn, Tị",
+            "chi": "Ngọ, Mùi, Thân, Dậu, Tuất, Hợi, Tý, Sửu, Dần, Mão, Thìn, Tỵ",
             "name": "Đại Hao, Tử Khí, Quan Phù"
         },
         {
-            "chi": "Tị, Ngọ, Mùi, Thân, Dậu, Tuất, Hợi, Tý, Sửu, Dần, Mão, Thìn",
+            "chi": "Tỵ, Ngọ, Mùi, Thân, Dậu, Tuất, Hợi, Tý, Sửu, Dần, Mão, Thìn",
             "name": "Tiểu Hao"
         },
         {
-            "chi": "Tý, Tị, Mùi, Mão, Thân, Tuất, Sửu, Hợi, Ngọ, Dậu, Dần, Thìn",
+            "chi": "Tý, Tỵ, Mùi, Mão, Thân, Tuất, Sửu, Hợi, Ngọ, Dậu, Dần, Thìn",
             "name": "Sát Chủ"
         },
         {
@@ -81,31 +81,31 @@
             "name": "Địa Hỏa"
         },
         {
-            "chi": " Sửu, Mùi, Dần, Thân, Mão, Dậu, Thìn, Tuất, Tị, Hợi, Tý, Ngọ",
+            "chi": " Sửu, Mùi, Dần, Thân, Mão, Dậu, Thìn, Tuất, Tỵ, Hợi, Tý, Ngọ",
             "name": "Hỏa Tai\n"
         },
         {
-            "chi": "Thân, Tuất, Tuất, Hợi, Sửu, Sửu, Dần, Thìn, Thìn, Tị, Mùi, Mùi",
+            "chi": "Thân, Tuất, Tuất, Hợi, Sửu, Sửu, Dần, Thìn, Thìn, Tỵ, Mùi, Mùi",
             "name": "Nguyệt Phá"
         },
         {
-            "chi": "Tị, Tý, Sửu, Thân, Mão, Tuất, Hợi, Ngọ, Mùi, Dần, Dậu, Thìn",
+            "chi": "Tỵ, Tý, Sửu, Thân, Mão, Tuất, Hợi, Ngọ, Mùi, Dần, Dậu, Thìn",
             "name": "Băng Tiêu, Ngọa Giải"
         },
         {
-            "chi": "Hợi, Hợi, Hợi, Dần, Dần, Dần, Tị, Tị, Tị, Thân, Thân, Thân",
+            "chi": "Hợi, Hợi, Hợi, Dần, Dần, Dần, Tỵ, Tỵ, Tỵ, Thân, Thân, Thân",
             "name": "Thổ Cẩm"
         },
         {
-            "chi": "Dần, Tị, Thân, Hợi, Mão, Ngọ, Dậu, Tý, Thìn, Mùi, Tuất, Sửu",
+            "chi": "Dần, Tỵ, Thân, Hợi, Mão, Ngọ, Dậu, Tý, Thìn, Mùi, Tuất, Sửu",
             "name": "Thổ Kỵ, Vãng Vong"
         },
         {
-            "chi": "Tuất, Hợi, Tý, Sửu, Dần, Mão, Thìn, Tị, Ngọ, Mùi, Thân, Dậu",
+            "chi": "Tuất, Hợi, Tý, Sửu, Dần, Mão, Thìn, Tỵ, Ngọ, Mùi, Thân, Dậu",
             "name": "Cô Thần"
         },
         {
-            "chi": "Thìn, Tị, Ngọ, Mùi, Thân, Dậu, Tuất, Hợi, Tý, Sửu, Dần, Mão.",
+            "chi": "Thìn, Tỵ, Ngọ, Mùi, Thân, Dậu, Tuất, Hợi, Tý, Sửu, Dần, Mão.",
             "name": "Quả Tú"
         },
         {

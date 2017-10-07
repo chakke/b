@@ -107,7 +107,7 @@
         },
         {
             "can": "Canh",
-            "chi": "TuẤt",
+            "chi": "tuất",
             "huong_id": "Đông Bắc"
         },
         {
@@ -167,7 +167,7 @@
         },
         {
             "can": "Nhâm",
-            "chi": "TuẤt",
+            "chi": "tuất",
             "huong_id": "Đông Nam"
         },
         {
@@ -227,7 +227,7 @@
         },
         {
             "can": "Giáp",
-            "chi": "TuẤt",
+            "chi": "tuất",
             "huong_id": "Tây Nam"
         },
         {
@@ -287,7 +287,7 @@
         },
         {
             "can": "Bính",
-            "chi": "TuẤt",
+            "chi": "tuất",
             "huong_id": "Tây Bắc"
         },
         {
@@ -327,22 +327,22 @@
         },
         {
             "canchi": "Ất sửu",
-            "tuoi_xung_khac": "Kỷ mùi, Quí mùi, Tân mão, Tân dậu"
+            "tuoi_xung_khac": "Kỷ mùi, Quý mùi, Tân mão, Tân dậu"
         },
         {
             "canchi": "Bính dần",
-            "tuoi_xung_khac": "Giáp thân, Nhâm thân, Nhâm tuẤt, Nhâm thìn"
+            "tuoi_xung_khac": "Giáp thân, Nhâm thân, Nhâm tuất, Nhâm thìn"
         },
         {
             "canchi": "Đinh mão",
-            "tuoi_xung_khac": "Ất dậu, Quí dậu, Quí tị, Quí hợi"
+            "tuoi_xung_khac": "Ất dậu, Quý dậu, Quý tỵ, Quý hợi"
         },
         {
             "canchi": "Mậu thìn",
-            "tuoi_xung_khac": "Canh tuẤt, Bính tuẤt"
+            "tuoi_xung_khac": "Canh tuất, Bính tuất"
         },
         {
-            "canchi": "Kỷ tị",
+            "canchi": "Kỷ tỵ",
             "tuoi_xung_khac": "Tân hợi, Đinh hợi"
         },
         {
@@ -351,23 +351,23 @@
         },
         {
             "canchi": "Tân mùi",
-            "tuoi_xung_khac": "Quí sửu, Đinh sửu, Ất dậu, Ất mão"
+            "tuoi_xung_khac": "Quý sửu, Đinh sửu, Ất dậu, Ất mão"
         },
         {
             "canchi": "Nhâm thân",
             "tuoi_xung_khac": "Bính dần, Canh dần, Bính thân"
         },
         {
-            "canchi": "Quí dậu",
+            "canchi": "Quý dậu",
             "tuoi_xung_khac": "Đinh mão, Tân mão, Đinh dậu"
         },
         {
-            "canchi": "Giáp tuẤt",
-            "tuoi_xung_khac": "Nhâm thìn, Canh thìn, Canh tuẤt"
+            "canchi": "Giáp tuất",
+            "tuoi_xung_khac": "Nhâm thìn, Canh thìn, Canh tuất"
         },
         {
             "canchi": "Ất hợi",
-            "tuoi_xung_khac": "Quí tị, Tân tị, Tân hợi"
+            "tuoi_xung_khac": "Quý tỵ, Tân tỵ, Tân hợi"
         },
         {
             "canchi": "Bính tý",
@@ -387,19 +387,19 @@
         },
         {
             "canchi": "Canh thìn",
-            "tuoi_xung_khac": "Giáp tuẤt, Mậu tuẤt, Giáp thìn"
+            "tuoi_xung_khac": "Giáp tuất, Mậu tuất, Giáp thìn"
         },
         {
-            "canchi": "Tân tị",
-            "tuoi_xung_khac": "Ất hợi, Kỷ hợi, Ất tị"
+            "canchi": "Tân tỵ",
+            "tuoi_xung_khac": "Ất hợi, Kỷ hợi, Ất tỵ"
         },
         {
             "canchi": "Nhâm ngọ",
-            "tuoi_xung_khac": "Giáp tý, Canh ty, Bính tuẤt, Bính thìn"
+            "tuoi_xung_khac": "Giáp tý, Canh ty, Bính tuất, Bính thìn"
         },
         {
-            "canchi": "Quí mùi",
-            "tuoi_xung_khac": "Ất sửu, Tân sửu, Đinh hợi, Đinh tị"
+            "canchi": "Quý mùi",
+            "tuoi_xung_khac": "Ất sửu, Tân sửu, Đinh hợi, Đinh tỵ"
         },
         {
             "canchi": "Giáp thân",
@@ -410,12 +410,12 @@
             "tuoi_xung_khac": "Kỷ mão, Đinh mão, Tân mùi, Tân sửu"
         },
         {
-            "canchi": "Bính tuẤt",
+            "canchi": "Bính tuất",
             "tuoi_xung_khac": "Mậu thìn, Nhâm thìn, Nhâm ngọ, Nhâm tý"
         },
         {
             "canchi": "Đinh hợi",
-            "tuoi_xung_khac": "Kỷ tị, Quí tị, Quí mùi, Quí sửu"
+            "tuoi_xung_khac": "Kỷ tỵ, Quý tỵ, Quý mùi, Quý sửu"
         },
         {
             "canchi": "Mậu tý",
@@ -423,7 +423,7 @@
         },
         {
             "canchi": "Kỷ sửu",
-            "tuoi_xung_khac": "Đinh mùi, Ất mui"
+            "tuoi_xung_khac": "Đinh mùi, Ất mùi"
         },
         {
             "canchi": "Canh dần",
@@ -431,14 +431,14 @@
         },
         {
             "canchi": "Tân mão",
-            "tuoi_xung_khac": "Quí dậu, Kỷ dậu, Ất sửu, Ất mùi"
+            "tuoi_xung_khac": "Quý dậu, Kỷ dậu, Ất sửu, Ất mùi"
         },
         {
             "canchi": "Nhâm thìn",
-            "tuoi_xung_khac": "Bính tuẤt, Giáp tuât, Bính dần"
+            "tuoi_xung_khac": "Bính tuất, Giáp tuât, Bính dần"
         },
         {
-            "canchi": "Quí tị",
+            "canchi": "Quý tỵ",
             "tuoi_xung_khac": "Đinh hợi, Ất hợi, Đinh mão"
         },
         {
@@ -447,23 +447,23 @@
         },
         {
             "canchi": "Ất mùi",
-            "tuoi_xung_khac": "Kỷ sửu, Quí sửu, Tân mão, Tân dậu"
+            "tuoi_xung_khac": "Kỷ sửu, Quý sửu, Tân mão, Tân dậu"
         },
         {
             "canchi": "Bính thân",
-            "tuoi_xung_khac": "Giáp dần, Nhâm thân, Nhâm tuẤt, Nhâm thìn"
+            "tuoi_xung_khac": "Giáp dần, Nhâm thân, Nhâm tuất, Nhâm thìn"
         },
         {
             "canchi": "Đinh dậu",
-            "tuoi_xung_khac": "Ất mão, Quí mão, Quí tị, Quí hợi"
+            "tuoi_xung_khac": "Ất mão, Quý mão, Quý tỵ, Quý hợi"
         },
         {
-            "canchi": "Mậu tuẤt",
+            "canchi": "Mậu tuất",
             "tuoi_xung_khac": "Canh thìn, Bính thìn"
         },
         {
             "canchi": "Kỷ hợi",
-            "tuoi_xung_khac": "Tân tị, Đinh tị."
+            "tuoi_xung_khac": "Tân tỵ, Đinh tỵ."
         },
         {
             "canchi": "Canh tý",
@@ -471,23 +471,23 @@
         },
         {
             "canchi": "Tân sửu",
-            "tuoi_xung_khac": "Quí mùi, Đinh mùi, Ất dậu, Ất mão"
+            "tuoi_xung_khac": "Quý mùi, Đinh mùi, Ất dậu, Ất mão"
         },
         {
             "canchi": "Nhâm dần",
             "tuoi_xung_khac": "Canh thân, Bính thân, Bính dần"
         },
         {
-            "canchi": "Quí mão",
+            "canchi": "Quý mão",
             "tuoi_xung_khac": "Tân dậu, Đinh dậu, Đinh mão"
         },
         {
             "canchi": "Giáp thìn",
-            "tuoi_xung_khac": "Nhâm tuẤt, Canh tuẤt, Canh thìn"
+            "tuoi_xung_khac": "Nhâm tuất, Canh tuất, Canh thìn"
         },
         {
-            "canchi": "Ất tị",
-            "tuoi_xung_khac": "Quí hợi, Tân hợi, Tân tị"
+            "canchi": "Ất tỵ",
+            "tuoi_xung_khac": "Quý hợi, Tân hợi, Tân tỵ"
         },
         {
             "canchi": "Bính ngọ",
@@ -506,19 +506,19 @@
             "tuoi_xung_khac": "Tân mão, Ất mão"
         },
         {
-            "canchi": "Canh TuẤt",
-            "tuoi_xung_khac": "Giáp thìn, Mậu thìn, Giáp tuẤt"
+            "canchi": "Canh tuất",
+            "tuoi_xung_khac": "Giáp thìn, Mậu thìn, Giáp tuất"
         },
         {
             "canchi": "Tân hợi",
-            "tuoi_xung_khac": "Ất tị, Kỷ tị, Ất hợi"
+            "tuoi_xung_khac": "Ất tỵ, Kỷ tỵ, Ất hợi"
         },
         {
             "canchi": "Nhâm tý",
-            "tuoi_xung_khac": "Giáp ngọ, Canh ngọ, Bính tuẤt, Bính thìn"
+            "tuoi_xung_khac": "Giáp ngọ, Canh ngọ, Bính tuất, Bính thìn"
         },
         {
-            "canchi": "Quí sửu",
+            "canchi": "Quý sửu",
             "tuoi_xung_khac": "Ất mùi, Tân mùi, Đinh hợi, Đinh tỵ"
         },
         {
@@ -531,11 +531,11 @@
         },
         {
             "canchi": "Bính thìn",
-            "tuoi_xung_khac": "Mậu tuẤt, Nhâm tuẤt, Nhâm ngọ, Nhâm tý"
+            "tuoi_xung_khac": "Mậu tuất, Nhâm tuất, Nhâm ngọ, Nhâm tý"
         },
         {
-            "canchi": "Đinh tị",
-            "tuoi_xung_khac": "Kỷ hợi, Quí hợi, Quí sửu, Quí mùi"
+            "canchi": "Đinh tỵ",
+            "tuoi_xung_khac": "Kỷ hợi, Quý hợi, Quý sửu, Quý mùi"
         },
         {
             "canchi": "Mậu ngọ",
@@ -551,15 +551,15 @@
         },
         {
             "canchi": "Tân dậu",
-            "tuoi_xung_khac": "Quí mão, Kỷ mão, Ất sửu, Ất mùi"
+            "tuoi_xung_khac": "Quý mão, Kỷ mão, Ất sửu, Ất mùi"
         },
         {
-            "canchi": "Nhâm tuẤt",
+            "canchi": "Nhâm tuất",
             "tuoi_xung_khac": "Bính thìn, Giáp thìn, Bính thân, Bính dần"
         },
         {
             "canchi": "Quý hợi",
-            "tuoi_xung_khac": "Đinh tị, Ất tị, Đinh mão, Đinh dậu"
+            "tuoi_xung_khac": "Đinh tỵ, Ất tỵ, Đinh mão, Đinh dậu"
         }
     ]
 

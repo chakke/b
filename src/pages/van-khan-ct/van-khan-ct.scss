@@ -1,20 +1,24 @@
 page-van-khan-ct {
     .scroll-content {
-        top: 56px !important;
+        top: 61px !important;
     }
     .content-md {
-        background: linear-gradient(to right, #17cce9, #34a1ca);
+        background: linear-gradient(to right, #5A8166, #145355);
     }
     .content-ios {
-        background: linear-gradient(to right, #17cce9, #34a1ca);
+        background: linear-gradient(to right, #5A8166, #145355);
     }
-    .back-button {
-        height: 30px;
-        width: 30px;
+    .background-header {
+        background: #145355;
+    }
+    .header-button {
+        height: 25px;
+        width: 25px;
+    }
+    .back {
         border-radius: 50%;
-        left: 16px;
-        border: 1px solid white;
-        background: rgba(black, 0.4);
+        border: 2px solid white;
+        background: rgba(white, 0.2);
         ion-icon {
             color: #fff;
         }
@@ -34,6 +38,7 @@ page-van-khan-ct {
         overflow: auto;
         width: 90%;
         background: rgba(black, 0.4);
+        border-radius: 10px;
     }
     .content-title {
         span {
@@ -48,6 +53,16 @@ page-van-khan-ct {
             color: white;
             white-space: pre-wrap;
             text-align: justify;
+            font-size: 1.2em;
+        }
+    }
+    .setting-text {
+        right: 16px;
+        top: 14px;
+        span {
+            color: white;
+            font-size: 24px;
+            text-transform: uppercase;
         }
     }
 }

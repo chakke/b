@@ -121,10 +121,10 @@ export class DepartureLoadData {
             let luna_date = data[i].luna_date;
             let sun_date = data[i].sun_date;
             if(luna_date && lunarDay == luna_date){
-                result.push(data[i].description);
+                result.push(data[i].luna_date +"/ "+ data[i].description);
             }
             if(sun_date && solarDay == sun_date){
-                result.push(data[i].description);
+                result.push(data[i].sun_date+"/ "+data[i].description);
             }
         }
         return result;

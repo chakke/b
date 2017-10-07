@@ -1,29 +1,29 @@
 page-day-detail {
-    $background: linear-gradient(to right, #17cce9, #34a1ca);
-    $line-height: 1.2em;
+    $background: linear-gradient(to right, #1B7449, #3AEBA7);
+    $line-height: 1.5em;
     .content-ios {
         // background: radial-gradient(black, #837E7E, #251F1F);
-        background: linear-gradient(to bottom, #83E6F3, #34a1ca);
+        background: linear-gradient(to bottom, #A2F8E8, #EEDB2C);
     }
     .content-md {
         // background: radial-gradient(#68B7DB, #17cce9, #34a1ca);
-        background: linear-gradient(to bottom, #83E6F3, #34a1ca);
+        background: linear-gradient(to bottom, #A2F8E8, #EEDB2C);
         // background-image: url('/assets/departure/background/background-image.jpg');
     }
     .scroll-content {
-        position: absolute;
-        top: 25%;
-        height: 75%;
-        left: 0;
-        width: 100%;
+        top: 171px;
+    }
+    .special {
+        border-radius: 10px;
+        margin-bottom: 20px;
     }
     .back-button {
         height: 25px;
         width: 25px;
         border-radius: 50%;
-        border: 1px solid white;
-        background: rgba(black, 0.4);
         margin-left: 10px;
+        border: 2px solid white;
+        background: rgba(white, 0.2);
     }
     .today-button {
         border-radius: 10px;
@@ -35,10 +35,13 @@ page-day-detail {
             padding: 2px;
         }
     }
-    .background {
-        background: $background;
+    .background-header {
+        background: rgba(black, 0.8);
         color: white;
-        padding: 5px;
+    }
+    .background {
+        background: rgba(black, 0.8);
+        color: white;
     }
     .height-30 {
         height: 30px;
@@ -60,11 +63,13 @@ page-day-detail {
     .lunar-container {
         padding-right: 10px;
         padding-left: 10px;
+        height: 75px;
         position: relative;
         top: 20px;
         width: 100%;
         .item-container {
-            width: 24.75%;
+            height: 75px;
+            width: 25%;
         }
         .item-number {
             span {
@@ -77,9 +82,17 @@ page-day-detail {
             }
         }
     }
+    .line {
+        width: 1px;
+        background: white;
+        height: 100%;
+        z-index: 10;
+    }
     .box-container {
         padding: 5px;
-        background: white;
+        background: rgba(black, 0.6);
+        color: white;
+        height: 70%;
     }
     .item {
         padding: 5px;
@@ -107,12 +120,16 @@ page-day-detail {
         height: 100%;
     }
     .item-haft {
-        width: 49.8335%;
+        width: 50%;
+        padding: 5px;
+        color: white;
+        background: rgba(black, 0.6);
     }
     .item-background {
         padding: 5px;
         color: white;
-        background: rgba(black, 0.2);
+        background: rgba(black, 0.6);
+        min-height: 60px;
     }
     .width-25 {
         width: 25%;

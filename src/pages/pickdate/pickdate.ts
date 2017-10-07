@@ -101,6 +101,8 @@ export class PickdatePage {
       this.doScrollTo(this.divIDs[2],(this.today.getFullYear() - this.datas[2][0])*this.rowHeight);
     }
     this.selected_date = new Departure(this.today);
+    let data = this.mDepartureModule.updateDepartureInfo([this.selected_date]);
+    this.selected_date = data[0];
   }
   ionViewDidEnter() {
     // this.gotoToday();

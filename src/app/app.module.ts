@@ -24,8 +24,8 @@ import { SpecicalDatePopover } from '../pages/special-date/special-date-popover'
     BrowserModule,
     HttpModule,
     IonicModule.forRoot(MyApp,{
-      iconMode: 'ios',
-      tabsHideOnSubPages: true
+      tabsHideOnSubPages: true,
+      pageTransition: "md-transition"
     })
   ],
   bootstrap: [IonicApp],

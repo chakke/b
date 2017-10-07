@@ -2,23 +2,27 @@ page-special-date {
     .app-content {
         overflow: auto;
     }
+    .scroll-content {
+        top: 112px !important;
+    }
     .content-md {
-        background: linear-gradient(to right, #17cce9, #34a1ca);
+        background: linear-gradient(to bottom, #F06464, #D34D19);
     }
     .content-ios {
-        background: linear-gradient(to right, #17cce9, #34a1ca);
+        background: linear-gradient(to bottom, #F06464, #D34D19);
     }
     // .background {
     //     background: linear-gradient(to right, #17cce9, #34a1ca);
     //     padding: 5px;
     // }
-    .back-button {
-        height: 30px;
-        width: 30px;
+    .header-button {
+        height: 25px;
+        width: 25px;
+    }
+    .back {
         border-radius: 50%;
-        left: 16px;
-        background: rgba(black, 0.4);
-        border: 1px solid white;
+        background: rgba(white, 0.2);
+        border: 2px solid white;
         ion-icon {
             color: #fff;
         }
@@ -38,6 +42,12 @@ page-special-date {
         border-color: #fff;
         border-width: 2px;
         opacity: 1;
+    }
+    .segment-ios .segment-button.segment-activated {
+        background-color: #F06464;
+    }
+    .segment-ios .segment-button {
+        border-color: white;
     }
     .segmen-title {
         color: white;
@@ -68,6 +78,7 @@ page-special-date {
             left: 20%;
             width: 1px;
             height: 60%;
+            top: 20%;
             background-color: white;
         }
         .item-start {

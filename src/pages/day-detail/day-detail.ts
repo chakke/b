@@ -4,6 +4,7 @@ import { DepartureModule } from '../../providers/departure/departure';
 import { TNBINFO } from '../../providers/departure/interface/tnb_Info';
 import { HUONGXUATHANH } from '../../providers/departure/interface/huong_xuat_hanh';
 import { Utils } from '../../providers/app-utils';
+import { StatusBar } from '@ionic-native/status-bar';
 
 /**
  * Generated class for the DayDetailPage page.
@@ -37,13 +38,17 @@ export class DayDetailPage {
   tuoi_xung_khac: any;
   sao_tot = [];
   sao_xau = [];
+  special_name : any;
   day_numbers_of_month_in_normal_year: Array<number> = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
   day_numbers_of_month_in_leap_year: Array<number> = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
   constructor(public navCtrl: NavController,
     private mAppModule: DepartureModule,
     private rd: Renderer2,
-    public navParams: NavParams) {
+    public navParams: NavParams,
+    private statusBar : StatusBar
+  ) {
+    
   }
   mHasEnter: boolean = false;
   ngOnInit(){
@@ -53,7 +58,7 @@ export class DayDetailPage {
     
   }
   ionViewDidEnter() {
-
+    this.statusBar.backgroundColorByHexString("#1f302d");
   }
   loadData() {
     this.TNBINFO = this.mAppModule.GetTNBINFO(this.dd, this.mm, this.yy);
@@ -67,7 +72,7 @@ export class DayDetailPage {
     this.sao_tot = [];
     this.sao_xau = [];
     this.sao_tot = this.mAppModule.getSaoTot(this.sexagesimalCycleDate.split(" ")[1], this.lunarMonth);
-    this.sao_xau = this.mAppModule.getSaoXau(this.sexagesimalCycleDate.split(" ")[1], this.lunarMonth);
+    this.sao_xau = this.mAppModule.getSaoXau(this.sexagesimalCycleDate.split(" ")[0],this.sexagesimalCycleDate.split(" ")[1], this.lunarMonth);
     this.getSpecicalDate();
   }
   close() {
@@ -86,7 +91,7 @@ export class DayDetailPage {
   getSpecicalDate() {
     let solarDay = this.getViewDate(this.dd, this.mm);
     let lunarDay = this.getViewDate(this.lunarDate, this.lunarMonth);
-    this.mAppModule.getSpecialDate(lunarDay, solarDay);
+    this.special_name =  this.mAppModule.getSpecialDate(lunarDay, solarDay);
   }
   getSexagesimal() {
     this.sexagesimalCycleDate = this.mAppModule.getSexagesimalCycleByDay(this.dd, this.mm, this.yy);

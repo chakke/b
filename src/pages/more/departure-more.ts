@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, Platform } from 'ionic-angular';
 import { DepartureModule } from '../../providers/departure/departure';
+import { StatusBar } from '@ionic-native/status-bar';
 
 
 @IonicPage()
@@ -17,11 +18,14 @@ export class DepartureMorePage {
     private navParams: NavParams,
     private navCtrl: NavController,
     private mAppModule: DepartureModule,
-    private platform : Platform
+    private platform : Platform,
+    private statusBar : StatusBar
   ) {
     this.more_options = this.mAppModule.getOptions();
   }
   ionViewDidEnter(){
+    this.statusBar.backgroundColorByHexString("#34a1ca");
+    
     if(!this.cavalVNAL){
       this.mAppModule.getCavalVNALDataJSON().then(
         data=>{

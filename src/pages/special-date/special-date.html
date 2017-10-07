@@ -1,11 +1,12 @@
 <div class="a1-container-top a1-z-10">
-    <div class="a3-container-center height-56">
-        <div class="back-button a1-absolute a3-container-center" (click)="closeView()">
+    <div class="a3-container a3-justify-between a3-items-center height-56">
+        <div margin-left class="header-button back a3-container-center" (click)="closeView()">
             <ion-icon name="arrow-back"></ion-icon>
         </div>
         <div class="title">
             <span>Ngày Lễ Việt Nam</span>
         </div>
+        <div class="header-button"></div>
     </div>
     <div style="height: 30px" class="a1-relative a3-container segment-container">
         <div class="dl-al" text-center>
@@ -22,12 +23,9 @@
         </ion-segment>
     </div>
 </div>
-
-
 <ion-content>
-    <div style="height:96px"></div>
-    <div [ngSwitch]="calendar" [style.height]="content_height" class="app-content">
-        <div margin-top *ngSwitchCase="'solar'" class="a1-relative">
+    <div [ngSwitch]="calendar" class="app-content">
+        <div *ngSwitchCase="'solar'" class="a1-relative">
             <div [style.height]="item_height" class="item-div a1-relative a3-container a3-justify-between a3-items-center" *ngFor="let day of cavalDL_data">
                 <div class="date item-start">
                     <div><span class="dl">{{day.date}}</span></div>
@@ -45,8 +43,8 @@
         <div margin-top *ngSwitchCase="'lunar'" class="a1-relative">
             <div [style.height]="item_height" class="item-div a1-relative a3-container a3-justify-between a3-items-center" *ngFor="let day of cavalAL_data">
                 <div class="date item-start">
-                    <div><span class="dl">{{day.date}}</span></div>
-                    <div><span class="al">{{getLunarDate(day.date)}}</span></div>
+                    <div><span class="dl">{{getSolarDate(day.date)}}</span></div>
+                    <div><span class="al">{{day.date}}</span></div>
                 </div>
                 <div class="a1-absolute line"></div>
                 <div class="item-content" (click)="goToDetail(day)">

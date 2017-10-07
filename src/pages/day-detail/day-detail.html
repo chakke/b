@@ -1,5 +1,5 @@
-<div style="height: 30%" *ngIf="!isLoading" class="day-detail-header a1-absolute a1-z-10">
-    <div class="background">
+<div *ngIf="!isLoading" class="day-detail-header a1-absolute a1-z-10">
+    <div class="background-header">
         <div *ngIf="mAppModule.mIsOnIOSDevice" style="height:20px;"></div>
         <div *ngIf="!mAppModule.mIsOnIOSDevice" style="height:4px;"></div>
         <div class="a3-container a3-justify-between a3-items-center height-56 ">
@@ -25,6 +25,7 @@
                 <div class="item-footer"><span>{{sexagesimalCycleTime}}</span></div>
             </div>
         </div>
+        <div class="line a1-absolute" style="left: 25%"></div>
         <div class="item-container a1-relative" text-center>
             <div class="item-title a1-height-30 background"><span>Ngày</span></div>
             <div class="box-container">
@@ -32,6 +33,7 @@
                 <div class="item-footer"><span>{{sexagesimalCycleDate}}</span></div>
             </div>
         </div>
+        <div class="line a1-absolute" style="left: 50%"></div>
         <div class="item-container a1-relative" text-center>
             <div class="item-title a1-height-30 background"><span>Tháng</span></div>
             <div class="box-container">
@@ -39,6 +41,7 @@
                 <div class="item-footer"><span>{{sexagesimalCycleMonth }}</span></div>
             </div>
         </div>
+        <div class="line a1-absolute" style="left: 75%"></div>
         <div class="item-container a1-relative" text-center style="border-top-right-radius:10px ">
             <div class="item-title a1-height-30 background" style="border-top-right-radius:10px "><span>Năm</span></div>
             <div class="box-container">
@@ -50,19 +53,25 @@
 </div>
 
 <ion-content>
-    <!-- <div *ngIf="mAppModule.mIsOnIOSDevice" style="height:76px;"></div>
-    <div *ngIf="!mAppModule.mIsOnIOSDevice" style="height:60px;"></div> -->
-    <div style="height: 20px"></div>
+    <div *ngIf="mAppModule.mIsOnIOSDevice" style="height:20px;"></div>
+    <div *ngIf="!mAppModule.mIsOnIOSDevice" style="height:4px;"></div>
 
     <div class="app-content animated" #detail id="detail" (swipe)="swipe($event)">
-        <div class="a3-container a3-justify-between">
-            <div class="item-background item-haft">
+        <div *ngIf="special_name.length>0" class="a3-container-center item-background special">
+            <div *ngFor="let item of special_name" text-center>
+                <span>{{item}}</span>
+            </div>
+        </div>
+        <div style="height: 1px"></div>
+        <div class="a3-container a3-justify-between a1-relative">
+            <div class="item-haft">
                 <div class="item">
                     <span class="item-title">Hành:</span>
                     <span>{{TNBINFO.nguhanh_id}}</span>
                 </div>
             </div>
-            <div class="item-background item-haft">
+            <div class="line a1-absolute" style="left: 50%"></div>
+            <div class="item-haft">
                 <div class="item">
                     <span class="item-title">Trực:</span>
                     <span>{{trucDay}}</span>
@@ -70,14 +79,15 @@
             </div>
         </div>
         <div style="height: 1px"></div>
-        <div class="a3-container a3-justify-between">
-            <div class="item-background item-haft">
+        <div class="a3-container a3-justify-between a1-relative">
+            <div class="item-haft">
                 <div class="item">
                     <span class="item-title">Sao: </span>
                     <span>{{TNBINFO.thapnhibat_ten}}</span>
                 </div>
             </div>
-            <div class="item-background item-haft">
+            <div class="line a1-absolute" style="left: 50%"></div>
+            <div class="item-haft">
                 <div class="item">
                     <span class="item-title">Tiết: </span>
                     <span>{{tietDay}}</span>
@@ -121,7 +131,8 @@
         <div style="height: 1px"></div>
         <div class="item-background">
             <div class="item-title-color"><span>Sao tốt</span></div>
-            <div style="padding-left: 10px"><span *ngFor="let temp of sao_tot">{{temp}}</span></div>
+            <div style="padding-left: 10px"><span *ngFor="let temp of sao_tot; let i = index">{{temp}}<span *ngIf= "i<sao_tot.length-1">, </span></span>
+            </div>
         </div>
         <div style="height: 1px"></div>
         <div class="item-background">
@@ -133,6 +144,12 @@
                 </span>
             </div>
         </div>
-        <div style="height: 5px"></div>
+        <div style="height:1px"></div>
+        <div class="item-background">
+            <div style="padding-left: 10px" text-center>
+                <p style="white-space:pre-wrap; line-height: 1.5em">{{TNBINFO.thapnhibat_tho}}</p>
+            </div>
+        </div>
+        <div style="height:10px"></div>
     </div>
 </ion-content>

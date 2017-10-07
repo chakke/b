@@ -4,7 +4,7 @@ import { DatePicker } from '@ionic-native/date-picker';
 import { AppController } from '../../providers/app-controller';
 import { DepartureModule } from '../../providers/departure/departure';
 import { Departure } from "../../providers/departure/class/departure";
-
+import { StatusBar } from '@ionic-native/status-bar';
 
 @IonicPage()
 @Component({
@@ -65,7 +65,8 @@ export class DepartureHomePage {
   index_background: number = 0;
   //góc quay cho div ở phần ngày dương
   degree: number = 0;
-
+  //
+  fg :any;
   //loading 
   isLoading: boolean = true;
   /* init all variable */
@@ -75,7 +76,8 @@ export class DepartureHomePage {
     private mMenuController: MenuController,
     private datePicker: DatePicker,
     private platform: Platform,
-    private modalCtrl: ModalController
+    private modalCtrl: ModalController,
+    private statusBar: StatusBar
   ) {
    
     this.solarDate = new Date().getDate();
@@ -90,6 +92,9 @@ export class DepartureHomePage {
   }
   mHasEnter: boolean = false;
   ionViewDidEnter() {
+    if(this.fg){
+      this.statusBar.backgroundColorByHexString(this.fg);
+    }
     if (!this.mHasEnter) {
       this.mHasEnter = true;
       this.mMenuController.enable(false, "lottery");
@@ -338,7 +343,10 @@ export class DepartureHomePage {
         let departure_background = <HTMLElement>document.getElementById("departure-background");
         let qoute_fg = <HTMLElement>document.getElementById("quote-fg");
         qoute_fg.style.color = link.fg;
+        this.fg = link.fg;
+        this.statusBar.backgroundColorByHexString(link.fg);
         departure_background.style.backgroundImage = 'url(' + link.bg + ')';
+
       }
     }
   }

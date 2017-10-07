@@ -68,7 +68,7 @@ export class DepartureModule {
   }
   //doi ngay am ve ngay duong
   public convertLunarToSolar(dd: any, mm: any, yy: any) {
-    return this.mDepartureExchangeDay.convertSolar2Lunar(dd,mm,yy,7);
+    return this.mDepartureExchangeDay.convertLunar2Solar(dd,mm,yy,7);
   }
 
   public update() {
@@ -340,11 +340,11 @@ export class DepartureModule {
     }
     return this.mDepartureExchangeDay.getSaoTot(chi,lunarMonth,data);
   }
-  public getSaoXau(chi: string, lunarMonth: number, data?:any){
+  public getSaoXau(can: string, chi: string, lunarMonth: number, data?:any){
     if(!data){
       data = this.sao_tot_data;
     }
-    return this.mDepartureExchangeDay.getSaoXau(chi,lunarMonth,data);
+    return this.mDepartureExchangeDay.getSaoXau(can,chi,lunarMonth,data);
   }
 
   public getSpecialDate(lunarDay: string, solarDay: string ,data?:any){

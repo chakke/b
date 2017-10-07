@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { StatusBar } from '@ionic-native/status-bar';
 
 /**
  * Generated class for the VanKhanCtPage page.
@@ -17,7 +18,10 @@ export class VanKhanCtPage {
   data: any;
   van_khan_td: string;
   van_khan: any;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+    private statusBar : StatusBar
+  ) {
+   
   }
   ngOnInit(){
     this.data = this.navParams.get("data");
@@ -26,8 +30,23 @@ export class VanKhanCtPage {
    
   }
 
-  ionViewDidLoad() {
-    
+  ionViewDidEnter() {
+    this.statusBar.backgroundColorByHexString("#145355");
+  }
+  closeView(){
+    this.navCtrl.pop();
+  }
+  changeTextSmaller(){
+    let p = document.getElementById("text-vk");
+    let t = document.getElementById("title-vk");
+    t.style.fontSize = "1.2em";
+    p.style.fontSize = "1em";
+  }
+  changeTextLarger(){
+    let p = document.getElementById("text-vk");
+    let t = document.getElementById("title-vk");
+    t.style.fontSize = "1.8em";
+    p.style.fontSize = "1.4em";
   }
 
 }

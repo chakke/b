@@ -147,7 +147,7 @@ export class DepartureExchangeDay {
     }
 
     //Chuyển ngày âm sang ngày dương
-    convertLunar2Solar(lunarDay, lunarMonth, lunarYear, lunarLeap, timeZone) {
+    convertLunar2Solar(lunarDay, lunarMonth, lunarYear, timeZone) {
 
         let k, a11, b11, off, leapOff, leapMonth, monthStart;
         if (lunarMonth < 11) {
@@ -167,9 +167,7 @@ export class DepartureExchangeDay {
             if (leapMonth < 0) {
                 leapMonth += 12;
             }
-            if (lunarLeap != 0 && lunarMonth != leapMonth) {
-                return new Array(0, 0, 0);
-            } else if (lunarLeap != 0 || off >= leapOff) {
+            if (off >= leapOff) {
                 off += 1;
             }
         }
@@ -684,9 +682,10 @@ export class DepartureExchangeDay {
         return result;
     }
     getTuoiXungKhac(canchi: string, data: any){
+        
         let tuoi_xung_khac_data = data.tuoi_xung_khac;
         for(let t = 0; t< tuoi_xung_khac_data.length;t++){
-            if(canchi.toLocaleLowerCase()==tuoi_xung_khac_data[t].canchi.toLocaleLowerCase()){
+            if(canchi.toLowerCase()==tuoi_xung_khac_data[t].canchi.toLowerCase()){
                 return tuoi_xung_khac_data[t].tuoi_xung_khac;
             }
         }
@@ -696,17 +695,20 @@ export class DepartureExchangeDay {
         let result= [];
         let data_sao_tot = data.sao_tot;
         for(let i = 0;i<data_sao_tot.length;i++){
-            if(chi.toLocaleLowerCase()==data_sao_tot[i].chi.split(", ")[lunarMonth-1].toLocaleLowerCase()){
+            if(chi.toLowerCase()==data_sao_tot[i].chi.split(", ")[lunarMonth-1].toLowerCase()){
                 result.push(data_sao_tot[i].name);
             }
         }
         return result;
     }
-    getSaoXau(chi: string,lunarMonth: number,data : any){
+    getSaoXau(can : string, chi: string,lunarMonth: number,data : any){
         let result= [];
         let data_sao_xau = data.sao_xau;
         for(let i = 0;i<data_sao_xau.length;i++){
-            if(chi.toLocaleLowerCase()==data_sao_xau[i].chi.split(", ")[lunarMonth-1].toLocaleLowerCase()){
+            if(i<data_sao_xau.length - 2 && chi.toLowerCase()==data_sao_xau[i].chi.split(", ")[lunarMonth-1].toLowerCase()){
+                result.push(data_sao_xau[i].name);
+            }
+            if(i>=data_sao_xau.length - 2 && can.toLowerCase()==data_sao_xau[i].chi.split(", ")[lunarMonth-1].toLowerCase()){
                 result.push(data_sao_xau[i].name);
             }
         }

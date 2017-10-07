@@ -4,6 +4,7 @@ import { DepartureModule } from '../../providers/departure/departure';
 import { DepartureExchangeDay } from '../../providers/departure/departure-exchangeday';
 import { Departure } from '../../providers/departure/class/departure';
 import { AppModule } from "../../providers/app-module";
+import { StatusBar } from '@ionic-native/status-bar';
 export class DayFilter {
   day: any;
   month: any;
@@ -51,8 +52,10 @@ export class DepartureChangeDatePage {
     private navParams: NavParams,
     private navCtrl: NavController,
     private mAppModule: DepartureModule,
-    private platform: Platform
+    private platform: Platform,
+    private statusBar : StatusBar
   ) {
+    
     for (let i = 1; i <= 31; i++) {
       this.datas[0].push(i);
       if (i < 29) {
@@ -83,7 +86,9 @@ export class DepartureChangeDatePage {
       this.mRunningScroll.push(false);
     }
   }
-
+  ionViewDidEnter(){
+    this.statusBar.backgroundColorByHexString("#34a1ca");
+  }
   getDayInSolarMonth() {
     this.solar_date = [];
     for (let i = 0; i < 3; i++) {
