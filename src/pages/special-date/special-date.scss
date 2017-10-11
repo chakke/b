@@ -1,6 +1,6 @@
 page-special-date {
     .app-content {
-        overflow: auto;
+        // overflow: hidden;
     }
     .scroll-content {
         top: 112px !important;
@@ -99,6 +99,7 @@ page-special-date {
         .item-end {
             width: 20%;
             text-align: center;
+            padding: 6px;
             ion-icon {
                 color: white;
                 font-size: 1.8em;

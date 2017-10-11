@@ -13,7 +13,8 @@ import { HttpService } from "../providers/http-service";
 import { DeviceInfoProvider } from "../providers/device-info/device-info";
 import { HttpModule } from "@angular/http";
 import { SpecicalDatePopover } from '../pages/special-date/special-date-popover';
-
+import { AdMobPro } from '@ionic-native/admob-pro';
+import { GoogleAnalytics } from '@ionic-native/google-analytics';
 @NgModule({
   declarations: [
     MyApp,
@@ -43,6 +44,8 @@ import { SpecicalDatePopover } from '../pages/special-date/special-date-popover'
     DatePicker,    
     HttpService,
     DeviceInfoProvider,
+    AdMobPro,
+    GoogleAnalytics
   ]
 })
 export class AppModule {}

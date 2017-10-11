@@ -28,7 +28,7 @@
         <div *ngIf="mAppModule.mIsOnIOSDevice" style="height: 75px;"></div>
         <div *ngIf="!mAppModule.mIsOnIOSDevice" style="height: 60px"></div>
         <div style="height: 30px"></div>
-        <ion-grid class="calendar-block">
+        <ion-grid class="calendar-block" (swipe)="swipe($event)">
             <ion-row #calendarContent margin-top class="calendar-day animated">
                 <ion-col [style.height]="col_height" class="a3-container-center" (tap)="selectDeparture(departure)" *ngFor="let departure of departureDays; let i = index">
                     <div *ngIf="departure" class="day-box a1-relative" text-center [class.today]="departure && departure.dateString == currentDate.dateString" [class.selected]="departure &&  departure.dateString == selectedDate.dateString">

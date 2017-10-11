@@ -14,10 +14,10 @@
             <div><span class="al">AL</span></div>
         </div>
         <ion-segment [(ngModel)]="calendar">
-            <ion-segment-button value="solar">
+            <ion-segment-button value="solar" (ionSelect)="changeSegment('solar')">
                 <span class="segmen-title">Dương Lịch</span>
             </ion-segment-button>
-            <ion-segment-button value="lunar">
+            <ion-segment-button value="lunar" (ionSelect)="changeSegment('lunar')">
                 <span class="segmen-title">Âm Lịch</span>
             </ion-segment-button>
         </ion-segment>
@@ -35,12 +35,12 @@
                 <div class="item-content" (click)="goToDetail(day)">
                     <span>{{day.name}}</span>
                 </div>
-                <div class="item-end">
-                    <ion-icon name="ios-information-circle-outline" (click)="viewDescription(day)"></ion-icon>
+                <div class="item-end" (click)="viewDescription(day)">
+                    <ion-icon name="ios-information-circle-outline"></ion-icon>
                 </div>
             </div>
         </div>
-        <div margin-top *ngSwitchCase="'lunar'" class="a1-relative">
+        <div *ngSwitchCase="'lunar'" class="a1-relative">
             <div [style.height]="item_height" class="item-div a1-relative a3-container a3-justify-between a3-items-center" *ngFor="let day of cavalAL_data">
                 <div class="date item-start">
                     <div><span class="dl">{{getSolarDate(day.date)}}</span></div>
@@ -50,8 +50,8 @@
                 <div class="item-content" (click)="goToDetail(day)">
                     <span>{{day.name}}</span>
                 </div>
-                <div class="item-end">
-                    <ion-icon name="ios-information-circle-outline" (click)="viewDescription(day)"></ion-icon>
+                <div class="item-end" (click)="viewDescription(day)">
+                    <ion-icon name="ios-information-circle-outline"></ion-icon>
                 </div>
             </div>
         </div>

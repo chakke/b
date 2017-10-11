@@ -31,9 +31,9 @@ export class PickdatePage {
   selected_date: Departure;
   solar_date = [];
   mScrollELms = new Array<HTMLElement>();
-  divIDs = ["div1","div2","div3"];
+  divIDs = ["div1", "div2", "div3"];
   mRunningScroll: boolean = false;
-  scrollIndex : number = 4; 
+  scrollIndex: number = 4;
   constructor(public navCtrl: NavController, public navParams: NavParams,
     public viewCtrl: ViewController,
     private mDepartureModule: DepartureModule,
@@ -60,13 +60,14 @@ export class PickdatePage {
   }
 
   ionViewDidLoad() {
-    for(let i = 0; i<this.divIDs.length;i++){
+    // this.mAppModule.showAdvertisement();
+    for (let i = 0; i < this.divIDs.length; i++) {
       let element = <HTMLElement>document.getElementById(this.divIDs[i]);
       this.mScrollELms.push(element);
     }
-    
-    if(this.mScrollELms){
-      for(let key = 0; key<this.mScrollELms.length;key++){
+
+    if (this.mScrollELms) {
+      for (let key = 0; key < this.mScrollELms.length; key++) {
         let scrollElm = this.mScrollELms[key];
 
         scrollElm.addEventListener('scroll', (event) => {
@@ -95,10 +96,10 @@ export class PickdatePage {
   }
   gotoToday() {
     this.today = new Date();
-    if(this.mScrollELms){
-      this.doScrollTo(this.divIDs[0],(this.today.getDate()-1)*this.rowHeight);
-      this.doScrollTo(this.divIDs[1],(this.today.getMonth())*this.rowHeight);
-      this.doScrollTo(this.divIDs[2],(this.today.getFullYear() - this.datas[2][0])*this.rowHeight);
+    if (this.mScrollELms) {
+      this.doScrollTo(this.divIDs[0], (this.today.getDate() - 1) * this.rowHeight);
+      this.doScrollTo(this.divIDs[1], (this.today.getMonth()) * this.rowHeight);
+      this.doScrollTo(this.divIDs[2], (this.today.getFullYear() - this.datas[2][0]) * this.rowHeight);
     }
     this.selected_date = new Departure(this.today);
     let data = this.mDepartureModule.updateDepartureInfo([this.selected_date]);
@@ -107,26 +108,28 @@ export class PickdatePage {
   ionViewDidEnter() {
     // this.gotoToday();
   }
-  doScrollTo(divID: string, top: number){
+  doScrollTo(divID: string, top: number) {
     this.isScroll = true;
-    AppModule.getInstance().getScrollController().doScroll(divID,top,{alpha: 0.4, callback: ()=>{
-      this.isScroll = false;
-    }});
+    let element = document.getElementById(divID);
+    element.scrollTop = top;
+    this.isScroll = false;
   }
   scrollToTop(element: HTMLElement, scrollTop, index) {
     let divID = element.getAttribute('id');
     let nowScrollTop = element.scrollTop;
     this.isScroll = true;
-    AppModule.getInstance().getScrollController().doScroll(divID, scrollTop,{alpha:0.1, callback: ()=>{
-      if(nowScrollTop%45==0){
-        this.getDayInMonth();
-        setTimeout(()=> {
-        this.changeDate();
-        }, 100);
+    AppModule.getInstance().getScrollController().doScroll(divID, scrollTop, {
+      alpha: 0.1, callback: () => {
+        if (nowScrollTop % 45 == 0) {
+          this.getDayInMonth();
+          setTimeout(() => {
+            this.changeDate();
+          }, 100);
+        }
+        this.isScroll = false;
+        return;
       }
-      this.isScroll = false;
-      return;
-    }});
+    });
   }
 
   scrollEnd(scrollElm: HTMLElement, index) {
@@ -139,7 +142,7 @@ export class PickdatePage {
   changeDate() {
     this.solar_date = [];
     console.log("change-date");
-    
+
     if (this.mScrollELms) {
       for (let i = 0; i < 3; i++) {
         let solarElm = this.mScrollELms[i];
@@ -154,7 +157,7 @@ export class PickdatePage {
 
   getDayInMonth() {
     this.solar_date = [];
-    if(this.mScrollELms){
+    if (this.mScrollELms) {
       for (let i = 0; i < 3; i++) {
         let solarElm = this.mScrollELms[i];
         let childIndex = Math.round(solarElm.scrollTop / this.rowHeight) + 1;

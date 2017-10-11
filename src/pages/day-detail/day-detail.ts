@@ -5,7 +5,7 @@ import { TNBINFO } from '../../providers/departure/interface/tnb_Info';
 import { HUONGXUATHANH } from '../../providers/departure/interface/huong_xuat_hanh';
 import { Utils } from '../../providers/app-utils';
 import { StatusBar } from '@ionic-native/status-bar';
-
+// import { AdMobPro } from '@ionic-native/admob-pro';
 /**
  * Generated class for the DayDetailPage page.
  *
@@ -38,7 +38,7 @@ export class DayDetailPage {
   tuoi_xung_khac: any;
   sao_tot = [];
   sao_xau = [];
-  special_name : any;
+  special_name: any;
   day_numbers_of_month_in_normal_year: Array<number> = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
   day_numbers_of_month_in_leap_year: Array<number> = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
@@ -46,19 +46,21 @@ export class DayDetailPage {
     private mAppModule: DepartureModule,
     private rd: Renderer2,
     public navParams: NavParams,
-    private statusBar : StatusBar
+    private statusBar: StatusBar,
   ) {
-    
   }
+
+
   mHasEnter: boolean = false;
-  ngOnInit(){
+  ngOnInit() {
     this.loadNavParmas();
     this.loadData();
     this.isLoading = false;
-    
+
   }
   ionViewDidEnter() {
     this.statusBar.backgroundColorByHexString("#1f302d");
+    this.mAppModule.showAdvertisement();
   }
   loadData() {
     this.TNBINFO = this.mAppModule.GetTNBINFO(this.dd, this.mm, this.yy);
@@ -72,7 +74,7 @@ export class DayDetailPage {
     this.sao_tot = [];
     this.sao_xau = [];
     this.sao_tot = this.mAppModule.getSaoTot(this.sexagesimalCycleDate.split(" ")[1], this.lunarMonth);
-    this.sao_xau = this.mAppModule.getSaoXau(this.sexagesimalCycleDate.split(" ")[0],this.sexagesimalCycleDate.split(" ")[1], this.lunarMonth);
+    this.sao_xau = this.mAppModule.getSaoXau(this.sexagesimalCycleDate.split(" ")[0], this.sexagesimalCycleDate.split(" ")[1], this.lunarMonth);
     this.getSpecicalDate();
   }
   close() {
@@ -91,7 +93,7 @@ export class DayDetailPage {
   getSpecicalDate() {
     let solarDay = this.getViewDate(this.dd, this.mm);
     let lunarDay = this.getViewDate(this.lunarDate, this.lunarMonth);
-    this.special_name =  this.mAppModule.getSpecialDate(lunarDay, solarDay);
+    this.special_name = this.mAppModule.getSpecialDate(lunarDay, solarDay);
   }
   getSexagesimal() {
     this.sexagesimalCycleDate = this.mAppModule.getSexagesimalCycleByDay(this.dd, this.mm, this.yy);
@@ -118,7 +120,7 @@ export class DayDetailPage {
     this.sexagesimalCycleTime = this.mAppModule.getSexagesimalCycleByTime(this.dd, this.mm, this.yy, date.getHours());
     this.loadData();
   }
-  swipe(event){
+  swipe(event) {
     let direction = event.offsetDirection; //2 = swipe right to left; 4 = swipe left to right;
     // console.log(direction, this.calendar.month, this.calendar.year);
     // console.log(this.calendar.days);
@@ -135,16 +137,16 @@ export class DayDetailPage {
     this.day_of_week = Utils.getDayOfWeek(this.dd, this.mm, this.yy);
     this.loadLunarDate();
     this.getSexagesimal();
-    
+
     this.sexagesimalCycleTime = this.mAppModule.getSexagesimalCycleByTime(this.dd, this.mm, this.yy, date.getHours());
     this.loadData();
-    setTimeout(()=> {
+    setTimeout(() => {
       this.rd.addClass(this.detail.nativeElement, 'slideInLeft');
       setTimeout(() => {
         this.rd.removeClass(this.detail.nativeElement, 'slideInLeft');
       }, 1000);
     }, 50);
-   
+
   }
   rotateRight() {
     let date = new Date();
@@ -152,16 +154,16 @@ export class DayDetailPage {
     this.day_of_week = Utils.getDayOfWeek(this.dd, this.mm, this.yy);
     this.loadLunarDate();
     this.getSexagesimal();
-    
+
     this.sexagesimalCycleTime = this.mAppModule.getSexagesimalCycleByTime(this.dd, this.mm, this.yy, date.getHours());
     this.loadData();
-    setTimeout(()=> {
+    setTimeout(() => {
       this.rd.addClass(this.detail.nativeElement, 'slideInRight');
       setTimeout(() => {
         this.rd.removeClass(this.detail.nativeElement, 'slideInRight');
-      }, 1000); 
+      }, 1000);
     }, 50);
-    
+
   }
   getDayNumbersInOneMonth() {
     let result: number[];

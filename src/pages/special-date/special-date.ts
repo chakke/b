@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, PopoverController } from 'ionic-angular';
+import { Component,ViewChild } from '@angular/core';
+import { IonicPage,Content, NavController, NavParams, PopoverController } from 'ionic-angular';
 import { DepartureModule } from '../../providers/departure/departure';
 import { SpecicalDatePopover } from './special-date-popover';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -17,6 +17,7 @@ import { StatusBar } from '@ionic-native/status-bar';
   templateUrl: 'special-date.html',
 })
 export class SpecialDatePage {
+  @ViewChild(Content) content : Content;
   cavalDL_data : any;
   cavalAL_data : any;
   isLoading : boolean = true;  
@@ -28,10 +29,10 @@ export class SpecialDatePage {
     public popover: PopoverController,
     private statusBar : StatusBar
   ) {
-   
   }
 
   ionViewDidEnter() {
+    this.mAppModule.showAdvertisement();
     this.statusBar.backgroundColorByHexString("#D34D19");
       this.item_height = (screen.height / 10) + "px";
       this.cavalAL_data = this.mAppModule.getValueDataLeVNAL();
@@ -114,4 +115,10 @@ export class SpecialDatePage {
   closeView(){
     this.navCtrl.pop();
   }
+  changeSegment(name : string){
+    if(name!=this.calendar){
+        this.content.scrollToTop(400);        
+    }
+  }
+  
 }

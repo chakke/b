@@ -24,9 +24,9 @@ export class DayFilter {
 
 export class DepartureChangeDatePage {
   rowHeight = 50;//height of each row in px; Match to css; 
-  timeoutID;
+  timeoutID = [];
   touchingObjects = [];
-  animationFrameObjects = [];
+  animationFrameObjects : number;
   currentIndex = 6;
   departureExchangeDay: DepartureExchangeDay;
   datas = [[], [], []];
@@ -87,7 +87,16 @@ export class DepartureChangeDatePage {
     }
   }
   ionViewDidEnter(){
+    this.gotoToday();
     this.statusBar.backgroundColorByHexString("#34a1ca");
+    this.mAppModule.showAdvertisement();
+  }
+  viewDetail(){
+    this.navCtrl.push("DayDetailPage",{
+      dd: this.solar_date[0],
+      mm: this.solar_date[1],
+      yy: this.solar_date[2]
+    })
   }
   getDayInSolarMonth() {
     this.solar_date = [];
@@ -126,28 +135,31 @@ export class DepartureChangeDatePage {
       for (let i = 0; i < this.scrollElms.length; i++) {
         let scrollElm = <HTMLElement>this.scrollElms[i];
 
+      
         scrollElm.addEventListener('scroll', (event) => {
-          if (!this.touchingObjects[i] && i == this.currentIndex) {
+          if (i == this.currentIndex) {
             this.mRunningScroll[i] = true;
             this.scrollEnd(scrollElm, i);
+            this.changeDate(i);
           }
         })
         scrollElm.addEventListener('touchstart', () => {
-          this.touchingObjects[i] = true;
           this.currentIndex = i;
         })
         scrollElm.addEventListener('touchend', () => {
-          this.touchingObjects[i] = false;
           this.scrollEnd(scrollElm, i);
+          this.changeDate(i);
         })
       }
     }
-    this.gotoToday();
   }
   gotoToday() {
     this.load_filter = true;
     this.currentIndex = 6;
     this.today = new Date();
+    this.solar_date[0] = this.today.getDate();
+    this.solar_date[1] = this.today.getMonth() +1;
+    this.solar_date[2] = this.today.getFullYear();
     this.todayInLunar = this.departureExchangeDay.convertSolar2Lunar(this.today.getDate(), this.today.getMonth() + 1, this.today.getFullYear(), 7);
     this.day_filter = [];
     this.day_filter.push(new DayFilter(this.today.getDate(), this.today.getMonth() + 1, this.today.getFullYear()));
@@ -232,14 +244,14 @@ export class DepartureChangeDatePage {
     let nowScrollTop = scrollElm.scrollTop;
     AppModule.getInstance().getScrollController().doScroll(divID, top, {
       alpha: 0.2, callback: () => {
-        if (nowScrollTop % 50 == 0 && index == this.currentIndex) {
-          if(index>=0 && index <=2){
-            this.getDayInSolarMonth();
-          }
-          setTimeout(()=>{
-            this.changeDate(index);
-          }, 100)
-        }
+        // if (nowScrollTop % 50 == 0 && index == this.currentIndex) {
+        //   if(index>=0 && index <=2){
+        this.getDayInSolarMonth();
+        //   }
+        //   setTimeout(()=>{
+        //     this.changeDate(index);
+        //   }, 100)
+        // }
         this.mRunningScroll[index] = false;
         return;
       }
@@ -248,15 +260,17 @@ export class DepartureChangeDatePage {
 
   scrollTo(scrollElm: HTMLElement, top: number, index) {
     this.mRunningScroll[index] = true;
-    AppModule.getInstance().getScrollController().doScroll(scrollElm.getAttribute('id'), top, {
-      alpha: 0.2,
-      callback: () => {
-        this.mRunningScroll[index] = false;
-        if (!this.checkScrollDone()) {
-          this.getSelectedDate();
-        }
-      }
-    });
+    scrollElm.scrollTop = top;
+    this.mRunningScroll[index] = false;
+    // if (!this.checkScrollDone()) {
+      this.getSelectedDate();
+    // }
+    // AppModule.getInstance().getScrollController().doScroll(scrollElm.getAttribute('id'), top, {
+    //   alpha: 0.2,
+    //   callback: () => {
+        
+    //   }
+    // });
   }
   checkScrollDone(): boolean {
     for (var index = 0; index < this.mRunningScroll.length; index++) {
@@ -268,10 +282,10 @@ export class DepartureChangeDatePage {
   }
   scrollEnd(scrollElm: HTMLElement, index: number) {
     let nowScrollTop = scrollElm.scrollTop;
-    if (this.timeoutID) clearTimeout(this.timeoutID);
-    this.timeoutID = setTimeout(() => {
+    if (this.timeoutID[index]) clearTimeout(this.timeoutID[index]);
+    this.timeoutID[index] = setTimeout(() => {
       let top = Math.round(nowScrollTop / this.rowHeight) * this.rowHeight;
       this.doScrollToTop(scrollElm, scrollElm.getAttribute('id'), top, index);
-    }, 100);
+    },100);
   }
 }

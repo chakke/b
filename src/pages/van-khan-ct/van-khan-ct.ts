@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
+import { DepartureModule } from '../../providers/departure/departure';
 
 /**
  * Generated class for the VanKhanCtPage page.
@@ -19,7 +20,8 @@ export class VanKhanCtPage {
   van_khan_td: string;
   van_khan: any;
   constructor(public navCtrl: NavController, public navParams: NavParams,
-    private statusBar : StatusBar
+    private statusBar : StatusBar,
+    private mAppModule : DepartureModule,
   ) {
    
   }
@@ -32,6 +34,7 @@ export class VanKhanCtPage {
 
   ionViewDidEnter() {
     this.statusBar.backgroundColorByHexString("#145355");
+    this.mAppModule.showAdvertisement();
   }
   closeView(){
     this.navCtrl.pop();

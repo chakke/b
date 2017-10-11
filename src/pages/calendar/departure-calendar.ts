@@ -38,7 +38,6 @@ export class DepartureCalendarPage {
     private rd: Renderer2,
     private statusBar: StatusBar,
   ) {
-    
     this.isPlatform = this.platform._platforms[2];
     this.currentDate = new Departure(new Date());
     this.selectedDate = new Departure(new Date());
@@ -61,7 +60,8 @@ export class DepartureCalendarPage {
   }
  
   ionViewDidEnter() {
-    this.statusBar.backgroundColorByHexString("#17cce9");
+    this.statusBar.backgroundColorByHexString("#34a1ca");
+    this.mAppModule.showAdvertisement();
   }
   
   //Load data

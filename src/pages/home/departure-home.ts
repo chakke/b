@@ -5,7 +5,7 @@ import { AppController } from '../../providers/app-controller';
 import { DepartureModule } from '../../providers/departure/departure';
 import { Departure } from "../../providers/departure/class/departure";
 import { StatusBar } from '@ionic-native/status-bar';
-
+// import { AdMobPro } from '@ionic-native/admob-pro';
 @IonicPage()
 @Component({
   selector: 'page-departure-home',
@@ -48,9 +48,9 @@ export class DepartureHomePage {
   //dữ liệu về chi tiết ngày
   dayDetailData: any;
   //đữ liệu về chi tiết trực
-  trucData : any;
+  trucData: any;
   //dữ liệu về Tiết của ngày
-  tietData : any;
+  tietData: any;
   //dữ liệu về hướng xuất hành
   taiThan_hyThan: any;
   //dữ liệu sao tốt sao xấu
@@ -63,10 +63,12 @@ export class DepartureHomePage {
   quote_of_date: string = "";
   //index background
   index_background: number = 0;
+  //
+  dem : number = -1;
   //góc quay cho div ở phần ngày dương
   degree: number = 0;
   //
-  fg :any;
+  fg: any;
   //loading 
   isLoading: boolean = true;
   /* init all variable */
@@ -77,9 +79,10 @@ export class DepartureHomePage {
     private datePicker: DatePicker,
     private platform: Platform,
     private modalCtrl: ModalController,
-    private statusBar: StatusBar
-  ) {
+    private statusBar: StatusBar,
    
+  ) {
+
     this.solarDate = new Date().getDate();
     this.solarMonth = new Date().getMonth() + 1;
     this.solarYear = new Date().getFullYear();
@@ -88,11 +91,10 @@ export class DepartureHomePage {
 
   ngAfterViewInit() {
 
-
   }
   mHasEnter: boolean = false;
   ionViewDidEnter() {
-    if(this.fg){
+    if (this.fg) {
       this.statusBar.backgroundColorByHexString(this.fg);
     }
     if (!this.mHasEnter) {
@@ -100,48 +102,48 @@ export class DepartureHomePage {
       this.mMenuController.enable(false, "lottery");
       this.addCubeListener();
     }
-    if(!this.dayDetailData){
+    if (!this.dayDetailData) {
       this.mAppModule.getDayDetailDataJSON().then(
-        data=>{
+        data => {
           this.dayDetailData = data;
           console.log("LoadDayDetail finished");
-          
-        }, error => {}
+
+        }, error => { }
       )
     }
-    if(!this.trucData ){
+    if (!this.trucData) {
       this.mAppModule.getTrucDataJSON().then(
-        data=>{
+        data => {
           this.trucData = data;
-        }, error => {}
+        }, error => { }
       )
     }
-    if(!this.tietData ){
+    if (!this.tietData) {
       this.mAppModule.getTietDataJSON().then(
-        data=>{
+        data => {
           this.tietData = data;
-        }, error => {}
+        }, error => { }
       )
     }
-    if(!this.taiThan_hyThan){
+    if (!this.taiThan_hyThan) {
       this.mAppModule.getTaiThanHyThanDataJSON().then(
-        data=> {
+        data => {
           this.taiThan_hyThan = data;
-        },error =>{}
+        }, error => { }
       )
     }
-    if(!this.saoTot_saoXau){
+    if (!this.saoTot_saoXau) {
       this.mAppModule.getSaoTotSaoXauDataJSON().then(
-        data =>{
+        data => {
           this.saoTot_saoXau = data;
-        },error =>{}
+        }, error => { }
       )
     }
-    if(!this.special_data){
+    if (!this.special_data) {
       this.mAppModule.getSpecialDataJSON().then(
-        data=>{
+        data => {
           this.special_data = data;
-        },error =>{}
+        }, error => { }
       )
     }
     if (!this.departureData) {
@@ -153,16 +155,17 @@ export class DepartureHomePage {
       );
     }
 
-   
-    
+
+
   }
-  viewDayDetail(){
+  viewDayDetail() {
     console.log("click");
     this.navCtrl.push("DayDetailPage", {
       dd: this.solarDate,
       mm: this.solarMonth,
       yy: this.solarYear,
     });
+    // this.mAppModule.showInterstitial();
   }
   onLoadedData() {
     this.getDayOfWeek();
@@ -294,7 +297,7 @@ export class DepartureHomePage {
       this.solarDate = day_numbers_of_month[this.solarMonth - 1];
     }
   }
-
+  
   //touch move event cho cube
   addCubeListener() {
     let cube = document.getElementById('iAppContent');
@@ -311,6 +314,7 @@ export class DepartureHomePage {
     }, false);
 
     cube.addEventListener('touchend', (e) => {
+      this.mAppModule.showAdvertisement();
       var touchobj = e.changedTouches[0]; // reference first touch point for this event
       dist = touchobj.clientX - startx;
       if (dist > 20) {
