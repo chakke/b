@@ -33,7 +33,7 @@ export class SpecialDatePage {
 
   ionViewDidEnter() {
     this.mAppModule.showAdvertisement();
-    this.statusBar.backgroundColorByHexString("#D34D19");
+    if(!this.mAppModule.mIsOnIOSDevice)this.statusBar.backgroundColorByHexString("#14e09c");
       this.item_height = (screen.height / 10) + "px";
       this.cavalAL_data = this.mAppModule.getValueDataLeVNAL();
       this.cavalDL_data = this.mAppModule.getValueDataLeVNDL();
@@ -63,6 +63,7 @@ export class SpecialDatePage {
           dd: solarDate,
           mm: solarMonth,
           yy: solarYear,
+          special_info: day.description
         })
       }
     }else{

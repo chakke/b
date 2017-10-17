@@ -12,6 +12,7 @@ export class ScrollDiv {
     /**1 : top, 2 : bottom, 3 : custom */
     direction: number = 1;
     top: number = 0;
+    left: number = 0;
     mCallback = null;
 
     constructor(id: string) {
@@ -57,6 +58,19 @@ export class ScrollDiv {
                 this.element.scrollTop += dx;
             }
         }
+        else if (this.direction == 4) {
+            let dx = this.alpha * (this.left - this.element.scrollLeft);
+            if (Math.abs(dx) < 1) {
+                this.element.scrollLeft = this.left;
+                this.done = true;
+            } else {
+                this.element.scrollLeft += dx;
+            }
+        }
+    }
+    scrollToLeft(left: number) {
+        this.left = left;
+        this.direction = 4;
     }
     scrollTo(top: number) {
         this.top = top;
@@ -95,6 +109,16 @@ export class ScrollController {
             item = new ScrollDiv(divID);
             item.setOption(option);
             item.scrollTo(top);
+            this.items.set(divID, item);
+        }
+    }
+    doScrollLeft(divID: string, left: number, option?: ScrollOption) {
+        this.checkUpdate();
+        let item = this.getItem(divID);
+        if (!item) {
+            item = new ScrollDiv(divID);
+            item.setOption(option);
+            item.scrollToLeft(left);
             this.items.set(divID, item);
         }
     }

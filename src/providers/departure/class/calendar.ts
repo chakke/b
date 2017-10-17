@@ -29,4 +29,9 @@ export class Calendar {
             index++;
         }
     }
+    copyData(calendar : Calendar){
+        this.month = calendar.month;
+        this.year = calendar.year;
+        this.days = calendar.days;
+    }
 }

@@ -26,7 +26,7 @@ import { GoogleAnalytics } from '@ionic-native/google-analytics';
     HttpModule,
     IonicModule.forRoot(MyApp,{
       tabsHideOnSubPages: true,
-      pageTransition: "md-transition"
+      pageTransition: "ios-transition"
     })
   ],
   bootstrap: [IonicApp],

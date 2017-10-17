@@ -199,6 +199,14 @@ export class DepartureModule {
       }
     });
   }
+
+  getGiaiMongDataJSON() {
+    return new Promise((resolve, reject) => {
+        this.mDepartureLoadData.getGiaiMongDataFromJSON().subscribe((data) => {
+          resolve(data);
+        });
+    });
+  }
   updateDepartureInfo(departures: Array<Departure>) {
     if (this.departureData) {
       departures.forEach(departure => {

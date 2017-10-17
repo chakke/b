@@ -1,17 +1,14 @@
 page-day-detail {
-    $background: linear-gradient(to right, #1B7449, #3AEBA7);
+    $background: linear-gradient(to bottom, #14e09c, #274c7c);
     $line-height: 1.5em;
+    .header-md::after {
+        height: 0;
+    }
     .content-ios {
-        // background: radial-gradient(black, #837E7E, #251F1F);
-        background: linear-gradient(to bottom, #A2F8E8, #EEDB2C);
+        background: $background;
     }
     .content-md {
-        // background: radial-gradient(#68B7DB, #17cce9, #34a1ca);
-        background: linear-gradient(to bottom, #A2F8E8, #EEDB2C);
-        // background-image: url('/assets/departure/background/background-image.jpg');
-    }
-    .scroll-content {
-        top: 171px;
+        background: $background;
     }
     .special {
         border-radius: 10px;
@@ -22,7 +19,7 @@ page-day-detail {
         width: 25px;
         border-radius: 50%;
         margin-left: 10px;
-        border: 2px solid white;
+        border: 1px solid white;
         background: rgba(white, 0.2);
     }
     .today-button {
@@ -36,11 +33,11 @@ page-day-detail {
         }
     }
     .background-header {
-        background: rgba(black, 0.8);
+        background: rgba(black, 0.4);
         color: white;
     }
     .background {
-        background: rgba(black, 0.8);
+        background: rgba(black, 0.4);
         color: white;
     }
     .height-30 {
@@ -55,6 +52,8 @@ page-day-detail {
         // background: linear-gradient(to top, #C3F3FA, #34a1ca);
         ion-icon {
             color: white;
+            line-height: unset;
+            display: inline-block;
         }
     }
     .line-height {
@@ -65,7 +64,6 @@ page-day-detail {
         padding-left: 10px;
         height: 75px;
         position: relative;
-        top: 20px;
         width: 100%;
         .item-container {
             height: 75px;
@@ -91,7 +89,7 @@ page-day-detail {
     }
     .box-container {
         padding: 5px;
-        background: rgba(black, 0.6);
+        background: rgba(black, 0.2);
         color: white;
         height: 70%;
     }
@@ -124,12 +122,12 @@ page-day-detail {
         width: 50%;
         padding: 5px;
         color: white;
-        background: rgba(black, 0.6);
+        background: rgba(black, 0.4);
     }
     .item-background {
         padding: 5px;
         color: white;
-        background: rgba(black, 0.6);
+        background: rgba(black, 0.4);
         min-height: 60px;
     }
     .width-25 {

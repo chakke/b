@@ -1,15 +1,12 @@
-<div class="a-header-background a1-container-top a1-z-10" style="padding-bottom: 4px">
+<ion-header class="a-header-background">
     <!-- <div style="height: 20px"></div> -->
-    <div *ngIf="mAppModule.mIsOnIOSDevice" style="height:20px;"></div>
-    <div *ngIf="!mAppModule.mIsOnIOSDevice" style="height:4px;"></div>
-
     <div class="height-56 a3-container a3-justify-between a3-items-center">
         <div margin-left class="a-header-button" (click)="pickSolarDate($event)">
             <img src="assets/departure/btn_calendar.png">
         </div>
         <div class="a-header-title">
             <div text-center style="font-size: 1.2em;padding-bottom:5px;font-weight:bold">Đổi ngày</div>
-            <div text-center>
+            <div text-center (click)="goToday()">
                 <span class="today">Hôm nay</span>
                 <span class="date-today" nowrap>{{this.todayInSolar.dateString}}</span>
             </div>
@@ -18,12 +15,8 @@
             <img src="assets/departure/btn_notification.png">
         </div>
     </div>
-</div>
+</ion-header>
 <ion-content no-bounce>
-    <!-- <div style="height:20px"></div> -->
-    <div *ngIf="mAppModule.mIsOnIOSDevice" style="height:86px;"></div>
-    <div *ngIf="!mAppModule.mIsOnIOSDevice" style="height:70px;"></div>
-
     <div margin-top class="change-date-body a3-container-center">
         <div class="solar-date width-40 ">
             <div class="header a3-container-center">
@@ -33,20 +26,19 @@
                 <div class="bg-active"></div>
                 <div class="change-date-col solar-col" index="0" id="solarDay">
                     <div class="item"></div>
-                    <div class="item " *ngFor="let date of day_in_month" [class.day-active]="!load_filter && date== day_filter[0].day"><span>{{date}}</span>
-                    </div>
+                    <div class="item " *ngFor="let date of day_in_month;let i = index" [class.day-active]="!isLoading && i==numberMidder[0]"><span>{{date}}</span></div>
                     <div class="item"></div>
                 </div>
                 <div class="border"></div>
                 <div class="change-date-col solar-col" index="1" id="solarMonth">
                     <div class="item"></div>
-                    <div class="item" *ngFor="let month of datas[1]" [class.month-active]="!load_filter && month==day_filter[0].month"><span>{{month}}</span></div>
+                    <div class="item" *ngFor="let month of datas[1];let i = index" [class.month-active]="!isLoading && i==numberMidder[1]"><span>{{month}}</span></div>
                     <div class="item"></div>
                 </div>
                 <div class="border"></div>
                 <div class="change-date-col solar-col" index="2" id="solarYear">
                     <div class="item"></div>
-                    <div class="item" *ngFor="let year of datas[2]" [class.year-active]="!load_filter && year==day_filter[0].year"><span>{{year}}</span></div>
+                    <div class="item" *ngFor="let year of datas[2];let i = index" [class.year-active]="!isLoading && i==numberMidder[2]"><span>{{year}}</span></div>
                     <div class="item"></div>
                 </div>
             </div>
@@ -62,21 +54,21 @@
                 <div class="bg-active"></div>
                 <div class="change-date-col lunar-col" index="3" id="lunarDay">
                     <div class="item"></div>
-                    <div class="item" *ngFor="let date of lunarMonth" [class.day-active]="!load_filter && date== day_filter[1].day"><span>{{date}}</span></div>
+                    <div class="item" *ngFor="let date of day_30;let i = index" [class.day-active]="!isLoading && i==numberMidder[3]"><span>{{date}}</span></div>
                     <div class="item"></div>
                 </div>
                 <div class="border"></div>
 
                 <div class="change-date-col lunar-col" index="4" id="lunarMonth">
                     <div class="item"></div>
-                    <div class="item" *ngFor="let month of datas[1]" [class.month-active]="!load_filter && month== day_filter[1].month"><span>{{month}}</span></div>
+                    <div class="item" *ngFor="let month of datas[1];let i = index" [class.month-active]="!isLoading && i==numberMidder[4] "><span>{{month}}</span></div>
                     <div class="item"></div>
                 </div>
                 <div class="border"></div>
 
                 <div class="change-date-col lunar-col" index="5" id="lunarYear">
                     <div class="item"></div>
-                    <div class="item" *ngFor="let year of datas[2]" [class.year-active]="!load_filter && year== day_filter[1].year"><span>{{year}}</span></div>
+                    <div class="item" *ngFor="let year of datas[2];let i = index" [class.year-active]="!isLoading && i==numberMidder[5]"><span>{{year}}</span></div>
                     <div class="item"></div>
                 </div>
             </div>

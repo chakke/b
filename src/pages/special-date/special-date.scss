@@ -1,30 +1,31 @@
 page-special-date {
+    $background: linear-gradient(to bottom, #14e09c, #274c7c);
+    .header-md::after {
+        height: 0;
+    }
     .app-content {
         // overflow: hidden;
     }
-    .scroll-content {
-        top: 112px !important;
-    }
     .content-md {
-        background: linear-gradient(to bottom, #F06464, #D34D19);
+        background: $background;
     }
     .content-ios {
-        background: linear-gradient(to bottom, #F06464, #D34D19);
+        background: $background;
     }
-    // .background {
-    //     background: linear-gradient(to right, #17cce9, #34a1ca);
-    //     padding: 5px;
-    // }
     .header-button {
         height: 25px;
         width: 25px;
     }
+    .segment-md .segment-button {
+        border: none;
+    }
     .back {
         border-radius: 50%;
         background: rgba(white, 0.2);
-        border: 2px solid white;
+        border: 1px solid white;
         ion-icon {
             color: #fff;
+            line-height: unset;
         }
     }
     .title {
@@ -39,12 +40,11 @@ page-special-date {
     }
     button.activated,
     .segment-md .segment-button.segment-activated {
-        border-color: #fff;
-        border-width: 2px;
+        border-bottom: 2px solid #fff;
         opacity: 1;
     }
     .segment-ios .segment-button.segment-activated {
-        background-color: #F06464;
+        background-color: rgba(white, 0.3);
     }
     .segment-ios .segment-button {
         border-color: white;

@@ -1,5 +1,5 @@
 import { Component, ViewChild, Renderer2, ElementRef } from '@angular/core';
-import { IonicPage, NavController, NavParams, Platform, ModalController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Platform, ModalController,Slides } from 'ionic-angular';
 import { DepartureModule } from '../../providers/departure/departure';
 import { Departure } from '../../providers/departure/class/departure';
 import { AppController } from '../../providers/app-controller';
@@ -15,19 +15,26 @@ import { StatusBar } from '@ionic-native/status-bar';
 export class DepartureCalendarPage {
   @ViewChild('calendarContent') calendar_content: ElementRef;
   @ViewChild('box') box: ElementRef;
+  @ViewChild(Slides) slides: Slides;
   public departureDays: Array<Departure> = [];
   public dayOfWeek = ["CN", "T2", "T3", "T4", "T5", "T6", "T7"];
+  calendar1 : Calendar;
   calendar: Calendar;
+  calendar2 : Calendar;
   // day_in_month = new Array<Calendar>();
   public selectedMonth = 7;//Index at 0;
   public selectedDate: Departure;
   public currentDate: Departure;
   //dữ liệu về ngày xuất hành
   departureData: any;
+  departureData1: any;
+  departureData2: any;
   showDatePicker = false;
   col_height = "40px";
   grid_height= "256px";
   isPlatform;
+  isLoading: boolean = true;
+  isTouching: boolean = false;
   constructor(
     private navParams: NavParams,
     private navCtrl: NavController,
@@ -42,6 +49,8 @@ export class DepartureCalendarPage {
     this.currentDate = new Departure(new Date());
     this.selectedDate = new Departure(new Date());
     this.calendar = new Calendar(this.currentDate.date.getMonth(), this.currentDate.date.getFullYear());
+    this.getCalendar1();
+    this.getCalendar2();
     this.departureDays = this.calendar.days;
     this.col_height = Math.floor(((screen.width - 32) / 7)) + "px";
     this.grid_height = Math.floor(((screen.width - 32)/ 7)*6) + 16 + "px";
@@ -62,6 +71,7 @@ export class DepartureCalendarPage {
   ionViewDidEnter() {
     this.statusBar.backgroundColorByHexString("#34a1ca");
     this.mAppModule.showAdvertisement();
+    this.isLoading = false;
   }
   
   //Load data
@@ -71,7 +81,31 @@ export class DepartureCalendarPage {
     this.mAppModule.updateDepartureInfo(this.departureDays);
 
   }
-
+  next(){
+      if(this.slides.getActiveIndex()==2){
+        this.onInputChange(this.calendar2.month,this.calendar2.year)
+        this.slides.slideTo(1,0);
+        this.getData();
+      }
+  }
+  prev(){
+      if(this.slides.getActiveIndex()==0){
+        this.onInputChange(this.calendar1.month,this.calendar1.year)
+        this.slides.slideTo(1,0);
+        this.getData()
+        // this.getCalendar1();
+        // this.getCalendar2();
+      }
+  }
+  getData(){
+    this.getCalendar1();
+    this.getCalendar2();
+  }
+  slideToMidder(){
+    // this.slides.slideTo(1,0,false);
+    // this.getCalendar1();
+    // this.getCalendar2();
+  }
   getDate(date: Date) {
     return date.getDate();
   }
@@ -80,10 +114,41 @@ export class DepartureCalendarPage {
     return new Date(year, month, 0).getDate();
   }
 
-  swipe(event) {
-    let direction = event.offsetDirection; //2 = swipe right to left; 4 = swipe left to right;
-    // console.log(direction, this.calendar.month, this.calendar.year);
-    // console.log(this.calendar.days);
+  getCalendar1(){
+    let month = this.calendar.month - 1;
+    let year = this.calendar.year;
+    if (month == -1) {
+      month = 11;
+      year--;
+    }
+    if(this.isLoading){
+      this.calendar1 = new Calendar(month,year);
+      this.departureData1 = this.calendar1.days;
+      this.mAppModule.updateDepartureInfo(this.departureData1);
+      return;
+    }
+    this.calendar1.setTime(month,year);
+    this.departureData1 = this.calendar1.days;
+    this.mAppModule.updateDepartureInfo(this.departureData1);
+  }
+  getCalendar2(){
+    let month = this.calendar.month + 1;
+    let year = this.calendar.year;
+    if (month == 12) {
+      month = 0;
+      year++;
+    }
+    if(this.isLoading){
+      this.calendar2 = new Calendar(month,year);
+      this.departureData2 = this.calendar2.days;
+      this.mAppModule.updateDepartureInfo(this.departureData2);
+      return;
+    }
+    this.calendar2.setTime(month,year);
+    this.departureData2 = this.calendar2.days;
+    this.mAppModule.updateDepartureInfo(this.departureData2);
+  }
+  swipe(direction: number) {
     if (direction == 2) {
       let month = this.calendar.month + 1;
       let year = this.calendar.year;
@@ -91,12 +156,6 @@ export class DepartureCalendarPage {
         month = 0;
         year++;
       }
-
-      this.rd.addClass(this.calendar_content.nativeElement, 'slideInRight');
-      setTimeout(() => {
-        this.rd.removeClass(this.calendar_content.nativeElement, 'slideInRight');
-      }, 1000);
-      // this.rd.removeClass(this.calendar_content.nativeElement,'fadeInRight');
       this.onInputChange(month, year);
     }
     if (direction == 4) {
@@ -106,11 +165,6 @@ export class DepartureCalendarPage {
         month = 11;
         year--;
       }
-      this.rd.addClass(this.calendar_content.nativeElement, 'slideInLeft');
-      setTimeout(() => {
-        this.rd.removeClass(this.calendar_content.nativeElement, 'slideInLeft');
-      }, 1000);
-      // 
 
       this.onInputChange(month, year);
     }
@@ -130,6 +184,8 @@ export class DepartureCalendarPage {
           let month = this.selectedDate.date.getMonth();
           let year = this.selectedDate.date.getFullYear();
           this.onInputChange(month, year);
+          this.getCalendar1();
+          this.getCalendar2();
         }, 100);
       }
     })
@@ -150,11 +206,6 @@ export class DepartureCalendarPage {
 
   changeMonth(month, event) {
     this.onInputChange(month - 1, this.calendar.year);
-    // event.target.classList.add('bordered');
-    // setTimeout(() => {
-    //   this.showDatePicker = false;
-    //   event.target.classList.remove('bordered');
-    // }, 500);
   }
 
   onClickHome() {

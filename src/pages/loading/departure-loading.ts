@@ -44,7 +44,6 @@ export class DepartureLoadingPage {
   }
 
   onLoaded() {
-
     this.navCtrl.setRoot(DepartureTabsPage, {}, {
       animate: true,
       direction: "forward",

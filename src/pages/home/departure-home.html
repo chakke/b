@@ -114,10 +114,7 @@
         </div>
     </div>
 </ion-content>
-<div class="a1-container-top a1-z-10">
-    <div *ngIf="mAppModule.mIsOnIOSDevice" style="height:20px;"></div>
-    <div *ngIf="!mAppModule.mIsOnIOSDevice" style="height:4px;"></div>
-
+<ion-header>
     <div class="height-56 a3-container a3-justify-between a3-items-center">
         <div margin-left class="a3-container a-header-button" (click)="pickSolarDate()">
             <img src="assets/departure/btn_calendar.png">
@@ -133,4 +130,4 @@
             <img src="assets/departure/btn_notification.png">
         </div>
     </div>
-</div>
+</ion-header>

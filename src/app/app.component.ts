@@ -10,7 +10,7 @@ import { DepartureModule } from '../providers/departure/departure';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = DepartureTabsPage;
+  rootPage:any = "DepartureLoadingPage";
 
   constructor(
     private mAppModule: DepartureModule,

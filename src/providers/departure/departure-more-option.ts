@@ -5,7 +5,8 @@ export const MOREOPTION = [
     },
     {
         icon: "assets/departure/icon/icon_2.png" ,
-        name_option: "Giải mộng"
+        name_option: "Giải mộng",
+        component: "GiaiMongPage"
     },
     {
         icon: "assets/departure/icon/icon_3.png"  ,

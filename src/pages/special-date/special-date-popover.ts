@@ -4,7 +4,7 @@ import { NavParams,ViewController } from 'ionic-angular';
 @Component({
     template:`
         <div text-left *ngIf= "!isLoading" padding style="background: rgba(black,0.2)">
-            <p style="line-height: 1.2em">{{description}}</p>
+            <p style="line-height: 1.5em">{{description}}</p>
             <div style="width:100%" text-right><span style="color:#488aff" (click)="closeView()">OK</span></div>
         </div>
     `

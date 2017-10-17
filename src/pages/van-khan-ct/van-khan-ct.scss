@@ -1,15 +1,16 @@
 page-van-khan-ct {
-    .scroll-content {
-        top: 61px !important;
+    $background: linear-gradient(to bottom, #14e09c, #274c7c);
+    .header-md::after {
+        height: 0;
     }
     .content-md {
-        background: linear-gradient(to right, #5A8166, #145355);
+        background: $background;
     }
     .content-ios {
-        background: linear-gradient(to right, #5A8166, #145355);
+        background: $background;
     }
     .background-header {
-        background: #145355;
+        background: rgba(black, 0.4);
     }
     .header-button {
         height: 25px;
@@ -21,6 +22,7 @@ page-van-khan-ct {
         background: rgba(white, 0.2);
         ion-icon {
             color: #fff;
+            line-height: unset;
         }
     }
     .title {

@@ -1,0 +1,51 @@
+<ion-header class="background" ion-fixed>
+    <div class="height-56 a3-container a3-items-center a1-relative">
+        <div margin-left class="back-button a3-container-center" (click)="closeView()">
+            <ion-icon name="arrow-back"></ion-icon>
+        </div>
+        <div class="title-header a1-absolute">
+            <span>Giải Mộng</span>
+        </div>
+    </div>
+</ion-header>
+<ion-content>
+    <div style="height: 50px"></div>
+    <div class="animated a1-block" #mongName style="animation-duration: 500ms;">
+        <div margin-bottom class="a3-container a3-justify-between ">
+            <div class="title a3-container-center " style="margin-left:5%;"><span>Chữ cái</span></div>
+            <div class="title a3-container-center " style="margin-right:5%;"><span>Mộng thấy</span></div>
+        </div>
+        <div class="a3-container a3-justify-between a1-relative ">
+            <!-- <div class="top"></div> -->
+            <div class="row-background" style="left:5%;"></div>
+            <div class="row-background" style="right:5%;"></div>
+            <div class="scroll-container a1-relative" id="scroll1">
+                <div class="item-scroll"></div>
+                <div class="item-scroll"></div>
+                <div class="item-scroll"></div>
+                <div *ngFor="let letter of letters" class="item-scroll"><span>{{letter.letter}}</span></div>
+                <div class="item-scroll"></div>
+                <div class="item-scroll"></div>
+                <div class="item-scroll"></div>
+            </div>
+            <div class="scroll-container a1-relative" id="scroll2">
+                <div class="item-scroll"></div>
+                <div class="item-scroll"></div>
+                <div class="item-scroll"></div>
+                <div *ngFor="let item of data" class="item-scroll"><span>{{item.mong_name}}</span></div>
+                <div class="item-scroll"></div>
+                <div class="item-scroll"></div>
+                <div class="item-scroll"></div>
+            </div>
+            <!-- <div class="bottom"></div> -->
+        </div>
+        <div margin-top class="a3-container-center a1-relative" (click)="viewDetail()"><span text-center class="button-detail  background">Xem chi tiết</span></div>
+    </div>
+</ion-content>
+<div *ngIf="isClickView" margin-top class="mong-content animated fadeInLeft" #mongContent>
+    <div class="a1-relative mong-content-container">
+        <div class="mong-content-header height-56 a3-container a3-items-center"><span>Điềm : {{data[selectedIndex].mong_name}}</span></div>
+        <p style="white-space: pre-wrap; line-height: 1.5em">{{data[selectedIndex].mong_content}}</p>
+    </div>
+
+</div>

@@ -50,6 +50,10 @@ export class DepartureLoadData {
         return this.http.get("./assets/departure/VanKhan.json")
         .map((res: any) => res.json());
     }
+    getGiaiMongDataFromJSON(){
+        return this.http.get("./assets/departure/tbl_giaimong.json")
+        .map((res: any) => res.json());
+    }
     getTypeOfDay(lunarMonth: any, data: any) {
         let type: any;
         if (lunarMonth == 1 || lunarMonth == 4 || lunarMonth == 7 || lunarMonth == 10) {

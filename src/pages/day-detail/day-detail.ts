@@ -39,6 +39,7 @@ export class DayDetailPage {
   sao_tot = [];
   sao_xau = [];
   special_name: any;
+  special_info: any;
   day_numbers_of_month_in_normal_year: Array<number> = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
   day_numbers_of_month_in_leap_year: Array<number> = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
@@ -59,7 +60,7 @@ export class DayDetailPage {
 
   }
   ionViewDidEnter() {
-    this.statusBar.backgroundColorByHexString("#1f302d");
+    if(!this.mAppModule.mIsOnIOSDevice)this.statusBar.backgroundColorByHexString("#0c855e");
     this.mAppModule.showAdvertisement();
   }
   loadData() {
@@ -84,6 +85,7 @@ export class DayDetailPage {
     this.dd = this.navParams.get('dd');
     this.mm = this.navParams.get('mm');
     this.yy = this.navParams.get('yy');
+    if(this.navParams.get('special_info'))this.special_info = this.navParams.get('special_info');
     this.day_of_week = Utils.getDayOfWeek(this.dd, this.mm, this.yy);
     this.loadLunarDate();
     this.getSexagesimal();

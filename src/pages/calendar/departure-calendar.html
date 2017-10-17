@@ -1,8 +1,4 @@
-<div class="a1-container-top a1-z-10 a-header-background">
-    <!-- <div style="height: 20px"></div> -->
-    <div *ngIf="mAppModule.mIsOnIOSDevice" style="height:20px;"></div>
-    <div *ngIf="!mAppModule.mIsOnIOSDevice" style="height:4px;"></div>
-
+<ion-header class="a-header-background">
     <div class="height-56 a3-container a3-justify-between a3-items-center">
         <div margin-left class="a3-container a-header-button" (click)="pickSolarDate()">
             <img src="assets/departure/btn_calendar.png">
@@ -22,28 +18,59 @@
     <ion-row class="calendar-th">
         <ion-col *ngFor="let day of dayOfWeek"><span nowrap>{{day}}</span></ion-col>
     </ion-row>
-</div>
+</ion-header>
 <ion-content no-bounce>
     <div class="dp-content">
-        <div *ngIf="mAppModule.mIsOnIOSDevice" style="height: 75px;"></div>
-        <div *ngIf="!mAppModule.mIsOnIOSDevice" style="height: 60px"></div>
-        <div style="height: 30px"></div>
-        <ion-grid class="calendar-block" (swipe)="swipe($event)">
-            <ion-row #calendarContent margin-top class="calendar-day animated">
-                <ion-col [style.height]="col_height" class="a3-container-center" (tap)="selectDeparture(departure)" *ngFor="let departure of departureDays; let i = index">
-                    <div *ngIf="departure" class="day-box a1-relative" text-center [class.today]="departure && departure.dateString == currentDate.dateString" [class.selected]="departure &&  departure.dateString == selectedDate.dateString">
-                        <div class="solar-date " [class.color-sunday]="i==0 || i%7==0" [class.color-saturday]="i%7==6" [class.color-default]="i%7==1 || i%7==2 || i%7==3 || i%7==4 || i%7==5">{{getDate(departure.date)}}</div>
-                        <div class="a3-container-center a1-relative" nowrap>
-                            <span class="status-day status-{{departure.zodiacStatus}}"></span>
-                            <span class="lunar-date" *ngIf="departure.lunarDate != 1">{{departure.lunarDate}}  </span>
-                            <span class="lunar-date" *ngIf="departure.lunarDate == 1">{{departure.lunarDate+'/'+departure.lunarMonth}}</span>
-                        </div>
-                    </div>
-                    <!-- <div *ngIf="departure &&  departure.dateString == selectedDate.dateString && departure.dateString != currentDate.dateString" class="selected"></div> -->
-                </ion-col>
-            </ion-row>
-        </ion-grid>
-
+        <ion-slides initialSlide="1" speed="200" (ionSlideNextEnd)="next()" (ionSlidePrevEnd)="prev()">
+            <ion-slide>
+                <ion-grid class="calendar-block">
+                    <ion-row #calendarContent class="calendar-day animated">
+                        <ion-col [style.height]="col_height" class="a3-container-center" (click)="selectDeparture(departure)" *ngFor="let departure of departureData1; let i = index">
+                            <div *ngIf="departure" class="day-box a1-relative" text-center [class.today]="departure && departure.dateString == currentDate.dateString" [class.selected]="departure &&  departure.dateString == selectedDate.dateString">
+                                <div class="solar-date " [class.color-sunday]="i==0 || i%7==0" [class.color-saturday]="i%7==6" [class.color-default]="i%7==1 || i%7==2 || i%7==3 || i%7==4 || i%7==5">{{getDate(departure.date)}}</div>
+                                <div class="a3-container-center a1-relative" nowrap>
+                                    <span class="status-day status-{{departure.zodiacStatus}}"></span>
+                                    <span class="lunar-date" *ngIf="departure.lunarDate != 1">{{departure.lunarDate}}  </span>
+                                    <span class="lunar-date" *ngIf="departure.lunarDate == 1">{{departure.lunarDate+'/'+departure.lunarMonth}}</span>
+                                </div>
+                            </div>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </ion-slide>
+            <ion-slide>
+                <ion-grid class="calendar-block">
+                    <ion-row #calendarContent class="calendar-day animated">
+                        <ion-col [style.height]="col_height" class="a3-container-center" (click)="selectDeparture(departure)" *ngFor="let departure of departureDays; let i = index">
+                            <div *ngIf="departure" class="day-box a1-relative" text-center [class.today]="departure && departure.dateString == currentDate.dateString" [class.selected]="departure &&  departure.dateString == selectedDate.dateString">
+                                <div class="solar-date " [class.color-sunday]="i==0 || i%7==0" [class.color-saturday]="i%7==6" [class.color-default]="i%7==1 || i%7==2 || i%7==3 || i%7==4 || i%7==5">{{getDate(departure.date)}}</div>
+                                <div class="a3-container-center a1-relative" nowrap>
+                                    <span class="status-day status-{{departure.zodiacStatus}}"></span>
+                                    <span class="lunar-date" *ngIf="departure.lunarDate != 1">{{departure.lunarDate}}  </span>
+                                    <span class="lunar-date" *ngIf="departure.lunarDate == 1">{{departure.lunarDate+'/'+departure.lunarMonth}}</span>
+                                </div>
+                            </div>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </ion-slide>
+            <ion-slide>
+                <ion-grid class="calendar-block">
+                    <ion-row #calendarContent class="calendar-day animated">
+                        <ion-col [style.height]="col_height" class="a3-container-center" (click)="selectDeparture(departure)" *ngFor="let departure of departureData2; let i = index">
+                            <div *ngIf="departure" class="day-box a1-relative" text-center [class.today]="departure && departure.dateString == currentDate.dateString" [class.selected]="departure &&  departure.dateString == selectedDate.dateString">
+                                <div class="solar-date " [class.color-sunday]="i==0 || i%7==0" [class.color-saturday]="i%7==6" [class.color-default]="i%7==1 || i%7==2 || i%7==3 || i%7==4 || i%7==5">{{getDate(departure.date)}}</div>
+                                <div class="a3-container-center a1-relative" nowrap>
+                                    <span class="status-day status-{{departure.zodiacStatus}}"></span>
+                                    <span class="lunar-date" *ngIf="departure.lunarDate != 1">{{departure.lunarDate}}  </span>
+                                    <span class="lunar-date" *ngIf="departure.lunarDate == 1">{{departure.lunarDate+'/'+departure.lunarMonth}}</span>
+                                </div>
+                            </div>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </ion-slide>
+        </ion-slides>
         <div class="zodiac-block">
             <div class="positive" nowrap>
                 <span class="status status-zodiac status-1"></span>
@@ -61,26 +88,3 @@
     </div>
 
 </ion-content>
-
-
-<!-- <div id="solar-date" class="content a3-container-center">
-    <div class="bg-active"></div>
-    <div class="change-date-col solar-col" index="0">
-        <div class="item"></div>
-        <div class="item " *ngFor="let date of datas[0]" [class.day-active]="!load_filter && date== day_filter[0].day"><span>{{date}}</span>
-        </div>
-        <div class="item"></div>
-    </div>
-    <div class="border"></div>
-    <div class="change-date-col solar-col" index="1">
-        <div class="item"></div>
-        <div class="item" *ngFor="let month of datas[1]" [class.month-active]="!load_filter && month==day_filter[0].month"><span>{{month}}</span></div>
-        <div class="item"></div>
-    </div>
-    <div class="border"></div>
-    <div class="change-date-col solar-col" index="2">
-        <div class="item"></div>
-        <div class="item" *ngFor="let year of datas[2]" [class.year-active]="!load_filter && year==day_filter[0].year"><span>{{year}}</span></div>
-        <div class="item"></div>
-    </div>
-</div> -->

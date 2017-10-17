@@ -1,8 +1,4 @@
-<div class="a-header-background a1-container-top a1-z-10" style="padding-bottom:4px">
-    <!-- <div style="height: 20px"></div> -->
-    <div *ngIf="mAppModule.mIsOnIOSDevice" style="height:20px;"></div>
-    <div *ngIf="!mAppModule.mIsOnIOSDevice" style="height:4px;"></div>
-
+<ion-header ion-fixed class="a-header-background">
     <div class="height-56 a1-relative">
         <div class="a-header-title  a-center-center">
             Mở rộng
@@ -11,12 +7,8 @@
             <img src="assets/departure/icon/btn_setting.png">
         </div>
     </div>
-</div>
+</ion-header>
 <ion-content>
-    <div *ngIf="mAppModule.mIsOnIOSDevice" style="height:80px;"></div>
-    <div *ngIf="!mAppModule.mIsOnIOSDevice" style="height:64px;"></div>
-
-    <!-- <div style="height:20px"></div> -->
     <div padding-left padding-right class="body-content a1-relative">
         <div text-left margin-top margin-bottom>Đăng nhập với tài khoản</div>
         <div class="a3-container">

@@ -94,9 +94,7 @@ export class DepartureHomePage {
   }
   mHasEnter: boolean = false;
   ionViewDidEnter() {
-    if (this.fg) {
-      this.statusBar.backgroundColorByHexString(this.fg);
-    }
+    this.changeBackGroundStatusBar();
     if (!this.mHasEnter) {
       this.mHasEnter = true;
       this.mMenuController.enable(false, "lottery");
@@ -348,13 +346,16 @@ export class DepartureHomePage {
         let qoute_fg = <HTMLElement>document.getElementById("quote-fg");
         qoute_fg.style.color = link.fg;
         this.fg = link.fg;
-        this.statusBar.backgroundColorByHexString(link.fg);
         departure_background.style.backgroundImage = 'url(' + link.bg + ')';
-
+        this.changeBackGroundStatusBar();
       }
     }
   }
-
+  changeBackGroundStatusBar(){
+    if(this.fg && !this.mAppModule.mIsOnIOSDevice){
+      this.statusBar.backgroundColorByHexString(this.fg);
+    }
+  }
   //chọn ngày bất kỳ
   pickSolarDate() {
     let modal = this.modalCtrl.create("PickdatePage");

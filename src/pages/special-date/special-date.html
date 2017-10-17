@@ -1,4 +1,4 @@
-<div class="a1-container-top a1-z-10">
+<ion-header>
     <div class="a3-container a3-justify-between a3-items-center height-56">
         <div margin-left class="header-button back a3-container-center" (click)="closeView()">
             <ion-icon name="arrow-back"></ion-icon>
@@ -8,7 +8,7 @@
         </div>
         <div class="header-button"></div>
     </div>
-    <div style="height: 30px" class="a1-relative a3-container segment-container">
+    <div class="a1-relative a3-container segment-container">
         <div class="dl-al" text-center>
             <div><span class="dl"> DL</span></div>
             <div><span class="al">AL</span></div>
@@ -22,9 +22,9 @@
             </ion-segment-button>
         </ion-segment>
     </div>
-</div>
+</ion-header>
 <ion-content>
-    <div [ngSwitch]="calendar" class="app-content">
+    <div margin-top [ngSwitch]="calendar" class="app-content">
         <div *ngSwitchCase="'solar'" class="a1-relative">
             <div [style.height]="item_height" class="item-div a1-relative a3-container a3-justify-between a3-items-center" *ngFor="let day of cavalDL_data">
                 <div class="date item-start">
