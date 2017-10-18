@@ -19,6 +19,7 @@
         <ion-col *ngFor="let day of dayOfWeek"><span nowrap>{{day}}</span></ion-col>
     </ion-row>
 </ion-header>
+
 <ion-content no-bounce>
     <div class="dp-content">
         <ion-slides initialSlide="1" speed="200" (ionSlideNextEnd)="next()" (ionSlidePrevEnd)="prev()">
