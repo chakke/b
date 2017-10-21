@@ -33,7 +33,7 @@ export class VanKhanCtPage {
   }
 
   ionViewDidEnter() {
-    if(!this.mAppModule.mIsOnIOSDevice)this.statusBar.backgroundColorByHexString("#0c855e");
+    if(!this.mAppModule.mIsOnIOSDevice)this.statusBar.backgroundColorByHexString("#274c7c");
     this.mAppModule.showAdvertisement();
   }
   closeView(){

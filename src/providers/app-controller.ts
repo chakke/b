@@ -63,6 +63,10 @@ export class AppController {
     this.mLoadingController = loadingController;
   }
 
+  public setToastController(toastController: ToastController) {
+    this.mToastController = toastController;
+  }
+
   public doExitApps() {
     if (this.mPlatform) {
       this.mPlatform.exitApp();

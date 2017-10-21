@@ -1,0 +1,55 @@
+page-number-rich-detail {
+    $background: linear-gradient(to bottom, #14e09c, #274c7c);
+    ion-content {
+        background: $background;
+    }
+    .height-56 {
+        height: 56px;
+    }
+    .header-button {
+        height: 28px;
+        width: 28px;
+        border-radius: 50%;
+    }
+    .back {
+        border: 1px solid white;
+        background: rgba(white, 0.4);
+        ion-icon {
+            line-height: unset;
+            color: white
+        }
+    }
+    .back:active {
+        background: rgba(black, 0.6);
+    }
+    .header-title {
+        text-transform: uppercase;
+        color: white;
+        font-size: larger;
+    }
+    // .page-container {
+    .number-container {
+        margin: auto;
+        width: calc(100% - 20px);
+        height: 100%;
+        border-radius: 5px;
+        overflow: scroll;
+        background: rgba(black, 0.2);
+        color: white;
+        padding: 16px;
+    }
+    .number-title {
+        padding: 10px 0 10px 0;
+        span {
+            font-weight: bold;
+            font-size: larger;
+        }
+    }
+    .number-content {
+        p {
+            color: white;
+            text-align: justify;
+        }
+    }
+    // }
+}

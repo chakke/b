@@ -40,20 +40,9 @@ export class GiaiMongPage {
     public navCtrl: NavController, public navParams: NavParams) {
   }
   closeView() {
-    if (this.isClickView) {
-      this.rd.removeClass(this.mongName.nativeElement, "fadeOutRight");
-      this.rd.addClass(this.mongName.nativeElement, "fadeInLeft");
-      this.rd.addClass(this.mongContent.nativeElement, "fadeOutRight");
-      
-      setTimeout(() => {
-        this.rd.removeClass(this.mongContent.nativeElement, "fadeOutRight");
-        this.isClickView = false;
-      }, 300);
-      return;
-    }
     this.navCtrl.pop();
   }
-  ngOnInit() {
+  loadData() {
     if (!this.data) {
       this.mAppModule.getGiaiMongDataJSON().then(
         data => {
@@ -71,7 +60,8 @@ export class GiaiMongPage {
     }
   }
   ionViewDidEnter() {
-    if (!this.mAppModule.mIsOnIOSDevice) this.statusBar.backgroundColorByHexString("#0c855e");
+    this.loadData();
+    if (!this.mAppModule.mIsOnIOSDevice) this.statusBar.backgroundColorByHexString("#274c7c");
     this.addEventListener();
     // console.log('ionViewDidLoad GiaiMongPage');
   }
@@ -191,10 +181,9 @@ export class GiaiMongPage {
   isClickView: boolean = false;
   viewDetail() {
     let element = document.getElementById("scroll2");
-    this.rd.addClass(this.mongName.nativeElement, "fadeOutRight");
     let index = element.scrollTop / this.row_height;
     this.selectedIndex = index;
-    this.isClickView = true;
+    this.navCtrl.push("GiaiMongDetailPage",{data:this.data[this.selectedIndex]});
     // this.rd.addClass(this.mongContent.nativeElement,"fadeInUp");
   }
 }

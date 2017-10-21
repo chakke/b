@@ -1,0 +1,29 @@
+<ion-header>
+    <div class="a3-container height-56 a3-items-center a3-justify-between ">
+        <div margin-left class="header-button back a3-container-center" (click)="closeView()">
+            <ion-icon name="arrow-back"></ion-icon>
+        </div>
+        <div class="title">
+            <span>Chọn Ngày Tốt</span>
+        </div>
+        <div margin-right class="header-button"></div>
+    </div>
+</ion-header>
+
+
+<ion-content>
+    <div *ngIf="!isLoading" margin-top class="selectDate-detail">
+        <div class="a1-relative selectDateDetail-container">
+            <div class="name-work"><span>{{data.name}}</span></div>
+            <div class="content-work">
+                <div class="content-title"><span>Nội dung: </span></div>
+                <p class="p-left-5">{{data.content}}</p>
+                <div class="content-title"><span>Có trong các ngày sau:</span></div>
+                <div class="p-left-5">
+                    <span>{{date}}</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</ion-content>

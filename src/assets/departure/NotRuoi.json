@@ -1,0 +1,382 @@
+[
+    {
+        "content": "Khắc cha mẹ. Thường phải xa cha hoặc mẹ từ thuở nhỏ. Lớn lên tự lập, không có số nhờ cha mẹ.",
+        "idVitri": "1"
+    },
+    {
+        "content": "Khắc cha mẹ. Thường phải xa cha hoặc mẹ từ thuở nhỏ. Lớn lên tự lập, không có số nhờ cha mẹ.",
+        "idVitri": "2"
+    },
+    {
+        "content": "Khắc cha mẹ, Thường mất cha mẹ lúc còn trẻ tuổi.",
+        "idVitri": "3"
+    },
+    {
+        "content": "Người có cuộc sông bình đạm, không bon chen.",
+        "idVitri": "4"
+    },
+    {
+        "content": "Người có đạo đức.",
+        "idVitri": "5"
+    },
+    {
+        "content": "Sống rất thọ, cuộc đời sung túc nếu có cả nốt ruồi số 2.",
+        "idVitri": "6"
+    },
+    {
+        "content": "Số may mắn, làm việc thường lúc nào cũng thành công.",
+        "idVitri": "7"
+    },
+    {
+        "content": "Nốt ruồi đại phú, có nhiều tiền bạc, tài của.",
+        "idVitri": "8"
+    },
+    {
+        "content": "Nốt ruồi quý, thường có danh vọng, địa vị cao trong xã hội.",
+        "idVitri": "9"
+    },
+    {
+        "content": "Người biết xuôi theo thời, thường được người có thế lực đỡ đầu.",
+        "idVitri": "10"
+    },
+    {
+        "content": "Nốt ruồi thị phi, Dễ bị liên quan trong các vụ kiện tụng, thưa gửi, tiếng đồn xấu...",
+        "idVitri": "11"
+    },
+    {
+        "content": "Nốt ruồi đại kết, Cuộc đời thường gặp nhiều may mắn.",
+        "idVitri": "12"
+    },
+    {
+        "content": "Khắc cha. Thường cha chết trước mẹ.",
+        "idVitri": "13"
+    },
+    {
+        "content": "Nốt ruồi ly hương. Phải rời xa quê quán lập nghiệp mới thành công.",
+        "idVitri": "14"
+    },
+    {
+        "content": "Nốt ruồi tha hương, thường sống xa nhà, khi chết cũng ở xứ khác.",
+        "idVitri": "15"
+    },
+    {
+        "content": "Nốt ruồi Thiên - Hình. Dễ bị thương tật, hay xảy ra tai nạn.",
+        "idVitri": "16"
+    },
+    {
+        "content": "Thường có nhiều tiền bạc. Làm chơi ăn thiệt.",
+        "idVitri": "17"
+    },
+    {
+        "content": "Nốt ruồi cô quả. Thường sống độc thân, có gia đình cũng không lâu bền hoặc không hạnh phúc.",
+        "idVitri": "18"
+    },
+    {
+        "content": "Nốt ruồi kém may mắn. Thường không thành công trong cuộc đời. Khi chết xa quê hương.",
+        "idVitri": "19"
+    },
+    {
+        "content": "Thường làm về các nghề sản xuất như thủ công kỹ nghệ, hoặc chăn nuôi, trồng trọt. Không có số làm thương mại.",
+        "idVitri": "20"
+    },
+    {
+        "content": "Nốt ruồi triệu phú. Giàu nhỏ nhờ làm việc nhiều và biết cần kiệm.",
+        "idVitri": "21"
+    },
+    {
+        "content": "Nốt ruồi công danh. Thi cử dễ đậu cao, thường làm việc các nghề chuyên môn, cần bằng cấp.",
+        "idVitri": "22"
+    },
+    {
+        "content": "Nốt ruồi hoạnh tài. Thường chạy chọt áp phe, cờ bạc, hay trúng số.",
+        "idVitri": "23"
+    },
+    {
+        "content": "Nốt ruồi phú quí. Tốt cả về công danh lẫn tài lực.",
+        "idVitri": "24"
+    },
+    {
+        "content": "Thường thân cận với những người quyền quý hay giàu có.",
+        "idVitri": "25"
+    },
+    {
+        "content": "Nốt ruồi đa nghệ. Nghề nào làm cũng dễ thành công.",
+        "idVitri": "26"
+    },
+    {
+        "content": "Nốt ruồi xui xẻo.",
+        "idVitri": "27"
+    },
+    {
+        "content": "Làm ăn dễ thất bại, không nên mưu sự lớn.",
+        "idVitri": "28"
+    },
+    {
+        "content": "Nốt ruồi thiên lộc. Làm chơi ăn thiệt, thường có của trên trời rơi xuống.",
+        "idVitri": "29"
+    },
+    {
+        "content": "Nốt ruồi khôn ngoan, biết lợi dụng thời cơ để kiếm lời.",
+        "idVitri": "30"
+    },
+    {
+        "content": "Nốt ruồi phá gia. Làm ăn hay gặp trở ngại đến mức phá sản. Cẩn thận về cờ bạc.",
+        "idVitri": "31"
+    },
+    {
+        "content": "Nốt ruồi tai nạn, dễ bệnh hoạn, tai nạn.",
+        "idVitri": "32"
+    },
+    {
+        "content": "Dễ bị tai nạn, thương tích.",
+        "idVitri": "33"
+    },
+    {
+        "content": "Tiền kiết hậu hung. Làm ăn trước tốt sau xấu. Chớ nên làm những việc có tính ngắn hạn như áp phe, mánh mun, sale...",
+        "idVitri": "34"
+    },
+    {
+        "content": "May mắn, cuộc đời ít rủi ro, thường được nhiều người giúp đỡ.",
+        "idVitri": "35"
+    },
+    {
+        "content": "Nốt ruồi phú quý, làm giàu nhanh chóng.",
+        "idVitri": "36"
+    },
+    {
+        "content": "Tính người hung dữ, hay kiếm chuyện, hay gây rắc rối.",
+        "idVitri": "37"
+    },
+    {
+        "content": "Dễ gặp tai nạn vì bất cẩn.",
+        "idVitri": "38"
+    },
+    {
+        "content": "Tốt về mọi mặt từ sự nghiệp đến tình cảm.",
+        "idVitri": "39"
+    },
+    {
+        "content": "Tiền hung hậu kiết. Công việc thường có trở ngại lúc đầu, nhưng càng về sau càng tốt, giàu có.",
+        "idVitri": "40"
+    },
+    {
+        "content": "Hay gặp rủi ro, thất bại.",
+        "idVitri": "41"
+    },
+    {
+        "content": "Hay bị thương tích, thân thể thường có thương tật, tì vết.",
+        "idVitri": "42"
+    },
+    {
+        "content": "Nốt ruồi xui xẻo.",
+        "idVitri": "43"
+    },
+    {
+        "content": "Nốt ruồi lãng mạn, nam cũng như nữ, thường có nhiều quan hệ nhân tình.",
+        "idVitri": "44"
+    },
+    {
+        "content": "Phát đạt, làm ăn dễ thành công.",
+        "idVitri": "45"
+    },
+    {
+        "content": "Nốt ruồi xui xẻo",
+        "idVitri": "46"
+    },
+    {
+        "content": "Nốt ruồi ly hương. Làm ăn có lúc phát rất mạnh, nhưng cuộc đời dễ bị phá sản.",
+        "idVitri": "47"
+    },
+    {
+        "content": "Hay bị tai bay vạ gió, không làm mà chịu.",
+        "idVitri": "48"
+    },
+    {
+        "content": "Nốt ruồi phân ly, vợ chồng, nhân tình dễ xa cách.",
+        "idVitri": "49"
+    },
+    {
+        "content": "Khắc con cái, sinh nhiều nuôi ít.",
+        "idVitri": "50"
+    },
+    {
+        "content": "Sát thê, vợ chồng dễ phân ly.",
+        "idVitri": "51"
+    },
+    {
+        "content": "Khắc cha, xa cha sẽ khá hơn.",
+        "idVitri": "52"
+    },
+    {
+        "content": "Hay gặp tai họa, rủi ro.",
+        "idVitri": "53"
+    },
+    {
+        "content": "Khắc mẹ, số không sống gần mẹ. Vợ chồng cũng dễ phân ly.",
+        "idVitri": "54"
+    },
+    {
+        "content": "Kém may mắn, cuộc đời hay gặp những chuyện hung dữ, kẻ ác.",
+        "idVitri": "55"
+    },
+    {
+        "content": "Khắc con cái. Thường không sống gần con, sinh nở khó khăn.",
+        "idVitri": "56"
+    },
+    {
+        "content": "Sát thê, vợ chồng dễ phân ly.",
+        "idVitri": "57"
+    },
+    {
+        "content": "Tính tham lam, có tật ăn cắp vặt.",
+        "idVitri": "58"
+    },
+    {
+        "content": "Nốt ruồi lãng mạn, nam cũng như nữ. Có nhiều quan hệ nhân tình bất chính.",
+        "idVitri": "59"
+    },
+    {
+        "content": "Thông minh và khôn ngoan, học ít hiểu nhiều.",
+        "idVitri": "60"
+    },
+    {
+        "content": "Số dễ bị tai nạn.",
+        "idVitri": "61"
+    },
+    {
+        "content": "Thông minh, sống rất thọ. Tiền bạc trung bình.",
+        "idVitri": "62"
+    },
+    {
+        "content": "Hay bị tai nạn, trong người hay có thương tật, tì vết.",
+        "idVitri": "63"
+    },
+    {
+        "content": "Nốt ruồi quan tụng. Trong đời hay xảy ra lôi thôi về kiện tụng.",
+        "idVitri": "64"
+    },
+    {
+        "content": "Khắc cha, thường mất cha hoặc sống xa cha từ nhỏ.",
+        "idVitri": "65"
+    },
+    {
+        "content": "Thông minh, học ít hiểu nhiều. Sống rất thọ.",
+        "idVitri": "66"
+    },
+    {
+        "content": "Nốt ruồi cô độc, thường phải ly hương, xa gia đình, vợ con.",
+        "idVitri": "67"
+    },
+    {
+        "content": "Dễ bị tai nạn về nước và lửa.",
+        "idVitri": "68"
+    },
+    {
+        "content": "Nói nhiều, hay bị người ghét vì ăn nói. Nói không cẩn thận và không nghĩ đến cảm giác người khác.",
+        "idVitri": "69"
+    },
+    {
+        "content": "Ngồi lê đôi mách, hay để ý chuyện của người khác.",
+        "idVitri": "70"
+    },
+    {
+        "content": "Tính xấu, thường hà tiện và tham lam.",
+        "idVitri": "71"
+    },
+    {
+        "content": "Con cái, người dưới hay bị hoạn nạn.",
+        "idVitri": "72"
+    },
+    {
+        "content": "Nốt ruồi tuyệt tự, khó có con.",
+        "idVitri": "73"
+    },
+    {
+        "content": "Hay bị tai nạn, trong người hay có thương tật, tì vết.",
+        "idVitri": "74"
+    },
+    {
+        "content": "Dễ bị tai nạn về sông nước.",
+        "idVitri": "75"
+    },
+    {
+        "content": "Tính xấu, tham lam, lòng dạ không ngay thẳng.",
+        "idVitri": "76"
+    },
+    {
+        "content": "Nốt ruồi hoạnh tài. Thường chạy chọt áp phe, cờ bạc, hay trúng số.",
+        "idVitri": "77"
+    },
+    {
+        "content": "Nốt ruồi thị phi. Họa đến từ miệng, thần khẩu hại xác phàm.",
+        "idVitri": "78"
+    },
+    {
+        "content": "May mắn, làm ăn, công việc luôn có người giúp.",
+        "idVitri": "79"
+    },
+    {
+        "content": "Thông minh, nhạy bén, thi cử dễ đỗ cao.",
+        "idVitri": "80"
+    },
+    {
+        "content": "Nốt ruồi Hòa Lộc. Tiền hết lại có, không bị túng thiếu.",
+        "idVitri": "81"
+    },
+    {
+        "content": "Nốt ruồi ngoại trình, đa tình. Nam cũng như nữ, đều dễ ngoại tình.",
+        "idVitri": "82"
+    },
+    {
+        "content": "Nốt ruồi phú. Thường giàu có nhờ làm ăn được nhiều người giúp đỡ.",
+        "idVitri": "83"
+    },
+    {
+        "content": "Nốt ruồi may mắn. Cuộc đời thường may mắn, dễ kiếm tiền.",
+        "idVitri": "84"
+    },
+    {
+        "content": "Dễ bị phá sản vì thiên tai hay chiến tranh.",
+        "idVitri": "85"
+    },
+    {
+        "content": "Nốt ruồi hoạnh phát. Thường có tài lộc, của vô rất nhanh.",
+        "idVitri": "86"
+    },
+    {
+        "content": "Nốt ruồi lãng mạn, nam cũng như nữ đều thích chuyện tình ái ,chăn gối, thường có nhiều quan hệ cùng lúc.",
+        "idVitri": "87"
+    },
+    {
+        "content": "Nốt ruồi trác táng. Dễ sa ngã vào rượu chè, hút sách.",
+        "idVitri": "88"
+    },
+    {
+        "content": "Khôn ngoan, thông minh, tính tình rộng rãi.",
+        "idVitri": "89"
+    },
+    {
+        "content": "Số sung sướng, không giàu nhưng nhàn hạ, hưởng thụ.",
+        "idVitri": "90"
+    },
+    {
+        "content": "Nốt ruồi bình an. Cuộc đời không sợ tai nạn.",
+        "idVitri": "91"
+    },
+    {
+        "content": "Dễ bị người khác cướp giật, sang đoạt tài sản.",
+        "idVitri": "92"
+    },
+    {
+        "content": "Nốt ruồi phong lưu. Thường có đời sống xa hoa, hưởng thụ.",
+        "idVitri": "93"
+    },
+    {
+        "content": "Giàu có và khôn ngoan, hay gặp may mắn về tài lộc.",
+        "idVitri": "94"
+    },
+    {
+        "content": "Thường có danh vọng, địa vị trong xã hội.",
+        "idVitri": "95"
+    }
+]

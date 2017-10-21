@@ -1,0 +1,107 @@
+page-select-date {
+    $background: linear-gradient(to bottom, #14e09c, #274c7c);
+    $item-height: 30px;
+    ion-content {
+        background: $background;
+    }
+    // .header-md::after {
+    //     height: 0;
+    // }
+    .background-header {
+        background: rgba(black, 0.4);
+    }
+    .header-button {
+        height: 20px;
+        width: 20px;
+    }
+    .back {
+        border-radius: 50%;
+        border: 1px solid white;
+        background: rgba(white, 0.2);
+        ion-icon {
+            color: #fff;
+            line-height: unset;
+            font-size: unset;
+        }
+    }
+    .back:active {
+        background: rgba(black, 0.4);
+    }
+    .title {
+        text-transform: uppercase;
+        font-size: 1.5rem;
+        white-space: nowrap;
+        span {
+            color: white;
+        }
+    }
+    .height-56 {
+        height: 56px;
+    }
+    .selectDate-page {
+        height: calc(100% - 32px);
+        .selectDate-container {
+            margin: auto;
+            width: calc(100% - 20px);
+            color: white;
+            .content-title {
+                padding: 5px;
+                span {
+                    text-align: center;
+                    font-weight: bold;
+                    font-size: larger;
+                    white-space: nowrap;
+                }
+            }
+            .scroll-title {
+                width: 100%;
+                height: 30px;
+                text-align: center;
+                white-space: nowrap;
+                background: linear-gradient(to right, #14e09c, #274c7c)
+            }
+            .a-50 {
+                width: 50%;
+            }
+            .a-25 {
+                width: 25%;
+            }
+            .bg {
+                height: $item-height;
+                width: 100%;
+                background: rgba(black, 0.2);
+                position: absolute;
+                top: $item-height * 2;
+                z-index: -1;
+            }
+            .scroll-container {
+                height: $item-height * 5;
+                overflow: auto;
+                .item-scroll {
+                    height: $item-height;
+                    width: 100%;
+                    text-align: center;
+                    color: white;
+                    span {
+                        height: $item-height;
+                        line-height: $item-height;
+                        display: block;
+                        white-space: nowrap;
+                    }
+                }
+            }
+        }
+    }
+    .view-button {
+        border: 1px solid white;
+        background: rgba(black, 0.4);
+        border-radius: 5px;
+        padding: 8px;
+        width: 40%;
+        margin: auto;
+        margin-top: 16px;
+        span {
+            color: white;
+        }
+    }
+}

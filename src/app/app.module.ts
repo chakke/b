@@ -15,11 +15,15 @@ import { HttpModule } from "@angular/http";
 import { SpecicalDatePopover } from '../pages/special-date/special-date-popover';
 import { AdMobPro } from '@ionic-native/admob-pro';
 import { GoogleAnalytics } from '@ionic-native/google-analytics';
+import { XEMNDPopover } from '../pages/xem-nd-detail/popover';
+import { Keyboard } from '@ionic-native/keyboard';
+
 @NgModule({
   declarations: [
     MyApp,
     DepartureTabsPage,
-    SpecicalDatePopover
+    SpecicalDatePopover,
+    XEMNDPopover
   ],
   imports: [
     BrowserModule,
@@ -33,7 +37,8 @@ import { GoogleAnalytics } from '@ionic-native/google-analytics';
   entryComponents: [
     MyApp,
     DepartureTabsPage,
-    SpecicalDatePopover
+    SpecicalDatePopover,
+    XEMNDPopover
     
   ],
   providers: [
@@ -45,7 +50,8 @@ import { GoogleAnalytics } from '@ionic-native/google-analytics';
     HttpService,
     DeviceInfoProvider,
     AdMobPro,
-    GoogleAnalytics
+    GoogleAnalytics,
+    Keyboard
   ]
 })
 export class AppModule {}

@@ -13,7 +13,8 @@
             <div><span class="dl"> DL</span></div>
             <div><span class="al">AL</span></div>
         </div>
-        <ion-segment [(ngModel)]="calendar">
+        <ion-segment [(ngModel)]="calendar" class="a1-relative">
+            <div class="animation-bar" id="animateBar"></div>
             <ion-segment-button value="solar" (ionSelect)="changeSegment('solar')">
                 <span class="segmen-title">Dương Lịch</span>
             </ion-segment-button>

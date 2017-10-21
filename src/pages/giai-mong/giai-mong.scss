@@ -1,9 +1,9 @@
 page-giai-mong {
     $item-scroll-height: 30px;
     $background: linear-gradient(to bottom, #14e09c, #274c7c);
-    .header-md::after {
-        height: 0;
-    }
+    // .header-md::after {
+    //     height: 0;
+    // }
     ion-content {
         background: $background;
     }
@@ -21,7 +21,7 @@ page-giai-mong {
         position: absolute;
         z-index: -1;
         width: 40%;
-        background: rgba(black, 0.2);
+        background: rgba(black, 0.1);
         border-radius: 20px;
         top: $item-scroll-height * 3;
         height: $item-scroll-height;
@@ -69,7 +69,7 @@ page-giai-mong {
         }
     }
     .background {
-        background-color: rgba(black, 0.4);
+        background-color: rgba(black, 0.3);
     }
     .height-56 {
         height: 56px;
@@ -79,7 +79,7 @@ page-giai-mong {
         width: 40%;
         border-radius: 20px;
         height: 30px;
-        background: rgba(black, 0.4);
+        background: rgba(black, 0.3);
         span {
             color: white;
             font-weight: bold;
@@ -111,36 +111,5 @@ page-giai-mong {
     }
     .button-detail:active {
         background: rgba(white, 0.4);
-    }
-    .mong-content {
-        position: absolute;
-        z-index: 10;
-        top: 56px;
-        bottom: 56px;
-        width: 100%;
-        left: 0;
-        animation-duration: 500ms;
-        .mong-content-container {
-            background: rgba(black, 0.4);
-            width: 90%;
-            border-radius: 10px;
-            margin: auto;
-            height: 100%;
-            padding-left: 16px;
-            padding-right: 16px;
-            text-align: justify;
-            overflow: auto;
-        }
-        .mong-content-header {
-            border-bottom: 1px solid white;
-            span {
-                color: white;
-                text-transform: uppercase;
-                font-weight: bold;
-            }
-        }
-        p {
-            color: white;
-        }
     }
 }

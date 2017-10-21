@@ -24,8 +24,7 @@ export class DepartureMorePage {
     this.more_options = this.mAppModule.getOptions();
   }
   ionViewDidEnter(){
-    this.statusBar.backgroundColorByHexString("#34a1ca");
-    
+    if(!this.mAppModule.mIsOnIOSDevice){this.statusBar.backgroundColorByHexString("#20c0e1")};
     if(!this.cavalVNAL){
       this.mAppModule.getCavalVNALDataJSON().then(
         data=>{

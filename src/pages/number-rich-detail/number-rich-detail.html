@@ -1,0 +1,25 @@
+<ion-header>
+
+    <div class="a3-container height-56 a3-justify-between a3-items-center">
+        <div margin-left class="header-button back a3-container-center" (click)="closeView()">
+            <ion-icon name="arrow-back"></ion-icon>
+        </div>
+        <div *ngIf="!isLoading" class="header-title">
+            <span>{{data.number}}</span>
+        </div>
+        <div margin-right class="header-button"></div>
+    </div>
+
+</ion-header>
+
+
+<ion-content>
+    <div *ngIf="!isLoading" class="a1-relative" margin-top style="height: calc(100% - 32px)">
+        <div class="number-container">
+            <div class="number-title"><span>{{data.number}}</span></div>
+            <div class="number-content">
+                <p>{{data.content}}</p>
+            </div>
+        </div>
+    </div>
+</ion-content>

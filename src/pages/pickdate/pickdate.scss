@@ -38,6 +38,9 @@ page-pickdate {
         right: 0;
         border-top-right-radius: 10px;
     }
+    .close-button:active {
+        background-color: rgba(black, 0.6);
+    }
     .change-date-col-container {
         height: $rowHeight *3;
         position: relative;
@@ -97,5 +100,8 @@ page-pickdate {
         text-transform: uppercase;
         color: #fff;
         z-index: 10;
+    }
+    .button-bottom:active {
+        background-color: rgba(black, 0.6);
     }
 }

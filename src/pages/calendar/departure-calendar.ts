@@ -69,7 +69,7 @@ export class DepartureCalendarPage {
   }
  
   ionViewDidEnter() {
-    this.statusBar.backgroundColorByHexString("#34a1ca");
+    if(!this.mAppModule.mIsOnIOSDevice){this.statusBar.backgroundColorByHexString("#20c0e1")};
     this.mAppModule.showAdvertisement();
     this.isLoading = false;
   }

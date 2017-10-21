@@ -123,6 +123,7 @@ export class DayDetailPage {
     this.loadData();
   }
   swipe(event) {
+    if(this.special_info)this.special_info = null;
     let direction = event.offsetDirection; //2 = swipe right to left; 4 = swipe left to right;
     // console.log(direction, this.calendar.month, this.calendar.year);
     // console.log(this.calendar.days);

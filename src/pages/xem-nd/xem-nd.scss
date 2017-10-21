@@ -1,0 +1,50 @@
+page-xem-nd {
+    .height-56 {
+        height: 56px;
+    }
+    ion-content {
+        background: linear-gradient(to bottom, #14e09c, #274c7c);
+    }
+    .header-button {
+        height: 28px;
+        width: 28px;
+        border-radius: 50%;
+    }
+    .back {
+        border: 1px solid white;
+        background: rgba(white, 0.2);
+        ion-icon {
+            line-height: unset;
+            color: white;
+        }
+    }
+    .back:active {
+        background: rgba(black, 0.6);
+    }
+    .header-title {
+        span {
+            text-transform: uppercase;
+            font-size: larger;
+            color: white;
+        }
+    }
+    .item-container {
+        background: rgba(black, 0.2);
+        border-radius: 5px;
+        min-height: 13em;
+    }
+    .logo {
+        padding-top: 10px;
+        img {
+            height: 8em;
+            width: 6em;
+        }
+    }
+    .name {
+        text-align: center;
+        padding: 10px 10px 5px 10px;
+        span {
+            color: white;
+        }
+    }
+}

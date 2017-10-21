@@ -22,6 +22,9 @@ page-day-detail {
         border: 1px solid white;
         background: rgba(white, 0.2);
     }
+    .back-button:active {
+        background: rgba(black, 0.4);
+    }
     .today-button {
         border-radius: 10px;
         padding: 2px;
@@ -83,7 +86,8 @@ page-day-detail {
     }
     .line {
         width: 1px;
-        background: white;
+        background: #18bb94;
+        opacity: 0.5;
         height: 100%;
         z-index: 10;
     }

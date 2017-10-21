@@ -33,7 +33,7 @@ export class SpecialDatePage {
 
   ionViewDidEnter() {
     this.mAppModule.showAdvertisement();
-    if(!this.mAppModule.mIsOnIOSDevice)this.statusBar.backgroundColorByHexString("#14e09c");
+    if(!this.mAppModule.mIsOnIOSDevice)this.statusBar.backgroundColorByHexString("#274c7c");
       this.item_height = (screen.height / 10) + "px";
       this.cavalAL_data = this.mAppModule.getValueDataLeVNAL();
       this.cavalDL_data = this.mAppModule.getValueDataLeVNDL();
@@ -76,6 +76,7 @@ export class SpecialDatePage {
           dd: solarDay[0],
           mm: solarDay[1],
           yy: solarDay[2],
+          special_info: day.description
         })
       }
     }
@@ -118,7 +119,14 @@ export class SpecialDatePage {
   }
   changeSegment(name : string){
     if(name!=this.calendar){
-        this.content.scrollToTop(400);        
+        this.content.scrollToTop(400);
+        let element = document.getElementById("animateBar");
+        if(name=="solar"){
+          element.style.transform = "translate(0,0)";
+        }
+        if(name=="lunar"){
+          element.style.transform = "translate("+(element.clientWidth)+"px"+",0)";
+        }
     }
   }
   

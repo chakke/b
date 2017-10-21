@@ -10,7 +10,8 @@ export const MOREOPTION = [
     },
     {
         icon: "assets/departure/icon/icon_3.png"  ,
-        name_option: "Chọn ngày tốt"
+        name_option: "Chọn ngày tốt",
+        component: "SelectDatePage"
     },
     {
         icon: "assets/departure/icon/icon_4.png" ,
@@ -28,14 +29,17 @@ export const MOREOPTION = [
     },
     {
         icon: "assets/departure/icon/icon_7.png" ,
-        name_option: "Số làm giàu"
+        name_option: "Số làm giàu",
+        component: "NumberRichPage"
     },
     {
         icon: "assets/departure/icon/icon_8.png" ,
-        name_option: "TC Cung Hoàng Đạo"
+        name_option: "TC Cung Hoàng Đạo",
+        component: "ZodiacPage"
     },
     {
         icon: "assets/departure/icon/icon_9.png" ,
-        name_option: "Xem nốt ruồi"
+        name_option: "Xem nốt ruồi",
+        component:"XemNdPage"
     }
 ]

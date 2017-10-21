@@ -1,0 +1,64 @@
+page-giai-mong-detail {
+    $background: linear-gradient(to bottom, #14e09c, #274c7c);
+    ion-content {
+        background: $background;
+    }
+    .back-button {
+        height: 28px;
+        width: 28px;
+        border-radius: 50%;
+        border: 1px solid white;
+        background: rgba(white, 0.2);
+        line-height: 28px;
+        ion-icon {
+            color: white;
+            line-height: 28px;
+        }
+    }
+    .back-button:active {
+        background: rgba(black, 0.4);
+    }
+    .title-header {
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        span {
+            height: 28px;
+            text-transform: uppercase;
+            font-size: 20px;
+            font-family: 'Times New Roman', Times, serif;
+            // font-weight: bold;
+            color: white;
+        }
+    }
+    .height-56 {
+        height: 56px;
+    }
+    .mong-content {
+        height: calc(100% - 32px);
+        .mong-content-container {
+            background: rgba(black, 0.2);
+            width: calc(100% - 20px);
+            border-radius: 10px;
+            margin: auto;
+            height: 100%;
+            padding: 16px;
+            text-align: justify;
+            overflow: auto;
+        }
+        .mong-content-header {
+            border-bottom: 1px solid white;
+            padding: 16px 0 16px 0;
+            span {
+                color: white;
+                text-transform: uppercase;
+                font-weight: bold;
+            }
+        }
+        p {
+            color: white;
+            white-space: pre-wrap;
+            line-height: 1.5em;
+        }
+    }
+}

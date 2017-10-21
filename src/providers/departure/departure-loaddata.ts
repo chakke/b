@@ -10,6 +10,22 @@ export class DepartureLoadData {
     constructor(private http: Http) {
 
     }
+    getSelectDateFromJSON(){
+        return this.http.get("./assets/departure/departure86VU.json")
+        .map((res: any) => res.json());
+    }
+    getXEMNDFromJSON(link : string){
+        return this.http.get(link)
+        .map((res: any) => res.json());
+    }
+    getNumberRichFromJSON(){
+        return this.http.get("./assets/departure/CSLamGiau.json")
+        .map((res: any) => res.json());
+    }
+    getZodiacFromJSON(){
+        return this.http.get("./assets/departure/TC12CungHD.json")
+        .map((res: any) => res.json());
+    }
     getTietDataFromJSON(){
         return this.http.get("./assets/departure/tiet.json")
         .map((res: any) => res.json());
@@ -116,8 +132,6 @@ export class DepartureLoadData {
         }
         
     }
-
-
 
     getSpecialDate(lunarDay: string, solarDay: string, data : any){
         let result = [];

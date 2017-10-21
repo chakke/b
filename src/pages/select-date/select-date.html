@@ -1,0 +1,53 @@
+<ion-header>
+    <div class="a3-container height-56 a3-items-center a3-justify-between ">
+        <div margin-left class="header-button back a3-container-center" (click)="closeView()">
+            <ion-icon name="arrow-back"></ion-icon>
+        </div>
+        <div class="title">
+            <span>Chọn Ngày Tốt</span>
+        </div>
+        <div margin-right class="header-button"></div>
+    </div>
+</ion-header>
+
+<ion-content>
+    <div class="selectDate-page a1-relative" margin-top>
+        <div class="selectDate-container a1-relative" text-center>
+            <div class="content-title">
+                <span>Chọn lịch dương bạn muốn xem</span>
+            </div>
+            <div margin-top class="scroll-title a3-container-center">
+                <div class="a-50"><span>Việc cần làm</span></div>
+                <div class="a-25"><span>Tháng</span></div>
+                <div class="a-25"><span>Năm</span></div>
+            </div>
+            <div margin-bottom class="a3-container a3-justify-between a1-relative">
+                <div class="bg"></div>
+                <div class="scroll-container a-50" id="colum1">
+                    <div class="item-scroll"></div>
+                    <div class="item-scroll"></div>
+                    <div class="item-scroll" *ngFor="let item of data"><span>{{item.name}}</span></div>
+                    <div class="item-scroll"></div>
+                    <div class="item-scroll"></div>
+                </div>
+                <div class="scroll-container a-25" id="colum2">
+                    <div class="item-scroll"></div>
+                    <div class="item-scroll"></div>
+                    <div class="item-scroll" *ngFor="let item of dayInMonth"><span>{{item}}</span></div>
+                    <div class="item-scroll"></div>
+                    <div class="item-scroll"></div>
+                </div>
+                <div class="scroll-container a-25" id="colum3">
+                    <div class="item-scroll"></div>
+                    <div class="item-scroll"></div>
+                    <div class="item-scroll" *ngFor="let item of years"><span>{{item}}</span></div>
+                    <div class="item-scroll"></div>
+                    <div class="item-scroll"></div>
+                </div>
+            </div>
+            <div margin-top class="view-button" (click)="viewDescription()">
+                <span>Xem chi tiết</span>
+            </div>
+        </div>
+    </div>
+</ion-content>

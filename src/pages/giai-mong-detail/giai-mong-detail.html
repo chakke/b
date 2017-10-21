@@ -1,0 +1,18 @@
+<ion-header ion-fixed>
+    <div class="height-56 a3-container a3-items-center a1-relative">
+        <div margin-left class="back-button a3-container-center" (click)="closeView()">
+            <ion-icon name="arrow-back"></ion-icon>
+        </div>
+        <div class="title-header a1-absolute">
+            <span>Giải Mộng</span>
+        </div>
+    </div>
+</ion-header>
+<ion-content>
+    <div *ngIf="!isLoading" margin-top class="mong-content">
+        <div class="a1-relative mong-content-container">
+            <div class="mong-content-header a3-container a3-items-center"><span>Điềm : {{data.mong_name}}</span></div>
+            <p>{{data.mong_content}}</p>
+        </div>
+    </div>
+</ion-content>

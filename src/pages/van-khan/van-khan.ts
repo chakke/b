@@ -1,7 +1,8 @@
 import { Component, ViewChild, Renderer2, ElementRef } from '@angular/core';
-import { IonicPage, NavController, NavParams,Searchbar } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,Searchbar} from 'ionic-angular';
 import { DepartureModule } from '../../providers/departure/departure';
 import { StatusBar } from '@ionic-native/status-bar';
+import { Keyboard } from '@ionic-native/keyboard';
 
 /**
  * Generated class for the VanKhanPage page.
@@ -22,6 +23,7 @@ export class VanKhanPage {
   isClickSearch: boolean = false;
   item_height = screen.height / 10 + "px";
   constructor(
+    private keyboard : Keyboard,
     private rd: Renderer2,
     private mAppModule: DepartureModule,
     public navCtrl: NavController, public navParams: NavParams,
@@ -41,19 +43,20 @@ export class VanKhanPage {
     }
   }
   ionViewDidEnter() {
-    if (!this.mAppModule.mIsOnIOSDevice) this.statusBar.backgroundColorByHexString("#0c855e");
+    if (!this.mAppModule.mIsOnIOSDevice) this.statusBar.backgroundColorByHexString("#274c7c");
 
   }
   search() {
     this.isClickSearch = true;
   }
   cancel() {
+    this.keyboard.close();
     let element =  this.searchBar.getNativeElement();
     this.rd.addClass(element,"slideOutRight");
     setTimeout(()=> {
-      this.isClickSearch = false;
       this.rd.removeClass(element,"slideOutRight");
-    }, 500);
+      this.isClickSearch = false;
+    }, 1000);
   }
   initializeItems() {
     this.data = this.data_backup;
@@ -73,6 +76,7 @@ export class VanKhanPage {
     }
   }
   viewItem(item) {
+    if(this.isClickSearch){this.isClickSearch = false;}
     if (item.VanKhan) {
       this.navCtrl.push("VanKhanCtPage", {
         data: item

@@ -1,8 +1,8 @@
 page-van-khan {
     $background: linear-gradient(to bottom, #14e09c, #274c7c);
-    .header-md::after {
-        height: 0;
-    }
+    // .header-md::after {
+    //     height: 0;
+    // }
     .content-md {
         background: $background;
     }
@@ -31,6 +31,9 @@ page-van-khan {
             line-height: unset;
         }
     }
+    .back:active {
+        background: rgba(black, 0.4);
+    }
     .title {
         text-transform: uppercase;
         font-size: 1.5em;
@@ -49,7 +52,7 @@ page-van-khan {
             padding-left: 16px;
             margin-bottom: 10px;
             color: white;
-            background: rgba(black, 0.4);
+            background: rgba(black, 0.2);
             .item-content {
                 width: 90%;
             }

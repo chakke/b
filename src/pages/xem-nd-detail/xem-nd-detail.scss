@@ -1,0 +1,108 @@
+page-xem-nd-detail {
+    .height-56 {
+        height: 56px;
+    }
+    ion-content {
+        background: linear-gradient(to bottom, #14e09c, #274c7c);
+    }
+    .header-button {
+        height: 28px;
+        width: 28px;
+        border-radius: 50%;
+    }
+    .back {
+        border: 1px solid white;
+        background: rgba(white, 0.2);
+        ion-icon {
+            line-height: unset;
+            color: white;
+        }
+    }
+    .back:active {
+        background: rgba(black, 0.6);
+    }
+    .header-title {
+        span {
+            text-transform: uppercase;
+            font-size: larger;
+            color: white;
+        }
+    }
+    .pageXemND-container {
+        height: calc(100% - 32px);
+    }
+    .form-container {
+        margin: auto;
+        width: 50%;
+        text-align: center;
+    }
+    .view-button {
+        border: 1px solid white;
+        background: rgba(black, 0.4);
+        border-radius: 5px;
+        padding: 8px;
+        width: 30%;
+        margin: auto;
+        margin-top: 32px;
+        span {
+            color: white;
+        }
+    }
+    .text-input-md {
+        color: white;
+        width: 100%;
+        margin: 0;
+        margin-top: 13px;
+        margin-bottom: 5px;
+        // padding-bottom: 3px;
+    }
+    ion-input {
+        border-bottom: 1px solid white;
+    }
+    .text-input-ios {
+        color: white;
+    }
+    .text-input::-moz-placeholder {
+        color: white;
+    }
+    .text-input:-ms-input-placeholder {
+        color: white;
+    }
+    .text-input::-webkit-input-placeholder {
+        text-indent: 0;
+        color: white;
+    }
+    .image {
+        overflow: scroll;
+        img {
+            width: 50%;
+            transition: 500ms;
+            // touch-action: pinch-zoom;
+        }
+    }
+    .zoom-pane {
+        width: 100%;
+        height: 100%;
+    }
+    // ion-scroll {
+    //     .scroll-content {
+    //         display: flex;
+    //         display: -webkit-flex;
+    //         align-items: center;
+    //         -webkit-align-items: center;
+    //         justify-content: center;
+    //         -webkit-justify-content: center;
+    //         .scroll-zoom-wrapper {
+    //             text-align: center;
+    //         }
+    //     }
+    // }
+    // @-webkit-keyframes zoom {
+    //     from {-webkit-transform:scale(0)} 
+    //     to {-webkit-transform:scale(1)}
+    // }
+    // @keyframes zoom {
+    //     from {transform:scale(0)} 
+    //     to {transform:scale(1)}
+    // }
+}

@@ -1,4 +1,4 @@
-<ion-header class="background" ion-fixed>
+<ion-header ion-fixed>
     <div class="height-56 a3-container a3-items-center a1-relative">
         <div margin-left class="back-button a3-container-center" (click)="closeView()">
             <ion-icon name="arrow-back"></ion-icon>
@@ -42,10 +42,3 @@
         <div margin-top class="a3-container-center a1-relative" (click)="viewDetail()"><span text-center class="button-detail  background">Xem chi tiết</span></div>
     </div>
 </ion-content>
-<div *ngIf="isClickView" margin-top class="mong-content animated fadeInLeft" #mongContent>
-    <div class="a1-relative mong-content-container">
-        <div class="mong-content-header height-56 a3-container a3-items-center"><span>Điềm : {{data[selectedIndex].mong_name}}</span></div>
-        <p style="white-space: pre-wrap; line-height: 1.5em">{{data[selectedIndex].mong_content}}</p>
-    </div>
-
-</div>

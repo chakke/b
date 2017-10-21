@@ -13,6 +13,8 @@ import { BACKGROUNDCHANGE } from './departure-backgroundchange';
 import { MOREOPTION } from "./departure-more-option";
 import { AdMobPro } from '@ionic-native/admob-pro';
 import { GoogleAnalytics } from '@ionic-native/google-analytics';
+import { ZODIAC } from './zodiac-image';
+import { XEMND } from './departure-XEMND';
 @Injectable()
 export class DepartureModule {
 
@@ -207,6 +209,34 @@ export class DepartureModule {
         });
     });
   }
+  getZodiacDataJSON() {
+    return new Promise((resolve, reject) => {
+        this.mDepartureLoadData.getZodiacFromJSON().subscribe((data) => {
+          resolve(data);
+        });
+    });
+  }
+  getSelectDateDataJSON() {
+    return new Promise((resolve, reject) => {
+        this.mDepartureLoadData.getSelectDateFromJSON().subscribe((data) => {
+          resolve(data);
+        });
+    });
+  }
+  getNumberRichDataJSON() {
+    return new Promise((resolve, reject) => {
+        this.mDepartureLoadData.getNumberRichFromJSON().subscribe((data) => {
+          resolve(data);
+        });
+    });
+  }
+  getXEMNDDataJSON(link : string) {
+    return new Promise((resolve, reject) => {
+        this.mDepartureLoadData.getXEMNDFromJSON(link).subscribe((data) => {
+          resolve(data);
+        });
+    });
+  }
   updateDepartureInfo(departures: Array<Departure>) {
     if (this.departureData) {
       departures.forEach(departure => {
@@ -322,14 +352,24 @@ export class DepartureModule {
     BACKGROUNDCHANGE.push(link);
   }
 
+
+
   //lấy ảnh nền cho các tabs
   public getBackgroundWhenChangeTabs(): string {
     return BACKGROUNDCHANGE[BACKGROUNDCHANGE.length - 1];
   }
 
+  public getZodiacImage(index: number): string {
+    return ZODIAC[index-1];
+  }
+
   // lấy more-option
   public getOptions() {
     return MOREOPTION;
+  }
+
+  public getXEMND(){
+    return XEMND;
   }
 
   public getHourBetterAndBad(chi: string) {

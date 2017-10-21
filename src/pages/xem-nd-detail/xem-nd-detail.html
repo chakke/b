@@ -1,0 +1,35 @@
+<!--
+  Generated template for the XemNdDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <div class="a3-container a3-justify-between a3-items-center height-56">
+        <div margin-left class="header-button back a3-container-center" (click)="closeView()">
+            <ion-icon name="arrow-back"></ion-icon>
+        </div>
+        <div *ngIf="!isLoading" class="header-title"><span>{{data.name}}</span></div>
+        <div margin-right class="header-button"></div>
+    </div>
+</ion-header>
+<ion-content no-scroll>
+    <div margin-top class="pageXemND-container">
+        <div class="a1-relative a1-height-30">
+            <div class="form-container a1-relative" text-center>
+                <div class="input">
+                    <ion-input #input type="number" placeholder="Nhập số"></ion-input>
+                </div>
+                <div class="view-button" (click)="viewDescription()" text-center>
+                    <span>Xem</span>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="!isLoading" class="image a1-height-70" (click)="zoom()" text-center>
+            <img [src]="data.image" id="img">
+        </div>
+        <!-- <div *ngIf="!isLoading" class="image a3-container-center a1-height-70" (click)="zoom()">
+            <img [src]="data.image" id="img">
+        </div> -->
+    </div>
+</ion-content>
