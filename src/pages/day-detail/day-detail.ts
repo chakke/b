@@ -1,10 +1,12 @@
 import { Component, ViewChild, Renderer2, ElementRef } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController,Slides } from 'ionic-angular';
 import { DepartureModule } from '../../providers/departure/departure';
 import { TNBINFO } from '../../providers/departure/interface/tnb_Info';
 import { HUONGXUATHANH } from '../../providers/departure/interface/huong_xuat_hanh';
 import { Utils } from '../../providers/app-utils';
 import { StatusBar } from '@ionic-native/status-bar';
+import { Departure } from '../../providers/departure/class/departure';
+import { DayDetail } from './day-detail-class';
 // import { AdMobPro } from '@ionic-native/admob-pro';
 /**
  * Generated class for the DayDetailPage page.
@@ -20,63 +22,102 @@ import { StatusBar } from '@ionic-native/status-bar';
 })
 export class DayDetailPage {
   @ViewChild("detail") detail: ElementRef;
+  @ViewChild(Slides) slides : Slides;
+  dayDetail1 : DayDetail;
+  dayDetail2 : DayDetail;
+  dayDetail : DayDetail;
   day_of_week: string;
   dd; mm; yy;
   nowtime: Date;
-  lunarDate; lunarYear; lunarMonth;
-  sexagesimalCycleTime: string;
-  sexagesimalCycleDate: string;
-  sexagesimalCycleMonth: string;
-  sexagesimalCycleYear: string;
-  TNBINFO: TNBINFO;
   isLoading: boolean = true;
-  tietDay: string;
-  trucDay: string;
-  hour_better = [];
-  hour_bad = [];
-  huong_xuat_hanh = new Array<HUONGXUATHANH>();
-  tuoi_xung_khac: any;
-  sao_tot = [];
-  sao_xau = [];
-  special_name: any;
   special_info: any;
+  array = new Array<DayDetail>();
   day_numbers_of_month_in_normal_year: Array<number> = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
   day_numbers_of_month_in_leap_year: Array<number> = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-
   constructor(public navCtrl: NavController,
     private mAppModule: DepartureModule,
     private rd: Renderer2,
     public navParams: NavParams,
     private statusBar: StatusBar,
+    public modalCtrl : ModalController
   ) {
+    this.dayDetail = new DayDetail();
+    this.dayDetail1 = new DayDetail();
+    this.dayDetail2 = new DayDetail();
   }
 
 
   mHasEnter: boolean = false;
   ngOnInit() {
     this.loadNavParmas();
-    this.loadData();
+   
     this.isLoading = false;
-
   }
   ionViewDidEnter() {
     if(!this.mAppModule.mIsOnIOSDevice)this.statusBar.backgroundColorByHexString("#0c855e");
     this.mAppModule.showAdvertisement();
   }
+  pickDate(){
+    let modal = this.modalCtrl.create("PickdatePage");
+    modal.onDidDismiss((data: Departure) => {
+      if (data && data.date) {
+        setTimeout(() => {
+          let date = new Date();
+          this.dd = data.date.getDate();
+          this.mm = data.date.getMonth() + 1;
+          this.yy = data.date.getFullYear();
+          this.dayDetail.setData(this.dd,this.mm,this.yy);
+          this.loadData();
+        }, 100);
+      }
+    })
+    modal.present({
+      animate: false
+    });
+  }
   loadData() {
-    this.TNBINFO = this.mAppModule.GetTNBINFO(this.dd, this.mm, this.yy);
-    this.trucDay = this.mAppModule.getTrucDay(this.lunarMonth, this.sexagesimalCycleDate.split(" ")[1]);
-    this.tietDay = this.mAppModule.getTietDay(this.dd, this.mm);
-    let data = this.mAppModule.getHourBetterAndBad(this.sexagesimalCycleDate.split(" ")[1]);
-    this.hour_better = data[0];
-    this.hour_bad = data[1];
-    this.huong_xuat_hanh = this.mAppModule.getTaiThanHyThan(this.sexagesimalCycleDate);
-    this.tuoi_xung_khac = this.mAppModule.getTuoiXungKhac(this.sexagesimalCycleDate);
-    this.sao_tot = [];
-    this.sao_xau = [];
-    this.sao_tot = this.mAppModule.getSaoTot(this.sexagesimalCycleDate.split(" ")[1], this.lunarMonth);
-    this.sao_xau = this.mAppModule.getSaoXau(this.sexagesimalCycleDate.split(" ")[0], this.sexagesimalCycleDate.split(" ")[1], this.lunarMonth);
+    this.nowtime = new Date();
+    this.dayDetail.TNBINFO = this.mAppModule.GetTNBINFO(this.dayDetail.dd, this.dayDetail.mm, this.dayDetail.yy);
+    this.dayDetail.trucDay = this.mAppModule.getTrucDay(this.dayDetail.lunarMonth, this.dayDetail.sexagesimalCycleDate.split(" ")[1]);
+    this.dayDetail.tietDay = this.mAppModule.getTietDay(this.dayDetail.dd, this.dayDetail.mm);
+    let data = this.mAppModule.getHourBetterAndBad(this.dayDetail.sexagesimalCycleDate.split(" ")[1]);
+    this.dayDetail.hour_better = data[0];
+    this.dayDetail.hour_bad = data[1];
+    this.dayDetail.huong_xuat_hanh = this.mAppModule.getTaiThanHyThan(this.dayDetail.sexagesimalCycleDate);
+    this.dayDetail.tuoi_xung_khac = this.mAppModule.getTuoiXungKhac(this.dayDetail.sexagesimalCycleDate);
+    this.dayDetail.sao_tot = this.mAppModule.getSaoTot(this.dayDetail.sexagesimalCycleDate.split(" ")[1], this.dayDetail.lunarMonth);
+    this.dayDetail.sao_xau = this.mAppModule.getSaoXau(this.dayDetail.sexagesimalCycleDate.split(" ")[0], this.dayDetail.sexagesimalCycleDate.split(" ")[1], this.dayDetail.lunarMonth);
     this.getSpecicalDate();
+  }
+  loadData1(){
+    this.dayDetail1.TNBINFO = this.mAppModule.GetTNBINFO(this.dayDetail1.dd, this.dayDetail1.mm, this.dayDetail1.yy);
+    this.dayDetail1.trucDay = this.mAppModule.getTrucDay(this.dayDetail1.lunarMonth, this.dayDetail1.sexagesimalCycleDate.split(" ")[1]);
+    this.dayDetail1.tietDay = this.mAppModule.getTietDay(this.dayDetail1.dd, this.dayDetail1.mm);
+    let data = this.mAppModule.getHourBetterAndBad(this.dayDetail1.sexagesimalCycleDate.split(" ")[1]);
+    this.dayDetail1.hour_better = data[0];
+    this.dayDetail1.hour_bad = data[1];
+    this.dayDetail1.huong_xuat_hanh = this.mAppModule.getTaiThanHyThan(this.dayDetail1.sexagesimalCycleDate);
+    this.dayDetail1.tuoi_xung_khac = this.mAppModule.getTuoiXungKhac(this.dayDetail1.sexagesimalCycleDate);
+    this.dayDetail1.sao_tot = this.mAppModule.getSaoTot(this.dayDetail1.sexagesimalCycleDate.split(" ")[1], this.dayDetail1.lunarMonth);
+    this.dayDetail1.sao_xau = this.mAppModule.getSaoXau(this.dayDetail1.sexagesimalCycleDate.split(" ")[0], this.dayDetail1.sexagesimalCycleDate.split(" ")[1], this.dayDetail1.lunarMonth);
+    let solarDay = this.getViewDate(this.dayDetail1.dd, this.dayDetail1.mm);
+    let lunarDay = this.getViewDate(this.dayDetail1.lunarDate, this.dayDetail1.lunarMonth);
+    this.dayDetail1.special_name = this.mAppModule.getSpecialDate(lunarDay, solarDay);
+  }
+  loadData2(){
+    this.dayDetail2.TNBINFO = this.mAppModule.GetTNBINFO(this.dayDetail2.dd, this.dayDetail2.mm, this.dayDetail2.yy);
+    this.dayDetail2.trucDay = this.mAppModule.getTrucDay(this.dayDetail2.lunarMonth, this.dayDetail2.sexagesimalCycleDate.split(" ")[1]);
+    this.dayDetail2.tietDay = this.mAppModule.getTietDay(this.dayDetail2.dd, this.dayDetail2.mm);
+    let data = this.mAppModule.getHourBetterAndBad(this.dayDetail2.sexagesimalCycleDate.split(" ")[1]);
+    this.dayDetail2.hour_better = data[0];
+    this.dayDetail2.hour_bad = data[1];
+    this.dayDetail2.huong_xuat_hanh = this.mAppModule.getTaiThanHyThan(this.dayDetail2.sexagesimalCycleDate);
+    this.dayDetail2.tuoi_xung_khac = this.mAppModule.getTuoiXungKhac(this.dayDetail2.sexagesimalCycleDate);
+    this.dayDetail2.sao_tot = this.mAppModule.getSaoTot(this.dayDetail2.sexagesimalCycleDate.split(" ")[1], this.dayDetail2.lunarMonth);
+    this.dayDetail2.sao_xau = this.mAppModule.getSaoXau(this.dayDetail2.sexagesimalCycleDate.split(" ")[0], this.dayDetail2.sexagesimalCycleDate.split(" ")[1], this.dayDetail2.lunarMonth);
+    let solarDay = this.getViewDate(this.dayDetail2.dd, this.dayDetail2.mm);
+    let lunarDay = this.getViewDate(this.dayDetail2.lunarDate, this.dayDetail2.lunarMonth);
+    this.dayDetail2.special_name = this.mAppModule.getSpecialDate(lunarDay, solarDay);
   }
   close() {
     this.navCtrl.pop();
@@ -85,88 +126,60 @@ export class DayDetailPage {
     this.dd = this.navParams.get('dd');
     this.mm = this.navParams.get('mm');
     this.yy = this.navParams.get('yy');
-    if(this.navParams.get('special_info'))this.special_info = this.navParams.get('special_info');
-    this.day_of_week = Utils.getDayOfWeek(this.dd, this.mm, this.yy);
-    this.loadLunarDate();
-    this.getSexagesimal();
-    this.nowtime = new Date();
-    this.sexagesimalCycleTime = this.mAppModule.getSexagesimalCycleByTime(this.dd, this.mm, this.yy, this.nowtime.getHours());
+    this.dayDetail.setData(this.dd,this.mm,this.yy);
+    this.loadData();
+    this.getDayDetail1();
+    this.getDayDetail2();
+    // console.log();
+    
+    this.array.push(this.dayDetail1);
+    this.array.push(this.dayDetail);
+    this.array.push(this.dayDetail2);
+    console.log(this.array);
+    
+    if(this.navParams.get('special_info'))this.dayDetail.special_info = this.navParams.get('special_info');
   }
   getSpecicalDate() {
     let solarDay = this.getViewDate(this.dd, this.mm);
-    let lunarDay = this.getViewDate(this.lunarDate, this.lunarMonth);
-    this.special_name = this.mAppModule.getSpecialDate(lunarDay, solarDay);
-  }
-  getSexagesimal() {
-    this.sexagesimalCycleDate = this.mAppModule.getSexagesimalCycleByDay(this.dd, this.mm, this.yy);
-    this.sexagesimalCycleMonth = this.mAppModule.getSexagesimalCycleByMonth(this.dd, this.mm, this.yy);
-    this.sexagesimalCycleYear = this.mAppModule.getSexagesimalCycleByYear(this.dd, this.mm, this.yy);
+    let lunarDay = this.getViewDate(this.dayDetail.lunarDate, this.dayDetail.lunarMonth);
+    this.dayDetail.special_name = this.mAppModule.getSpecialDate(lunarDay, solarDay);
   }
   getViewDate(date: number, month: number): string {
     return (date < 10 ? "0" : "") + date + "-" + (month < 10 ? "0" : "") + month;
-  }
-  loadLunarDate() {
-    let lunarday = this.mAppModule.convertSolarToLunar(this.dd, this.mm, this.yy);
-    this.lunarDate = lunarday[0];
-    this.lunarMonth = lunarday[1];
-    this.lunarYear = lunarday[2];
   }
   goToDay() {
     let date = new Date();
     this.dd = date.getDate();
     this.mm = date.getMonth() + 1;
     this.yy = date.getFullYear();
-    this.day_of_week = Utils.getDayOfWeek(this.dd, this.mm, this.yy);
-    this.loadLunarDate();
-    this.getSexagesimal();
-    this.sexagesimalCycleTime = this.mAppModule.getSexagesimalCycleByTime(this.dd, this.mm, this.yy, date.getHours());
+    this.dayDetail.setData(this.dd,this.mm,this.yy);
     this.loadData();
+    this.getDayDetail1();
+    this.getDayDetail2();
   }
-  swipe(event) {
-    if(this.special_info)this.special_info = null;
-    let direction = event.offsetDirection; //2 = swipe right to left; 4 = swipe left to right;
-    // console.log(direction, this.calendar.month, this.calendar.year);
-    // console.log(this.calendar.days);
-    if (direction == 2) {
-      this.rotateRight()
+  prev() {
+    if(this.slides.getActiveIndex()==0){
+      let date = new Date();
+      this.backtoPreviousDate();
+      this.dayDetail.setData(this.dd,this.mm,this.yy);
+      this.loadData();
+      this.slides.slideTo(1,0);
+      this.getDayDetail1();
+      this.getDayDetail2();
     }
-    if (direction == 4) {
-      this.rotateLeft();
+    
+
+  }
+  next() {
+    if(this.slides.getActiveIndex()==2){
+      let date = new Date();
+      this.forwardNextDate();
+      this.dayDetail.setData(this.dd,this.mm,this.yy);
+      this.loadData();
+      this.slides.slideTo(1,0);
+      this.getDayDetail1();
+      this.getDayDetail2();
     }
-  }
-  rotateLeft() {
-    let date = new Date();
-    this.backtoPreviousDate();
-    this.day_of_week = Utils.getDayOfWeek(this.dd, this.mm, this.yy);
-    this.loadLunarDate();
-    this.getSexagesimal();
-
-    this.sexagesimalCycleTime = this.mAppModule.getSexagesimalCycleByTime(this.dd, this.mm, this.yy, date.getHours());
-    this.loadData();
-    setTimeout(() => {
-      this.rd.addClass(this.detail.nativeElement, 'slideInLeft');
-      setTimeout(() => {
-        this.rd.removeClass(this.detail.nativeElement, 'slideInLeft');
-      }, 1000);
-    }, 50);
-
-  }
-  rotateRight() {
-    let date = new Date();
-    this.forwardNextDate();
-    this.day_of_week = Utils.getDayOfWeek(this.dd, this.mm, this.yy);
-    this.loadLunarDate();
-    this.getSexagesimal();
-
-    this.sexagesimalCycleTime = this.mAppModule.getSexagesimalCycleByTime(this.dd, this.mm, this.yy, date.getHours());
-    this.loadData();
-    setTimeout(() => {
-      this.rd.addClass(this.detail.nativeElement, 'slideInRight');
-      setTimeout(() => {
-        this.rd.removeClass(this.detail.nativeElement, 'slideInRight');
-      }, 1000);
-    }, 50);
-
   }
   getDayNumbersInOneMonth() {
     let result: number[];
@@ -191,6 +204,22 @@ export class DayDetailPage {
       this.dd = 1;
     }
   }
+  getDayDetail2(){
+    let day_numbers_of_month = this.getDayNumbersInOneMonth();
+    let dd = this.dayDetail.dd + 1;
+    let mm = this.dayDetail.mm;
+    let yy = this.dayDetail.yy;
+    if (dd > day_numbers_of_month[this.mm - 1]) {
+      mm++;
+      if (mm > 12) {
+        mm = 1;
+        yy++;
+      }
+      dd = 1;
+    }
+    this.dayDetail2.setData(dd,mm,yy);
+    this.loadData2();
+  }
   //lùi về ngày hôm trước
   backtoPreviousDate() {
     let day_numbers_of_month = this.getDayNumbersInOneMonth();
@@ -204,6 +233,25 @@ export class DayDetailPage {
       this.dd = day_numbers_of_month[this.mm - 1];
     }
   }
+
+  getDayDetail1(){
+    let day_numbers_of_month = this.getDayNumbersInOneMonth();
+    let dd = this.dayDetail.dd-1;
+    let mm = this.dayDetail.mm;
+    let yy = this.dayDetail.yy;
+    if (dd < 1) {
+      mm--;
+      if (mm < 1) {
+        mm = 12;
+        yy--;
+      }
+      dd = day_numbers_of_month[this.mm - 1];
+    }
+    this.dayDetail1.setData(dd,mm,yy);
+    this.loadData1();
+  }
+
+
   // getSaoXau(){
   //   let code = "";
   //   for(let i = 0; i< this.sao_xau.length; i++){

@@ -67,8 +67,9 @@ export class DepartureChangeDatePage {
     }
     this.departureExchangeDay = new DepartureExchangeDay();
     this.selectedDate = new Departure(new Date());
-    this.todayInSolar = this.selectedDate;
     this.mAppModule.updateDepartureInfo([this.selectedDate]);
+    this.todayInSolar = this.selectedDate;
+   
     for (let i = 0; i < 6; i++) {
       this.mRunningScroll.push(false);
     }
@@ -83,6 +84,8 @@ export class DepartureChangeDatePage {
   }
   goToday(){
       this.today = new Date();
+      this.selectedDate = new Departure(new Date());
+      this.mAppModule.updateDepartureInfo([this.selectedDate]);
       this.todayInLunar = this.departureExchangeDay.convertSolar2Lunar(this.today.getDate(), this.today.getMonth() + 1, this.today.getFullYear(), 7);
       if (this.scrollElms) {
         for (let i = 0; i < this.scrollElms.length; i++) {

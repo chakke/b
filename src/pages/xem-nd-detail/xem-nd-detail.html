@@ -13,20 +13,23 @@
         <div margin-right class="header-button"></div>
     </div>
 </ion-header>
-<ion-content no-scroll>
-    <div margin-top class="pageXemND-container">
+<ion-content>
+    <div padding-top class="pageXemND-container">
         <div class="a1-relative a1-height-30">
             <div class="form-container a1-relative" text-center>
                 <div class="input">
                     <ion-input #input type="number" placeholder="Nhập số"></ion-input>
                 </div>
+                <div style="height: 32px"></div>
                 <div class="view-button" (click)="viewDescription()" text-center>
                     <span>Xem</span>
                 </div>
             </div>
         </div>
-        <div *ngIf="!isLoading" class="image a1-height-70" (click)="zoom()" text-center>
-            <img [src]="data.image" id="img">
+        <div *ngIf="!isLoading" class="a1-height-70 " (click)="zoom()" text-center>
+            <div class="image" [class.white-background]="isZoom">
+                <img [src]="data.image" id="img">
+            </div>
         </div>
         <!-- <div *ngIf="!isLoading" class="image a3-container-center a1-height-70" (click)="zoom()">
             <img [src]="data.image" id="img">

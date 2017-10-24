@@ -20,7 +20,11 @@ page-van-khan {
         position: absolute;
         top: 0;
         height: 56px;
-        animation-duration: 500ms;
+        animation-duration: 200ms;
+        background: #274c7c;
+    }
+    .button-clear-ios {
+        color: white;
     }
     .back {
         border-radius: 50%;

@@ -41,7 +41,7 @@ export class ZodiacPage {
   viewDetail(id:string){
     let index = parseInt(id);
     this.navCtrl.push("ZodiacDetailPage",{
-      data: this.data[index]
+      data: this.data[index-1]
     })
   }
 

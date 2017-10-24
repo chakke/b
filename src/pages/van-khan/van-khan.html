@@ -10,7 +10,7 @@
             <ion-icon name="search"></ion-icon>
         </div>
     </div>
-    <ion-searchbar *ngIf="isClickSearch" #searchBar class="searchBar animated slideInRight" [animated]="true" [showCancelButton]="true" (ionInput)="getItems($event)" (ionCancel)="cancel()"></ion-searchbar>
+    <ion-searchbar *ngIf="isClickSearch" #searchBar class="searchBar animated slideInDown" [animated]="true" [showCancelButton]="true" (ionInput)="getItems($event)" (ionCancel)="cancel()"></ion-searchbar>
 </ion-header>
 <ion-content>
     <div class="list-container" margin-top>

@@ -78,6 +78,7 @@ export class ZodiacDetailPage {
   selectedMenu(index: number,isScroll : boolean) {
     this.selectedIndex = index;
     this.isScroll = isScroll;
+    AppModule.getInstance().getScrollController().doScrollTop("contentZodiac");
     let menuElement = document.getElementById("menu");
     let element = document.getElementById("animateBar");
     let distanceTranform = index * screen.width/3;

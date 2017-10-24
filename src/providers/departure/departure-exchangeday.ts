@@ -1,8 +1,10 @@
 import { ZODIACTIME } from '../departure/departure-zodiactimestorage';
 import { Hour } from './departure-hour';
 import { HUONGXUATHANH } from './interface/huong_xuat_hanh';
+import { TNBINFO } from './interface/tnb_Info';
 
 export class DepartureExchangeDay {
+    day_in_months = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
     jdFromDate(dd, mm, yy) {
         let a, y, m, jd;
         a = parseInt(((14 - mm) / 12).toString());
@@ -624,11 +626,15 @@ export class DepartureExchangeDay {
         for(let j = ((solarMonth-1)*2); j < ((solarMonth-1)*2) + 2; j++){
             dateNumber.push(parseInt(data[j].date));
         }
+        // console.log(dateNumber);
+        if(date < dateNumber[0] && solarMonth==1){
+            return data[data.length-1].name;
+        }
         if(date < dateNumber[0]){
             return data[(solarMonth-1)*2 -1].name;
-        }else if(date > dateNumber[0] && date < dateNumber[1]){
+        }else if(date >= dateNumber[0] && date < dateNumber[1]){
             return data[(solarMonth-1)*2].name;
-        }else if(date > dateNumber[1]){
+        }else if(date >= dateNumber[1]){
             return data[(solarMonth-1)*2 + 1].name;
         }
     }
@@ -714,5 +720,44 @@ export class DepartureExchangeDay {
         }
         return result;
     }
+    GetTNBINFO(dd: number, mm : number, yy: number, data){
+        let detailData = data.DayDetail;
+        var idNUmber = this.getIDStar(dd,mm,yy);
+        let tnb_info : TNBINFO = {
+            thapnhibat_ten : data[idNUmber-1].thapnhibat_ten,
+            nguhanh_id : data[idNUmber-1].nguhanh_id,
+            thapnhibat_tho : data[idNUmber-1].thapnhibat_tho,
+            nen_lam : data[idNUmber -1].nen_lam,
+            kieng_ky: data[idNUmber-1].kieng_ky
+        }
+        return tnb_info;
+    }
+    getIDStar(dd: number, mm : number, yy: number){
+        // moc la ngay 1-1-1900 id sao la 5 ;
+        var number1 = (yy-1900) + Math.floor((yy-1900)/4);
+        let number2 = dd;
+        for(let i = 0; i< mm-1; i++){
+            number2 += this.day_in_months[i];
+        }
+        let number = 0;
+
+        if(mm<2 && yy%4==0){
+            number = number1 + number2  - 1;
+        }
+        if(yy%4!=0){
+            number = number1 + number2;
+        }
+        
+        let number_day_more = 0;
+        number_day_more = (number % 28);
+        
+        if(number_day_more<= 23){
+            return number_day_more  + 4;
+        }else{
+            return (5 + number_day_more)%28;
+        }
+        
+    }
+
    
 }

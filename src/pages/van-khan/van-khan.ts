@@ -48,15 +48,18 @@ export class VanKhanPage {
   }
   search() {
     this.isClickSearch = true;
+    setTimeout(()=> {
+    this.searchBar.setFocus();
+    }, 300);
   }
   cancel() {
     this.keyboard.close();
     let element =  this.searchBar.getNativeElement();
-    this.rd.addClass(element,"slideOutRight");
+    this.rd.addClass(element,"slideOutUp");
     setTimeout(()=> {
-      this.rd.removeClass(element,"slideOutRight");
+      this.rd.removeClass(element,"slideOutUp");
       this.isClickSearch = false;
-    }, 1000);
+    }, 200);
   }
   initializeItems() {
     this.data = this.data_backup;

@@ -29,6 +29,7 @@ export class SpecialDatePage {
     public popover: PopoverController,
     private statusBar : StatusBar
   ) {
+    
   }
 
   ionViewDidEnter() {
@@ -129,5 +130,18 @@ export class SpecialDatePage {
         }
     }
   }
-  
+  swipe($event){
+    let direction = $event.direction;
+    let element = document.getElementById("animateBar");
+    if(this.calendar=="solar" && direction==2){
+      this.content.scrollToTop(400);
+      this.calendar= "lunar";
+      element.style.transform = "translate("+(element.clientWidth)+"px"+",0)";
+    }
+    if(this.calendar=="lunar" && direction==4){
+      this.content.scrollToTop(400);
+      this.calendar= "solar";
+      element.style.transform = "translate(0,0)";
+    }
+  }
 }

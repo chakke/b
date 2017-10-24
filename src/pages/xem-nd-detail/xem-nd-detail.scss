@@ -24,16 +24,18 @@ page-xem-nd-detail {
     .header-title {
         span {
             text-transform: uppercase;
-            font-size: larger;
+            font-size: 5.5vw;
+            ;
             color: white;
         }
     }
     .pageXemND-container {
-        height: calc(100% - 32px);
+        height: 100%;
     }
     .form-container {
         margin: auto;
         width: 50%;
+        height: 100%;
         text-align: center;
     }
     .view-button {
@@ -43,7 +45,6 @@ page-xem-nd-detail {
         padding: 8px;
         width: 30%;
         margin: auto;
-        margin-top: 32px;
         span {
             color: white;
         }
@@ -74,11 +75,14 @@ page-xem-nd-detail {
     }
     .image {
         overflow: scroll;
+        height: 100%;
         img {
             width: 50%;
             transition: 500ms;
-            // touch-action: pinch-zoom;
         }
+    }
+    .white-background {
+        background: white;
     }
     .zoom-pane {
         width: 100%;

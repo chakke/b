@@ -16,8 +16,8 @@
             <div class="animate-bar" id="animateBar"></div>
         </div>
         <div *ngIf="!isLoading" class="item-container a1-relative" margin-top>
-            <div class="background-container" (swipe)="swipe($event)">
-                <div class="item">
+            <div class="background-container" (swipe)="swipe($event)" id="contentZodiac">
+                <div class="item animated slideInLeft">
                     <div class="item-title"><span>{{menu[selectedIndex]}}</span></div>
                     <div class="item-content">
                         <p>{{getContent(selectedIndex)}}</p>
