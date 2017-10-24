@@ -4,7 +4,6 @@ import { DepartureModule } from '../../providers/departure/departure';
 import { Departure } from '../../providers/departure/class/departure';
 import { AppController } from '../../providers/app-controller';
 import { Calendar } from '../../providers/departure/class/calendar';
-import { DatePicker } from '@ionic-native/date-picker';
 import { StatusBar } from '@ionic-native/status-bar';
 
 @IonicPage()
@@ -39,7 +38,6 @@ export class DepartureCalendarPage {
     private navParams: NavParams,
     private navCtrl: NavController,
     private mAppModule: DepartureModule,
-    private datePicker: DatePicker,
     private platform: Platform,
     private modalCtrl: ModalController,
     private rd: Renderer2,

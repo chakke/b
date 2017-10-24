@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, MenuController, Platform, ModalController } from 'ionic-angular';
-import { DatePicker } from '@ionic-native/date-picker';
 import { AppController } from '../../providers/app-controller';
 import { DepartureModule } from '../../providers/departure/departure';
 import { Departure } from "../../providers/departure/class/departure";
@@ -76,7 +75,6 @@ export class DepartureHomePage {
     private navCtrl: NavController,
     private mAppModule: DepartureModule,
     private mMenuController: MenuController,
-    private datePicker: DatePicker,
     private platform: Platform,
     private modalCtrl: ModalController,
     private statusBar: StatusBar,

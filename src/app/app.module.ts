@@ -7,7 +7,6 @@ import { MyApp } from './app.component';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { DepartureTabsPage } from "../pages/tabs/departure-tabs";
-import { DatePicker } from "@ionic-native/date-picker";
 import { DepartureModule } from "../providers/departure/departure";
 import { HttpService } from "../providers/http-service";
 import { DeviceInfoProvider } from "../providers/device-info/device-info";
@@ -46,7 +45,6 @@ import { Keyboard } from '@ionic-native/keyboard';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     DepartureModule,
-    DatePicker,    
     HttpService,
     DeviceInfoProvider,
     AdMobPro,
