@@ -125,12 +125,15 @@ page-day-detail {
             height: 100%;
         }
     }
+    #detail {
+        transition: 200ms;
+    }
     .app-content {
         padding-left: 10px;
         padding-right: 10px;
-        position: absolute;
+        // position: absolute;
         height: 100%;
-        top: 0;
+        // top: 0;
         overflow: auto;
     }
     .item-haft {

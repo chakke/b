@@ -11,13 +11,14 @@ import { Http, HttpModule } from '@angular/http';
 import { BACKGROUND } from './departure-background';
 import { BACKGROUNDCHANGE } from './departure-backgroundchange';
 import { MOREOPTION } from "./departure-more-option";
-import { AdMobPro } from '@ionic-native/admob-pro';
-import { GoogleAnalytics } from '@ionic-native/google-analytics';
+import { AdsManager } from "../common/ads-manager";
+import { AnalyticsManager } from "../common/analytics-manager";
 import { ZODIAC } from './zodiac-image';
 import { XEMND } from './departure-XEMND';
 @Injectable()
 export class DepartureModule {
-
+  public mAdsManager: AdsManager;
+  public mAnalyticsManager: AnalyticsManager;
   private mDepartureHttpService: DepartureHttpService;
   private mDepartureLoadData: DepartureLoadData;
   private mDepartureExchangeDay: DepartureExchangeDay;
@@ -32,20 +33,23 @@ export class DepartureModule {
   private cavalVNDL: any;
   private vankhan_data: any;
   private mConfig: AppConfig;
-  public mIsOnIOSDevice: boolean = false;
+  public mIsOnIOSDevice: boolean = true;
   private dem: number = 0;
   private n1: number = 0;
   private n2: number = 1;
   private period_number: number = 2;
   constructor(
-    private googleAnalytics: GoogleAnalytics,
-    private admob: AdMobPro,
+
+
     private mHttpService: HttpService,
     private http: Http) {
     this.mDepartureHttpService = new DepartureHttpService(this.mHttpService);
     this.mDepartureLoadData = new DepartureLoadData(this.http);
     this.mDepartureExchangeDay = new DepartureExchangeDay();
     this.mConfig = new AppConfig();
+    this.mAdsManager = new AdsManager();
+    this.mAnalyticsManager = new AnalyticsManager();
+
   }
   getAppConfig() {
     return this.mConfig;
@@ -66,6 +70,7 @@ export class DepartureModule {
     });
 
   }
+
 
   public getHttpService() {
     return this.mDepartureHttpService;
@@ -204,37 +209,37 @@ export class DepartureModule {
 
   getGiaiMongDataJSON() {
     return new Promise((resolve, reject) => {
-        this.mDepartureLoadData.getGiaiMongDataFromJSON().subscribe((data) => {
-          resolve(data);
-        });
+      this.mDepartureLoadData.getGiaiMongDataFromJSON().subscribe((data) => {
+        resolve(data);
+      });
     });
   }
   getZodiacDataJSON() {
     return new Promise((resolve, reject) => {
-        this.mDepartureLoadData.getZodiacFromJSON().subscribe((data) => {
-          resolve(data);
-        });
+      this.mDepartureLoadData.getZodiacFromJSON().subscribe((data) => {
+        resolve(data);
+      });
     });
   }
   getSelectDateDataJSON() {
     return new Promise((resolve, reject) => {
-        this.mDepartureLoadData.getSelectDateFromJSON().subscribe((data) => {
-          resolve(data);
-        });
+      this.mDepartureLoadData.getSelectDateFromJSON().subscribe((data) => {
+        resolve(data);
+      });
     });
   }
   getNumberRichDataJSON() {
     return new Promise((resolve, reject) => {
-        this.mDepartureLoadData.getNumberRichFromJSON().subscribe((data) => {
-          resolve(data);
-        });
+      this.mDepartureLoadData.getNumberRichFromJSON().subscribe((data) => {
+        resolve(data);
+      });
     });
   }
-  getXEMNDDataJSON(link : string) {
+  getXEMNDDataJSON(link: string) {
     return new Promise((resolve, reject) => {
-        this.mDepartureLoadData.getXEMNDFromJSON(link).subscribe((data) => {
-          resolve(data);
-        });
+      this.mDepartureLoadData.getXEMNDFromJSON(link).subscribe((data) => {
+        resolve(data);
+      });
     });
   }
   updateDepartureInfo(departures: Array<Departure>) {
@@ -360,7 +365,7 @@ export class DepartureModule {
   }
 
   public getZodiacImage(index: number): string {
-    return ZODIAC[index-1];
+    return ZODIAC[index - 1];
   }
 
   // lấy more-option
@@ -368,7 +373,7 @@ export class DepartureModule {
     return MOREOPTION;
   }
 
-  public getXEMND(){
+  public getXEMND() {
     return XEMND;
   }
 
@@ -420,21 +425,7 @@ export class DepartureModule {
     }
   }
   showInterstitial() {
-    let adId;
-    adId = 'ca-app-pub-7122576438584960/5503171687';
-    this.admob.prepareInterstitial(
-      {
-        adId: adId,
-        isTesting: true,
-        overlap: true,
-      }
-    )
-      .then(() => { this.admob.showInterstitial(); });
-    this.admob.onAdDismiss().subscribe(() => {
-      setTimeout(function() {
-        this.showInterstitial();
-      },300000);
-    });
+    this.mAdsManager.showInterstital(true);
   }
   showAdvertisement() {
     this.dem++;
@@ -454,25 +445,22 @@ export class DepartureModule {
   }
 
 
-  // set uid googleanalytic, 30 is dispath period
-  startTrackerWithId() {
-    this.googleAnalytics.startTrackerWithId("'UA-XXXX-YY", 30);
-  }
+
   // To track a Screen 
   trackView() {
-    this.googleAnalytics.trackView('Page view');
+    this.mAnalyticsManager.trackScreen('Page view');
   }
   // To track an event
   tracEvent() {
-    this.googleAnalytics.trackEvent('Category', 'Action', 'Label', 1);
+    this.mAnalyticsManager.trackEvent('Category', 'Action', 'Label', 1);
   }
   // To track timing
   trackTiming(IntervalInMilliseconds) {
-    this.googleAnalytics.trackTiming('Category', IntervalInMilliseconds, 'Variable', 'Label') // where IntervalInMilliseconds is numeric
+    this.mAnalyticsManager.trackTiming('Category', IntervalInMilliseconds, 'Variable', 'Label') // where IntervalInMilliseconds is numeric
   }
   //to enabling Advertising Features in Google Analytics allows you to take advantage of Remarketing
   setAllowIDFACollection(value: boolean) {
-    this.googleAnalytics.setAllowIDFACollection(value);
+    this.mAnalyticsManager.setAllowIDFACollection(value);
   }
 
 

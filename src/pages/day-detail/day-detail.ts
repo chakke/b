@@ -130,12 +130,10 @@ export class DayDetailPage {
     this.loadData();
     this.getDayDetail1();
     this.getDayDetail2();
-    // console.log();
     
     this.array.push(this.dayDetail1);
     this.array.push(this.dayDetail);
     this.array.push(this.dayDetail2);
-    console.log(this.array);
     
     if(this.navParams.get('special_info'))this.dayDetail.special_info = this.navParams.get('special_info');
   }
@@ -148,6 +146,10 @@ export class DayDetailPage {
     return (date < 10 ? "0" : "") + date + "-" + (month < 10 ? "0" : "") + month;
   }
   goToDay() {
+    let element = document.getElementById("detail");
+    if(element){
+      element.style.transform = 'translate(0,0)';
+    }
     let date = new Date();
     this.dd = date.getDate();
     this.mm = date.getMonth() + 1;
@@ -158,6 +160,10 @@ export class DayDetailPage {
     this.getDayDetail2();
   }
   prev() {
+    let elements = document.getElementsByClassName("app-content");
+    if(elements && elements[1] && elements[1].scrollTop!=0){
+      elements[1].scrollTop = 0;
+    }
     if(this.slides.getActiveIndex()==0){
       let date = new Date();
       this.backtoPreviousDate();
@@ -171,6 +177,11 @@ export class DayDetailPage {
 
   }
   next() {
+    let elements = document.getElementsByClassName("app-content");
+    if(elements && elements[1] && elements[1].scrollTop!=0){
+      elements[1].scrollTop = 0;
+    }
+    
     if(this.slides.getActiveIndex()==2){
       let date = new Date();
       this.forwardNextDate();

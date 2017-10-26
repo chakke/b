@@ -1,29 +1,31 @@
 <ion-header>
-
-    <div class="a3-container a3-justify-between a3-items-center height-56">
-        <div margin-left class="header-button back a3-container-center" (click)="closeView()">
-            <ion-icon name="arrow-back"></ion-icon>
-        </div>
-        <div class="header-title"><span>Xem nốt ruồi</span></div>
-        <div margin-right class="header-button"></div>
+  <div class="padding-statusbar"></div>
+  <div class="a3-container a3-justify-between a3-items-center height-56">
+    <div margin-left class="header-button back a3-container-center" (click)="closeView()">
+      <ion-icon name="arrow-back"></ion-icon>
     </div>
+    <div class="header-title">
+      <span>Xem nốt ruồi</span>
+    </div>
+    <div margin-right class="header-button"></div>
+  </div>
 
 </ion-header>
 
 
 <ion-content>
-    <div margin-top *ngIf="!isLoading" class="xemND-container">
-        <ion-row>
-            <ion-col col-4 *ngFor="let item of data; let i = index" (click)="selectedItem(i)">
-                <div class="item-container">
-                    <div class="logo" text-center>
-                        <img [src]="item.logo">
-                    </div>
-                    <div class="name">
-                        <span>{{item.name}}</span>
-                    </div>
-                </div>
-            </ion-col>
-        </ion-row>
-    </div>
+  <div margin-top *ngIf="!isLoading" class="xemND-container">
+    <ion-row>
+      <ion-col col-4 *ngFor="let item of data; let i = index" (click)="selectedItem(i)">
+        <div class="item-container">
+          <div class="logo" text-center>
+            <img [src]="item.logo">
+          </div>
+          <div class="name">
+            <span>{{item.name}}</span>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </div>
 </ion-content>

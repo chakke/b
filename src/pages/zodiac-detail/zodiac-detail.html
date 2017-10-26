@@ -1,29 +1,34 @@
 <ion-header>
-    <div class="a3-container height-56 a3-items-center a3-justify-between ">
-        <div margin-left class="header-button back a3-container-center" (click)="closeView()">
-            <ion-icon name="arrow-back"></ion-icon>
-        </div>
-        <div class="title" *ngIf="!isLoading">
-            <span>{{data.name}}</span>
-        </div>
-        <div margin-right class="header-button"></div>
+  <div class="padding-statusbar"></div>
+  <div class="a3-container height-56 a3-items-center a3-justify-between ">
+    <div margin-left class="header-button back a3-container-center" (click)="closeView()">
+      <ion-icon name="arrow-back"></ion-icon>
     </div>
+    <div class="title" *ngIf="!isLoading">
+      <span>{{data.name}}</span>
+    </div>
+    <div margin-right class="header-button"></div>
+  </div>
 </ion-header>
 <ion-content>
-    <div class="a1-relative zodacDetailPage-container ">
-        <div class="menu-container a1-relative" id="menu">
-            <div class="menu-item" *ngFor="let item of menu;let i = index" (click)="selectedMenu(i,true)"><span [class.item-active]="i==selectedIndex">{{item}}</span></div>
-            <div class="animate-bar" id="animateBar"></div>
-        </div>
-        <div *ngIf="!isLoading" class="item-container a1-relative" margin-top>
-            <div class="background-container" (swipe)="swipe($event)" id="contentZodiac">
-                <div class="item animated slideInLeft">
-                    <div class="item-title"><span>{{menu[selectedIndex]}}</span></div>
-                    <div class="item-content">
-                        <p>{{getContent(selectedIndex)}}</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <div class="a1-relative zodacDetailPage-container ">
+    <div class="menu-container a1-relative" id="menu-zodiac">
+      <div class="menu-item" *ngFor="let item of menu;let i = index" (click)="selectedMenu(i,true)">
+        <span [class.item-active]="i==selectedIndex">{{item}}</span>
+      </div>
+      <div class="animate-bar" id="animateBar"></div>
     </div>
+    <div *ngIf="!isLoading" class="item-container a1-relative" margin-top>
+      <div class="background-container" (swipe)="swipe($event)" id="contentZodiac">
+        <div class="item animated slideInLeft">
+          <div class="item-title">
+            <span>{{menu[selectedIndex]}}</span>
+          </div>
+          <div class="item-content">
+            <p>{{getContent(selectedIndex)}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </ion-content>
