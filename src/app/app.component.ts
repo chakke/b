@@ -10,7 +10,7 @@ import { DepartureModule } from '../providers/departure/departure';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = "DepartureLoadingPage";
+  rootPage: any = "DepartureLoadingPage";
 
   constructor(
     private mAppModule: DepartureModule,
@@ -19,8 +19,6 @@ export class MyApp {
       statusBar.styleLightContent();
       splashScreen.hide();
     });
-    this.mAppModule.startTrackerWithId();
-    this.mAppModule.setAllowIDFACollection(true);
-    this.mAppModule.trackView();
+
   }
 }

@@ -1,34 +1,35 @@
 <ion-header>
-    <div class="a3-container height-56 a3-items-center a3-justify-between ">
-        <div margin-left class="header-button back a3-container-center" (click)="closeView()">
-            <ion-icon name="arrow-back"></ion-icon>
-        </div>
-        <div class="title">
-            <span>Tính cách 12 Cung Hoàng Đạo</span>
-        </div>
-        <div margin-right class="header-button"></div>
+  <div class="padding-statusbar"></div>
+  <div class="a3-container height-56 a3-items-center a3-justify-between ">
+    <div margin-left class="header-button back a3-container-center" (click)="closeView()">
+      <ion-icon name="arrow-back"></ion-icon>
     </div>
+    <div class="title">
+      <span>Tính cách 12 Cung Hoàng Đạo</span>
+    </div>
+    <div margin-right class="header-button"></div>
+  </div>
 </ion-header>
 
 
 <ion-content>
-    <div *ngIf="!isLoading" class="pageZodiac-container" margin-top>
-        <ion-row>
-            <ion-col col-4 *ngFor="let item of data" text-center (click)="viewDetail(item.id)">
-                <div class="zodiac-container a1-relative">
-                    <div class="zodiac-symbol a1-height-50">
-                        <img [src]="getDataImage(item.id)">
-                    </div>
-                    <div class="a1-height-50" style="padding: 4px">
-                        <div class="zodiac-name">
-                            <span>{{getItemName(item.name)}}</span>
-                        </div>
-                        <div class="zodiac-date">
-                            <span>{{item.date}}</span>
-                        </div>
-                    </div>
-                </div>
-            </ion-col>
-        </ion-row>
-    </div>
+  <div *ngIf="!isLoading" class="pageZodiac-container" margin-top>
+    <ion-row>
+      <ion-col col-4 *ngFor="let item of data" text-center (click)="viewDetail(item.id)">
+        <div class="zodiac-container a1-relative">
+          <div class="zodiac-symbol a1-height-50">
+            <img [src]="getDataImage(item.id)">
+          </div>
+          <div class="a1-height-50" style="padding: 4px">
+            <div class="zodiac-name">
+              <span>{{getItemName(item.name)}}</span>
+            </div>
+            <div class="zodiac-date">
+              <span>{{item.date}}</span>
+            </div>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </div>
 </ion-content>

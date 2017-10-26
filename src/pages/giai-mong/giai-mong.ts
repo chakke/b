@@ -29,15 +29,18 @@ export class GiaiMongPage {
   selectedIndex = 0;
   letters = new Array<Letter>();
   divID = ['scroll1', 'scroll2'];
-  currentID: any;
-  timeoutID = [];
-  touchID = [];
-  scroll_controller = AppModule.getInstance().getScrollController();
+  currentID: number = 0;
+  timeoutID = [-1, -1];
+  touchID = [false, false];
+
   constructor(
     private statusBar: StatusBar,
     private rd: Renderer2,
     private mAppModule: DepartureModule,
     public navCtrl: NavController, public navParams: NavParams) {
+
+
+
   }
   closeView() {
     this.navCtrl.pop();
@@ -62,11 +65,20 @@ export class GiaiMongPage {
   ionViewDidEnter() {
     this.loadData();
     if (!this.mAppModule.mIsOnIOSDevice) this.statusBar.backgroundColorByHexString("#274c7c");
+
     this.addEventListener();
-    // console.log('ionViewDidLoad GiaiMongPage');
+
   }
+
+  mTimeEnter: number = 0;
   addEventListener() {
+
+    if (this.mTimeEnter != 0) return;
+
+    this.mTimeEnter++;
+
     for (let i = 0; i < this.divID.length; i++) {
+
       let scrollElem = document.getElementById(this.divID[i]);
 
       scrollElem.addEventListener("scroll", (event) => {
@@ -86,18 +98,23 @@ export class GiaiMongPage {
       });
     }
   }
+
   scrollEnd(divID: string, scrollElm: HTMLElement, i: number) {
-    if (this.timeoutID[i]) clearTimeout(this.timeoutID[i]);
+
+    clearTimeout(this.timeoutID[i]);
+
     if (i == this.currentID) {
       let topNumber = Math.round(scrollElm.scrollTop / this.row_height) * this.row_height;
+
       this.timeoutID[i] = setTimeout(() => {
         this.scrollTop(divID, topNumber, i);
+
       }, 100)
     }
   }
   scrollTop(divID: string, top: number, i: number) {
     let nowScrollTop = document.getElementById(divID).scrollTop;
-    this.scroll_controller.doScroll(divID, top, {
+    AppModule.getInstance().getScrollController().doScroll(divID, top, {
       alpha: 0.1,
       callback: () => {
         if (nowScrollTop % 30 == 0 && this.currentID == i) {
@@ -112,12 +129,15 @@ export class GiaiMongPage {
     if (i == 0) {
       let letter = this.letters[childIndex].letter;
       let element = document.getElementById("scroll2");
-      let elementIndex = Math.round(element.scrollTop / this.row_height);
-      if (letter == this.bodauTiengViet(this.data[elementIndex].mong_name.charAt(0)).toUpperCase()) {
-        return;
-      } else {
-        element.scrollTop = this.findTopNumber(letter, i) * this.row_height;
+      if (element) {
+        let elementIndex = Math.round(element.scrollTop / this.row_height);
+        if (letter == this.bodauTiengViet(this.data[elementIndex].mong_name.charAt(0)).toUpperCase()) {
+          return;
+        } else {
+          element.scrollTop = this.findTopNumber(letter, i) * this.row_height;
+        }
       }
+
     } else {
       let letter = this.bodauTiengViet(this.data[childIndex].mong_name.charAt(0)).toUpperCase();
       let element = document.getElementById("scroll1");
@@ -139,6 +159,7 @@ export class GiaiMongPage {
       }
     }
 
+    return null;
   }
   bodauTiengViet(str: string): string {
     str = str.toLowerCase();
@@ -183,7 +204,7 @@ export class GiaiMongPage {
     let element = document.getElementById("scroll2");
     let index = element.scrollTop / this.row_height;
     this.selectedIndex = index;
-    this.navCtrl.push("GiaiMongDetailPage",{data:this.data[this.selectedIndex]});
+    this.navCtrl.push("GiaiMongDetailPage", { data: this.data[this.selectedIndex] });
     // this.rd.addClass(this.mongContent.nativeElement,"fadeInUp");
   }
 }

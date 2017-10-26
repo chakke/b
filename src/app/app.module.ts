@@ -12,8 +12,9 @@ import { HttpService } from "../providers/http-service";
 import { DeviceInfoProvider } from "../providers/device-info/device-info";
 import { HttpModule } from "@angular/http";
 import { SpecicalDatePopover } from '../pages/special-date/special-date-popover';
-import { AdMobPro } from '@ionic-native/admob-pro';
+
 import { GoogleAnalytics } from '@ionic-native/google-analytics';
+import { AdMobFree } from '@ionic-native/admob-free';
 import { XEMNDPopover } from '../pages/xem-nd-detail/popover';
 import { Keyboard } from '@ionic-native/keyboard';
 
@@ -27,7 +28,7 @@ import { Keyboard } from '@ionic-native/keyboard';
   imports: [
     BrowserModule,
     HttpModule,
-    IonicModule.forRoot(MyApp,{
+    IonicModule.forRoot(MyApp, {
       tabsHideOnSubPages: true,
       pageTransition: "ios-transition"
     })
@@ -38,18 +39,18 @@ import { Keyboard } from '@ionic-native/keyboard';
     DepartureTabsPage,
     SpecicalDatePopover,
     XEMNDPopover
-    
+
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
     DepartureModule,
     HttpService,
     DeviceInfoProvider,
-    AdMobPro,
+    AdMobFree,
     GoogleAnalytics,
     Keyboard
   ]
 })
-export class AppModule {}
+export class AppModule { }

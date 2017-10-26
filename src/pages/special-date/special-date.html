@@ -1,60 +1,73 @@
 <ion-header>
-    <div class="a3-container a3-justify-between a3-items-center height-56">
-        <div margin-left class="header-button back a3-container-center" (click)="closeView()">
-            <ion-icon name="arrow-back"></ion-icon>
-        </div>
-        <div class="title">
-            <span>Ngày Lễ Việt Nam</span>
-        </div>
-        <div class="header-button"></div>
+  <div class="padding-statusbar"></div>
+  <div class="a3-container a3-justify-between a3-items-center height-56">
+    <div margin-left class="header-button back a3-container-center" (click)="closeView()">
+      <ion-icon name="arrow-back"></ion-icon>
     </div>
-    <div class="a1-relative a3-container segment-container">
-        <div class="dl-al" text-center>
-            <div><span class="dl"> DL</span></div>
-            <div><span class="al">AL</span></div>
-        </div>
-        <ion-segment [(ngModel)]="calendar" class="a1-relative">
-            <div *ngIf="!mAppModule.mIsOnIOSDevice" class="animation-bar" id="animateBar"></div>
-            <ion-segment-button value="solar" (ionSelect)="changeSegment('solar')">
-                <span class="segmen-title">Dương Lịch</span>
-            </ion-segment-button>
-            <ion-segment-button value="lunar" (ionSelect)="changeSegment('lunar')">
-                <span class="segmen-title">Âm Lịch</span>
-            </ion-segment-button>
-        </ion-segment>
+    <div class="title">
+      <span>Ngày Lễ Việt Nam</span>
     </div>
+    <div class="header-button"></div>
+  </div>
+  <div class="a1-relative a3-container segment-container">
+    <div class="dl-al" text-center>
+      <div>
+        <span class="dl"> DL</span>
+      </div>
+      <div>
+        <span class="al">AL</span>
+      </div>
+    </div>
+    <ion-segment [(ngModel)]="calendar" class="a1-relative">
+      <div *ngIf="!mAppModule.mIsOnIOSDevice" class="animation-bar" id="animateBar"></div>
+      <ion-segment-button value="solar" (ionSelect)="changeSegment('solar')">
+        <span class="segmen-title">Dương Lịch</span>
+      </ion-segment-button>
+      <ion-segment-button value="lunar" (ionSelect)="changeSegment('lunar')">
+        <span class="segmen-title">Âm Lịch</span>
+      </ion-segment-button>
+    </ion-segment>
+  </div>
 </ion-header>
 <ion-content>
-    <div margin-top [ngSwitch]="calendar" class="app-content" (swipe)="swipe($event)">
-        <div *ngSwitchCase="'solar'" class="a1-relative">
-            <div [style.height]="item_height" class="item-div a1-relative a3-container a3-justify-between a3-items-center" *ngFor="let day of cavalDL_data">
-                <div class="date item-start">
-                    <div><span class="dl">{{day.date}}</span></div>
-                    <div><span class="al">{{getLunarDate(day.date)}}</span></div>
-                </div>
-                <div class="a1-absolute line"></div>
-                <div class="item-content" (click)="goToDetail(day)">
-                    <span>{{day.name}}</span>
-                </div>
-                <div class="item-end" (click)="viewDescription(day)">
-                    <ion-icon name="ios-information-circle-outline"></ion-icon>
-                </div>
-            </div>
+  <div margin-top [ngSwitch]="calendar" class="app-content" (swipe)="swipe($event)">
+    <div *ngSwitchCase="'solar'" class="a1-relative">
+      <div [style.height]="item_height" class="item-div a1-relative a3-container a3-justify-between a3-items-center" *ngFor="let day of cavalDL_data">
+        <div class="date item-start">
+          <div>
+            <span class="dl">{{day.date}}</span>
+          </div>
+          <div>
+            <span class="al">{{getLunarDate(day.date)}}</span>
+          </div>
         </div>
-        <div *ngSwitchCase="'lunar'" class="a1-relative">
-            <div [style.height]="item_height" class="item-div a1-relative a3-container a3-justify-between a3-items-center" *ngFor="let day of cavalAL_data">
-                <div class="date item-start">
-                    <div><span class="dl">{{getSolarDate(day.date)}}</span></div>
-                    <div><span class="al">{{day.date}}</span></div>
-                </div>
-                <div class="a1-absolute line"></div>
-                <div class="item-content" (click)="goToDetail(day)">
-                    <span>{{day.name}}</span>
-                </div>
-                <div class="item-end" (click)="viewDescription(day)">
-                    <ion-icon name="ios-information-circle-outline"></ion-icon>
-                </div>
-            </div>
+        <div class="a1-absolute line"></div>
+        <div class="item-content" (click)="goToDetail(day)">
+          <span>{{day.name}}</span>
         </div>
+        <div class="item-end" (click)="viewDescription(day)">
+          <ion-icon name="ios-information-circle-outline"></ion-icon>
+        </div>
+      </div>
     </div>
+    <div *ngSwitchCase="'lunar'" class="a1-relative">
+      <div [style.height]="item_height" class="item-div a1-relative a3-container a3-justify-between a3-items-center" *ngFor="let day of cavalAL_data">
+        <div class="date item-start">
+          <div>
+            <span class="dl">{{getSolarDate(day.date)}}</span>
+          </div>
+          <div>
+            <span class="al">{{day.date}}</span>
+          </div>
+        </div>
+        <div class="a1-absolute line"></div>
+        <div class="item-content" (click)="goToDetail(day)">
+          <span>{{day.name}}</span>
+        </div>
+        <div class="item-end" (click)="viewDescription(day)">
+          <ion-icon name="ios-information-circle-outline"></ion-icon>
+        </div>
+      </div>
+    </div>
+  </div>
 </ion-content>

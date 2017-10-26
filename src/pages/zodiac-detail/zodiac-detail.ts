@@ -20,7 +20,7 @@ export class ZodiacDetailPage {
   data: any;
   isLoading: boolean = true;
   selectedIndex = 0;
-  timeOut: any;
+  timeOut: number = -1;
   isScroll: boolean = false;
   menu = ["Nội dung", "Lý lịch", "Truyền thuyết", "Biểu tượng", "Mô tả", "Tổng quát"];
   constructor(
@@ -33,7 +33,7 @@ export class ZodiacDetailPage {
     if (!this.mAppModule.mIsOnIOSDevice) this.statusBar.backgroundColorByHexString("#274c7c");
     this.loadParams();
     this.isLoading = false;
-    let element = document.getElementById("menu");
+    let element = document.getElementById("menu-zodiac");
     element.addEventListener("scroll",()=>{
       if(!this.isScroll){
         this.scrollEnd(element);
@@ -79,14 +79,14 @@ export class ZodiacDetailPage {
     this.selectedIndex = index;
     this.isScroll = isScroll;
     AppModule.getInstance().getScrollController().doScrollTop("contentZodiac");
-    let menuElement = document.getElementById("menu");
+    let menuElement = document.getElementById("menu-zodiac");
     let element = document.getElementById("animateBar");
     let distanceTranform = index * screen.width/3;
     let distanceScroll: number = 0;
     distanceScroll = (index - 1) * screen.width/3;
     element.style.transform = "translate(" + distanceTranform + "px" + ",0)";
     if (index > 0 && index < 5 && isScroll) {
-      AppModule.getInstance().getScrollController().doScrollLeft("menu", distanceScroll,{
+      AppModule.getInstance().getScrollController().doScrollLeft("menu-zodiac", distanceScroll,{
         alpha: 0.2,
         callback:()=>{
           setTimeout(()=> {
