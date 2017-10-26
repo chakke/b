@@ -88,5 +88,8 @@
     <plugin name="cordova-plugin-google-analytics" spec="^1.8.3" />
     <plugin name="cordova-plugin-admob-free" spec="^0.11.0" />
     <plugin name="cordova-plugin-datepicker" spec="^0.9.3" />
+<<<<<<< HEAD
     <plugin name="cordova-promise-polyfill" spec="0.0.2" />
+=======
+>>>>>>> 84cfb88cae37d511a1008c7776ae97776bb5d9f6
 </widget>
